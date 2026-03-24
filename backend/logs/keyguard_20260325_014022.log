@@ -1,0 +1,12 @@
+2026-03-25 01:40:22,832 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 66.66666666666667, 'key_press_rate': 5.714285714285714, 'key_release_interval': np.float64(100.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 01:40:22,834 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'b', 'key_press_time': 1150, 'key_release_time': 1000}
+2026-03-25 01:40:22,843 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 1500ms
+2026-03-25 01:40:22,847 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.95, SVM score: 0.8
+2026-03-25 01:40:22,850 - keyguard_backend - INFO - Detection decision: normal - ['RF: High confidence in normal (prob=0.95)', 'SVM: Normal behavior detected']
+2026-03-25 01:40:22,854 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.45, SVM score: 0.5
+2026-03-25 01:40:22,855 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.45)', 'SVM: Normal behavior detected']
+2026-03-25 01:40:22,859 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.2, SVM score: -0.8
+2026-03-25 01:40:22,859 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.20)', 'SVM: Anomaly detected (score=-0.80)']
+2026-03-25 01:40:22,913 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 80.0, 'key_press_rate': 6.153846153846153, 'key_release_interval': np.float64(100.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 01:40:22,913 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5513320674119709, SVM score: -0.12154001704131523
+2026-03-25 01:40:22,914 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.55)', 'SVM: Anomaly detected (score=-0.12)']

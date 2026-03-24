@@ -1,0 +1,25 @@
+2026-03-25 01:42:47,871 - keyguard_backend - WARNING - Model file not found: /models/random_forest_model.pkl. Creating mock model.
+2026-03-25 01:42:47,871 - keyguard_backend - WARNING - Model file not found: /models/one_class_svm_model.pkl. Creating mock model.
+2026-03-25 01:42:47,871 - keyguard_backend - WARNING - Scaler file not found: /models/scaler.pkl. Creating mock scaler.
+2026-03-25 01:42:48,020 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 01:42:48,654 - keyguard_backend - INFO - Starting capture session for newuser
+2026-03-25 01:42:48,671 - keyguard_backend - INFO - Created new user: newuser
+2026-03-25 01:42:48,683 - keyguard_backend - INFO - Created new capture session 1 for newuser
+2026-03-25 01:42:48,848 - keyguard_backend - INFO - Starting capture session for testuser
+2026-03-25 01:42:48,850 - keyguard_backend - INFO - Returning existing active session for testuser
+2026-03-25 01:42:49,006 - keyguard_backend - DEBUG - Session active for testuser
+2026-03-25 01:42:49,420 - keyguard_backend - INFO - Prediction request from testuser with 5 keystrokes
+2026-03-25 01:42:49,458 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 80.0, 'key_press_rate': 6.153846153846153, 'key_release_interval': np.float64(100.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 01:42:49,523 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4934718561558317, SVM score: -0.8868500628500373
+2026-03-25 01:42:49,523 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.49)', 'SVM: Anomaly detected (score=-0.89)']
+2026-03-25 01:42:49,541 - keyguard_backend - WARNING - Logged intrusion event for user testuser
+2026-03-25 01:42:49,541 - keyguard_backend - INFO - Prediction result for testuser: intrusion
+2026-03-25 01:42:49,690 - keyguard_backend - INFO - Prediction request from nonexistent with 1 keystrokes
+2026-03-25 01:42:49,691 - keyguard_backend - WARNING - User not found: nonexistent
+2026-03-25 01:42:49,692 - keyguard_backend - ERROR - HTTP Exception: 404 - User not found
+2026-03-25 01:42:49,966 - keyguard_backend - INFO - Training request for testuser with 15 keystrokes
+2026-03-25 01:42:49,968 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 46.666666666666664, 'key_press_rate': 9.655172413793103, 'key_release_interval': np.float64(50.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 01:42:50,033 - keyguard_backend - INFO - Updated behavior profile for user testuser
+2026-03-25 01:42:50,203 - keyguard_backend - INFO - Training request for nonexistent with 1 keystrokes
+2026-03-25 01:42:50,205 - keyguard_backend - WARNING - User not found: nonexistent
+2026-03-25 01:42:50,205 - keyguard_backend - ERROR - HTTP Exception: 404 - User not found

@@ -1,0 +1,275 @@
+2026-03-25 02:02:40,608 - keyguard_backend - WARNING - Model file not found: /models/random_forest_model.pkl. Creating mock model.
+2026-03-25 02:02:40,608 - keyguard_backend - WARNING - Model file not found: /models/one_class_svm_model.pkl. Creating mock model.
+2026-03-25 02:02:40,609 - keyguard_backend - WARNING - Scaler file not found: /models/scaler.pkl. Creating mock scaler.
+2026-03-25 02:02:40,667 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 02:02:40,838 - keyguard_backend - INFO - Starting KeyGuard Backend server
+2026-03-25 02:03:31,736 - keyguard_backend - INFO - Starting capture session for test_integration_user
+2026-03-25 02:03:31,757 - keyguard_backend - INFO - Created new user: test_integration_user
+2026-03-25 02:03:31,769 - keyguard_backend - INFO - Created new capture session 1 for test_integration_user
+2026-03-25 02:03:33,808 - keyguard_backend - DEBUG - Session active for test_integration_user
+2026-03-25 02:03:35,877 - keyguard_backend - INFO - Prediction request from test_integration_user with 5 keystrokes
+2026-03-25 02:03:35,886 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 47.0, 'flight_time': 81.0, 'key_press_rate': 6.25, 'key_release_interval': np.float64(101.25), 'typing_speed': np.float64(47.0)}
+2026-03-25 02:03:35,919 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.39151747539392967, SVM score: 0.7096411342634177
+2026-03-25 02:03:35,919 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Low confidence in normal (prob=0.39)', 'SVM: Normal behavior detected']
+2026-03-25 02:03:35,931 - keyguard_backend - WARNING - Logged suspicious event for user test_integration_user
+2026-03-25 02:03:35,931 - keyguard_backend - INFO - Prediction result for test_integration_user: suspicious
+2026-03-25 02:03:37,961 - keyguard_backend - INFO - Prediction request from test_integration_user with 5 keystrokes
+2026-03-25 02:03:37,970 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 12.0, 'flight_time': 154.0, 'key_press_rate': 4.819277108433735, 'key_release_interval': np.float64(192.5), 'typing_speed': np.float64(12.0)}
+2026-03-25 02:03:37,971 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3396727353907708, SVM score: 0.14972854114998957
+2026-03-25 02:03:37,971 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Low confidence in normal (prob=0.34)', 'SVM: Normal behavior detected']
+2026-03-25 02:03:37,989 - keyguard_backend - WARNING - Logged suspicious event for user test_integration_user
+2026-03-25 02:03:37,989 - keyguard_backend - INFO - Prediction result for test_integration_user: suspicious
+2026-03-25 02:03:40,032 - keyguard_backend - INFO - Ending capture session for test_integration_user
+2026-03-25 02:03:40,062 - keyguard_backend - INFO - Ended capture session 1 for test_integration_user
+2026-03-25 02:06:27,166 - keyguard_backend - INFO - Starting capture session for jones
+2026-03-25 02:06:27,189 - keyguard_backend - INFO - Created new user: jones
+2026-03-25 02:06:27,204 - keyguard_backend - INFO - Created new capture session 2 for jones
+2026-03-25 02:06:32,171 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:06:32,179 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 150.0, 'flight_time': 163.6, 'key_press_rate': 2.5510204081632653, 'key_release_interval': np.float64(204.5), 'typing_speed': np.float64(150.0)}
+2026-03-25 02:06:32,180 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6135961854019093, SVM score: 0.6194804259345303
+2026-03-25 02:06:32,180 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.61)', 'SVM: Normal behavior detected']
+2026-03-25 02:06:32,196 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:06:32,197 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:06:34,068 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:06:34,072 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 117.0, 'flight_time': 267.6, 'key_press_rate': 2.1220159151193636, 'key_release_interval': np.float64(325.0), 'typing_speed': np.float64(117.0)}
+2026-03-25 02:06:34,073 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.27381405806428044, SVM score: 0.7760304824870508
+2026-03-25 02:06:34,073 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Low confidence in normal (prob=0.27)', 'SVM: Normal behavior detected']
+2026-03-25 02:06:34,086 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:06:34,086 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:06:35,012 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:06:35,014 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 127.8, 'flight_time': 48.2, 'key_press_rate': 4.545454545454546, 'key_release_interval': np.float64(60.25), 'typing_speed': np.float64(127.8)}
+2026-03-25 02:06:35,015 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6680552031760357, SVM score: 0.7323831791498125
+2026-03-25 02:06:35,015 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.67)', 'SVM: Normal behavior detected']
+2026-03-25 02:06:35,026 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:06:35,027 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:06:36,250 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:06:36,253 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 115.4, 'flight_time': 66.8, 'key_press_rate': 4.390779363336992, 'key_release_interval': np.float64(83.5), 'typing_speed': np.float64(115.4)}
+2026-03-25 02:06:36,253 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3659736042842698, SVM score: -0.9939411303304386
+2026-03-25 02:06:36,253 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.37)', 'SVM: Anomaly detected (score=-0.99)']
+2026-03-25 02:06:36,267 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:06:36,268 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:06:58,826 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:06:58,830 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 1252.0ms
+2026-03-25 02:06:58,830 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 28076.0ms
+2026-03-25 02:06:58,830 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 270.6666666666667, 'flight_time': 7243.666666666667, 'key_press_rate': 0.08877052818464269, 'key_release_interval': np.float64(10859.0), 'typing_speed': np.float64(270.6666666666667)}
+2026-03-25 02:06:58,831 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4590328775376488, SVM score: -0.5559233291726045
+2026-03-25 02:06:58,831 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.46)', 'SVM: Anomaly detected (score=-0.56)']
+2026-03-25 02:06:58,844 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:06:58,844 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:00,688 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:00,692 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 130.2, 'flight_time': 211.8, 'key_press_rate': 2.3391812865497075, 'key_release_interval': np.float64(264.75), 'typing_speed': np.float64(130.2)}
+2026-03-25 02:07:00,693 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6665443819049949, SVM score: 0.6093036993435732
+2026-03-25 02:07:00,693 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.67)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:00,707 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:00,708 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:02,004 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:02,010 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 121.8, 'flight_time': 127.0, 'key_press_rate': 3.265306122448979, 'key_release_interval': np.float64(154.0), 'typing_speed': np.float64(121.8)}
+2026-03-25 02:07:02,010 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5030034402528619, SVM score: -0.8415217044566643
+2026-03-25 02:07:02,012 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.50)', 'SVM: Anomaly detected (score=-0.84)']
+2026-03-25 02:07:02,026 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:02,028 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:03,619 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:03,626 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 110.8, 'flight_time': 123.4, 'key_press_rate': 3.4158838599487615, 'key_release_interval': np.float64(154.25), 'typing_speed': np.float64(110.8)}
+2026-03-25 02:07:03,627 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.7179579093472322, SVM score: 0.09748771638232934
+2026-03-25 02:07:03,627 - keyguard_backend - INFO - Detection decision: normal - ['RF: High confidence in normal (prob=0.72)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:03,628 - keyguard_backend - INFO - Prediction result for jones: normal
+2026-03-25 02:07:05,010 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:05,015 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 119.8, 'flight_time': 140.8, 'key_press_rate': 3.0698388334612434, 'key_release_interval': np.float64(176.0), 'typing_speed': np.float64(119.8)}
+2026-03-25 02:07:05,016 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.49535566443154677, SVM score: -0.8435250332243442
+2026-03-25 02:07:05,016 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.50)', 'SVM: Anomaly detected (score=-0.84)']
+2026-03-25 02:07:05,035 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:05,037 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:06,152 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:06,155 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 107.6, 'flight_time': 85.8, 'key_press_rate': 4.1365046535677354, 'key_release_interval': np.float64(107.25), 'typing_speed': np.float64(107.6)}
+2026-03-25 02:07:06,155 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4511490320136619, SVM score: -0.8363599078462711
+2026-03-25 02:07:06,155 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.45)', 'SVM: Anomaly detected (score=-0.84)']
+2026-03-25 02:07:06,167 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:06,167 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:07,693 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:07,696 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 117.8, 'flight_time': 109.8, 'key_press_rate': 3.5149384885764503, 'key_release_interval': np.float64(137.25), 'typing_speed': np.float64(117.8)}
+2026-03-25 02:07:07,696 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4615860300990862, SVM score: 0.08222703038061452
+2026-03-25 02:07:07,696 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.46)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:07,710 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:07,711 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:09,660 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:09,664 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 118.2, 'flight_time': 157.4, 'key_press_rate': 2.9390154298310067, 'key_release_interval': np.float64(192.5), 'typing_speed': np.float64(118.2)}
+2026-03-25 02:07:09,665 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4524091549414649, SVM score: -0.10406126479274702
+2026-03-25 02:07:09,665 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.45)', 'SVM: Anomaly detected (score=-0.10)']
+2026-03-25 02:07:09,679 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:09,680 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:10,671 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:10,679 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 119.6, 'flight_time': 75.0, 'key_press_rate': 4.110996916752312, 'key_release_interval': np.float64(93.75), 'typing_speed': np.float64(119.6)}
+2026-03-25 02:07:10,679 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5064553343446754, SVM score: -0.07485843726723052
+2026-03-25 02:07:10,680 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.51)', 'SVM: Anomaly detected (score=-0.07)']
+2026-03-25 02:07:10,695 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:10,696 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:11,709 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:11,713 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 124.0, 'flight_time': 71.2, 'key_press_rate': 4.098360655737705, 'key_release_interval': np.float64(89.0), 'typing_speed': np.float64(124.0)}
+2026-03-25 02:07:11,713 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6035956367830999, SVM score: 0.6559754248256351
+2026-03-25 02:07:11,713 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.60)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:11,724 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:11,724 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:13,912 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:13,917 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 114.6, 'flight_time': 273.2, 'key_press_rate': 2.0629190304280556, 'key_release_interval': np.float64(341.5), 'typing_speed': np.float64(114.6)}
+2026-03-25 02:07:13,918 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3659546965637257, SVM score: -0.29758057194015164
+2026-03-25 02:07:13,918 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.37)', 'SVM: Anomaly detected (score=-0.30)']
+2026-03-25 02:07:13,932 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:13,933 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:15,683 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:15,687 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 127.2, 'flight_time': 173.6, 'key_press_rate': 2.6595744680851063, 'key_release_interval': np.float64(217.0), 'typing_speed': np.float64(127.2)}
+2026-03-25 02:07:15,687 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4846491912274257, SVM score: 0.8726610269957324
+2026-03-25 02:07:15,687 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.48)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:15,702 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:15,703 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:18,200 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:18,207 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 114.2, 'flight_time': 308.0, 'key_press_rate': 1.8948365703458074, 'key_release_interval': np.float64(385.0), 'typing_speed': np.float64(114.2)}
+2026-03-25 02:07:18,207 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3521778065191824, SVM score: 0.9420623536228392
+2026-03-25 02:07:18,208 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Low confidence in normal (prob=0.35)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:18,222 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:18,223 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:19,948 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:19,953 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 108.4, 'flight_time': 238.6, 'key_press_rate': 2.3054755043227666, 'key_release_interval': np.float64(298.25), 'typing_speed': np.float64(108.4)}
+2026-03-25 02:07:19,953 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6254620452698622, SVM score: -0.5728103763631245
+2026-03-25 02:07:19,954 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.63)', 'SVM: Anomaly detected (score=-0.57)']
+2026-03-25 02:07:19,970 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:19,971 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:21,570 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:21,578 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 127.8, 'flight_time': 93.0, 'key_press_rate': 3.623188405797101, 'key_release_interval': np.float64(116.25), 'typing_speed': np.float64(127.8)}
+2026-03-25 02:07:21,578 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6246500162579796, SVM score: 0.19292657488429632
+2026-03-25 02:07:21,579 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.62)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:21,594 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:21,595 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:26,316 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:26,323 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 99.4, 'flight_time': 840.0, 'key_press_rate': 0.8516074089844582, 'key_release_interval': np.float64(1050.0), 'typing_speed': np.float64(99.4)}
+2026-03-25 02:07:26,323 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5569919304851816, SVM score: -0.48347800745334957
+2026-03-25 02:07:26,324 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.56)', 'SVM: Anomaly detected (score=-0.48)']
+2026-03-25 02:07:26,340 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:26,341 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:29,832 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:29,834 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 236.4, 'flight_time': 229.0, 'key_press_rate': 1.996007984031936, 'key_release_interval': np.float64(205.5), 'typing_speed': np.float64(236.4)}
+2026-03-25 02:07:29,834 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.44392555229928193, SVM score: -0.6356335943481881
+2026-03-25 02:07:29,834 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.44)', 'SVM: Anomaly detected (score=-0.64)']
+2026-03-25 02:07:29,846 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:29,846 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:32,452 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:32,457 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 110.8, 'flight_time': 265.8, 'key_press_rate': 2.1242697822623473, 'key_release_interval': np.float64(332.25), 'typing_speed': np.float64(110.8)}
+2026-03-25 02:07:32,457 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6920575609598065, SVM score: 0.40959915104175826
+2026-03-25 02:07:32,457 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.69)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:32,471 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:32,471 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:34,689 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:34,691 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 138.4, 'flight_time': 312.8, 'key_press_rate': 1.7929179740026895, 'key_release_interval': np.float64(384.75), 'typing_speed': np.float64(138.4)}
+2026-03-25 02:07:34,691 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5354015197860361, SVM score: 0.391328620455885
+2026-03-25 02:07:34,691 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.54)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:34,701 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:34,702 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:36,253 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:36,258 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 120.6, 'flight_time': 192.6, 'key_press_rate': 2.554278416347382, 'key_release_interval': np.float64(240.75), 'typing_speed': np.float64(120.6)}
+2026-03-25 02:07:36,259 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.690998119829265, SVM score: 0.09193358882568758
+2026-03-25 02:07:36,259 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.69)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:36,273 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:36,274 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:39,189 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:39,191 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 117.2, 'flight_time': 423.2, 'key_press_rate': 1.4803849000740192, 'key_release_interval': np.float64(529.0), 'typing_speed': np.float64(117.2)}
+2026-03-25 02:07:39,192 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4049512248760699, SVM score: 0.002291946602396955
+2026-03-25 02:07:39,192 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.40)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:39,202 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:39,203 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:41,515 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:41,520 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 133.2, 'flight_time': 255.2, 'key_press_rate': 2.059732234809475, 'key_release_interval': np.float64(319.0), 'typing_speed': np.float64(133.2)}
+2026-03-25 02:07:41,520 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3109475433077391, SVM score: -0.636634650495417
+2026-03-25 02:07:41,520 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.31)', 'SVM: Anomaly detected (score=-0.64)']
+2026-03-25 02:07:41,535 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:41,535 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:45,072 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:45,074 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 233.6, 'flight_time': 413.4, 'key_press_rate': 1.2364760432766615, 'key_release_interval': np.float64(516.75), 'typing_speed': np.float64(233.6)}
+2026-03-25 02:07:45,075 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4865693501844704, SVM score: -0.5063985959730843
+2026-03-25 02:07:45,075 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.49)', 'SVM: Anomaly detected (score=-0.51)']
+2026-03-25 02:07:45,088 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:45,088 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:47,037 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:47,046 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 111.4, 'flight_time': 266.6, 'key_press_rate': 2.1164021164021167, 'key_release_interval': np.float64(333.25), 'typing_speed': np.float64(111.4)}
+2026-03-25 02:07:47,046 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5476169887244664, SVM score: 0.22032659793126164
+2026-03-25 02:07:47,047 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.55)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:47,065 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:47,066 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:47,997 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:48,005 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 86.0, 'flight_time': 87.6, 'key_press_rate': 4.6082949308755765, 'key_release_interval': np.float64(109.5), 'typing_speed': np.float64(86.0)}
+2026-03-25 02:07:48,007 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3881857376677072, SVM score: -0.8489927376014084
+2026-03-25 02:07:48,007 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.39)', 'SVM: Anomaly detected (score=-0.85)']
+2026-03-25 02:07:48,024 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:48,024 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:50,087 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:50,094 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 125.0, 'flight_time': 273.0, 'key_press_rate': 2.0100502512562812, 'key_release_interval': np.float64(341.25), 'typing_speed': np.float64(125.0)}
+2026-03-25 02:07:50,095 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5049713070578611, SVM score: 0.6551445528400917
+2026-03-25 02:07:50,095 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.50)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:50,111 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:50,111 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:51,757 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:51,762 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 138.8, 'flight_time': 188.6, 'key_press_rate': 2.4691358024691357, 'key_release_interval': np.float64(231.5), 'typing_speed': np.float64(138.8)}
+2026-03-25 02:07:51,762 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5927250073718789, SVM score: -0.5117719865529666
+2026-03-25 02:07:51,763 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.59)', 'SVM: Anomaly detected (score=-0.51)']
+2026-03-25 02:07:51,777 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:51,777 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:53,293 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:53,295 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 115.0, 'flight_time': 176.0, 'key_press_rate': 2.7491408934707904, 'key_release_interval': np.float64(220.0), 'typing_speed': np.float64(115.0)}
+2026-03-25 02:07:53,296 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.41911015735922175, SVM score: 0.2770225366124994
+2026-03-25 02:07:53,296 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.42)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:53,308 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:53,308 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:54,562 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:54,569 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 136.6, 'flight_time': 93.2, 'key_press_rate': 3.4812880765883376, 'key_release_interval': np.float64(116.5), 'typing_speed': np.float64(136.6)}
+2026-03-25 02:07:54,570 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.4612877361342394, SVM score: 0.16189468389825956
+2026-03-25 02:07:54,570 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.46)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:54,585 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:07:54,586 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:07:56,392 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:56,394 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 125.4, 'flight_time': 114.4, 'key_press_rate': 3.3361134278565467, 'key_release_interval': np.float64(143.0), 'typing_speed': np.float64(125.4)}
+2026-03-25 02:07:56,395 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6085059025498749, SVM score: -0.13195092060402547
+2026-03-25 02:07:56,395 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.61)', 'SVM: Anomaly detected (score=-0.13)']
+2026-03-25 02:07:56,410 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:07:56,410 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:07:57,880 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:07:57,887 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 123.0, 'flight_time': 112.6, 'key_press_rate': 3.395585738539898, 'key_release_interval': np.float64(140.75), 'typing_speed': np.float64(123.0)}
+2026-03-25 02:07:57,887 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.7489209797319674, SVM score: 0.47216805968236875
+2026-03-25 02:07:57,888 - keyguard_backend - INFO - Detection decision: normal - ['RF: High confidence in normal (prob=0.75)', 'SVM: Normal behavior detected']
+2026-03-25 02:07:57,888 - keyguard_backend - INFO - Prediction result for jones: normal
+2026-03-25 02:08:02,454 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:08:02,456 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 108.0, 'flight_time': 739.4, 'key_press_rate': 0.9440641963653528, 'key_release_interval': np.float64(924.25), 'typing_speed': np.float64(108.0)}
+2026-03-25 02:08:02,456 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3286868483348425, SVM score: -0.45691730605407077
+2026-03-25 02:08:02,456 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.33)', 'SVM: Anomaly detected (score=-0.46)']
+2026-03-25 02:08:02,470 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:08:02,472 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:17:17,496 - keyguard_backend - INFO - Starting capture session for jones
+2026-03-25 02:17:17,513 - keyguard_backend - INFO - Returning existing active session for jones
+2026-03-25 02:20:59,105 - keyguard_backend - INFO - Training request for jones with 368 keystrokes
+2026-03-25 02:20:59,115 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 33904.0ms
+2026-03-25 02:20:59,115 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 34620.0ms
+2026-03-25 02:20:59,124 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 137.09562841530055, 'flight_time': 437.3524590163934, 'key_press_rate': 1.7419191654059627, 'key_release_interval': np.float64(436.6082191780822), 'typing_speed': np.float64(137.09562841530055)}
+2026-03-25 02:20:59,346 - keyguard_backend - INFO - Updated behavior profile for user jones
+2026-03-25 02:21:11,251 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:21:11,256 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 143.4, 'flight_time': 65.8, 'key_press_rate': 3.8722168441432725, 'key_release_interval': np.float64(79.0), 'typing_speed': np.float64(143.4)}
+2026-03-25 02:21:11,258 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5040906174578272, SVM score: -0.8251558308041929
+2026-03-25 02:21:11,258 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.50)', 'SVM: Anomaly detected (score=-0.83)']
+2026-03-25 02:21:11,273 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:21:11,276 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:21:15,538 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:21:15,542 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 114.8, 'flight_time': 724.2, 'key_press_rate': 0.9535160905840285, 'key_release_interval': np.float64(905.25), 'typing_speed': np.float64(114.8)}
+2026-03-25 02:21:15,543 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.3191819396161782, SVM score: 0.3803128132838396
+2026-03-25 02:21:15,543 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Low confidence in normal (prob=0.32)', 'SVM: Normal behavior detected']
+2026-03-25 02:21:15,570 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:21:15,571 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:21:16,433 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:21:16,437 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 132.0, 'flight_time': 35.2, 'key_press_rate': 4.8721071863581, 'key_release_interval': np.float64(40.25), 'typing_speed': np.float64(132.0)}
+2026-03-25 02:21:16,437 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5813097636770718, SVM score: -0.42180080023759436
+2026-03-25 02:21:16,437 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.58)', 'SVM: Anomaly detected (score=-0.42)']
+2026-03-25 02:21:16,451 - keyguard_backend - WARNING - Logged intrusion event for user jones
+2026-03-25 02:21:16,452 - keyguard_backend - INFO - Prediction result for jones: intrusion
+2026-03-25 02:21:17,299 - keyguard_backend - INFO - Prediction request from jones with 5 keystrokes
+2026-03-25 02:21:17,307 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 135.2, 'flight_time': 31.8, 'key_press_rate': 4.8543689320388355, 'key_release_interval': np.float64(37.0), 'typing_speed': np.float64(135.2)}
+2026-03-25 02:21:17,308 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.35987942068615464, SVM score: 0.002418109299984428
+2026-03-25 02:21:17,308 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Low confidence in normal (prob=0.36)', 'SVM: Normal behavior detected']
+2026-03-25 02:21:17,331 - keyguard_backend - WARNING - Logged suspicious event for user jones
+2026-03-25 02:21:17,332 - keyguard_backend - INFO - Prediction result for jones: suspicious
+2026-03-25 02:21:20,445 - keyguard_backend - INFO - Ending capture session for jones
+2026-03-25 02:21:20,485 - keyguard_backend - INFO - Ended capture session 2 for jones

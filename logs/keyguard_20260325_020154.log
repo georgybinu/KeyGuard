@@ -1,0 +1,37 @@
+2026-03-25 02:01:54,099 - keyguard_backend - WARNING - Model file not found: /models/random_forest_model.pkl. Creating mock model.
+2026-03-25 02:01:54,100 - keyguard_backend - WARNING - Model file not found: /models/one_class_svm_model.pkl. Creating mock model.
+2026-03-25 02:01:54,100 - keyguard_backend - WARNING - Scaler file not found: /models/scaler.pkl. Creating mock scaler.
+2026-03-25 02:01:54,182 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 02:01:54,928 - keyguard_backend - INFO - Starting capture session for newuser
+2026-03-25 02:01:54,945 - keyguard_backend - INFO - Created new user: newuser
+2026-03-25 02:01:54,955 - keyguard_backend - INFO - Created new capture session 1 for newuser
+2026-03-25 02:01:55,104 - keyguard_backend - INFO - Starting capture session for testuser
+2026-03-25 02:01:55,106 - keyguard_backend - INFO - Returning existing active session for testuser
+2026-03-25 02:01:55,260 - keyguard_backend - DEBUG - Session active for testuser
+2026-03-25 02:01:55,790 - keyguard_backend - INFO - Prediction request from testuser with 5 keystrokes
+2026-03-25 02:01:55,794 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 80.0, 'key_press_rate': 6.153846153846153, 'key_release_interval': np.float64(100.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 02:01:56,692 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.574433457505673, SVM score: -0.5111250154094085
+2026-03-25 02:01:56,692 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.57)', 'SVM: Anomaly detected (score=-0.51)']
+2026-03-25 02:01:56,702 - keyguard_backend - WARNING - Logged intrusion event for user testuser
+2026-03-25 02:01:56,703 - keyguard_backend - INFO - Prediction result for testuser: intrusion
+2026-03-25 02:01:56,844 - keyguard_backend - INFO - Prediction request from nonexistent with 1 keystrokes
+2026-03-25 02:01:56,845 - keyguard_backend - WARNING - User not found: nonexistent
+2026-03-25 02:01:56,846 - keyguard_backend - ERROR - HTTP Exception: 404 - User not found
+2026-03-25 02:01:57,108 - keyguard_backend - INFO - Training request for testuser with 15 keystrokes
+2026-03-25 02:01:57,110 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 46.666666666666664, 'key_press_rate': 9.655172413793103, 'key_release_interval': np.float64(50.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 02:01:57,158 - keyguard_backend - INFO - Updated behavior profile for user testuser
+2026-03-25 02:01:57,286 - keyguard_backend - INFO - Training request for nonexistent with 1 keystrokes
+2026-03-25 02:01:57,287 - keyguard_backend - WARNING - User not found: nonexistent
+2026-03-25 02:01:57,287 - keyguard_backend - ERROR - HTTP Exception: 404 - User not found
+2026-03-25 02:01:57,617 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 66.66666666666667, 'key_press_rate': 5.714285714285714, 'key_release_interval': np.float64(100.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 02:01:57,621 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'b', 'key_press_time': 1150, 'key_release_time': 1000}
+2026-03-25 02:01:57,627 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 1500ms
+2026-03-25 02:01:57,631 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.95, SVM score: 0.8
+2026-03-25 02:01:57,631 - keyguard_backend - INFO - Detection decision: normal - ['RF: High confidence in normal (prob=0.95)', 'SVM: Normal behavior detected']
+2026-03-25 02:01:57,635 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.45, SVM score: 0.5
+2026-03-25 02:01:57,636 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.45)', 'SVM: Normal behavior detected']
+2026-03-25 02:01:57,640 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.2, SVM score: -0.8
+2026-03-25 02:01:57,640 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.20)', 'SVM: Anomaly detected (score=-0.80)']
+2026-03-25 02:01:57,664 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 80.0, 'key_press_rate': 6.153846153846153, 'key_release_interval': np.float64(100.0), 'typing_speed': np.float64(50.0)}
+2026-03-25 02:01:57,664 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.5530738542725664, SVM score: -0.7101041791651088
+2026-03-25 02:01:57,664 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Suspicious behavior (prob=0.55)', 'SVM: Anomaly detected (score=-0.71)']

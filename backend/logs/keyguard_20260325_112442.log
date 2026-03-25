@@ -1,0 +1,7 @@
+2026-03-25 11:24:42,087 - keyguard_backend - WARNING - Model file not found: /models/random_forest_model.pkl. Creating mock model.
+2026-03-25 11:24:42,087 - keyguard_backend - WARNING - Model file not found: /models/one_class_svm_model.pkl. Creating mock model.
+2026-03-25 11:24:42,087 - keyguard_backend - WARNING - Scaler file not found: /models/scaler.pkl. Creating mock scaler.
+2026-03-25 11:24:42,093 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 11:24:42,129 - keyguard_backend - INFO - Starting KeyGuard Backend server
+2026-03-25 11:26:36,000 - keyguard_backend - INFO - Registering new user: madabkadab
+2026-03-25 11:26:36,014 - keyguard_backend - INFO - Successfully registered user: madabkadab

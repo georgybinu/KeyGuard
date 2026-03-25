@@ -4,7 +4,8 @@ Prediction endpoint for KeyGuard
 from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
+from pydantic import BaseModel
 from database.db import get_db
 from database.crud import get_user_by_username, get_active_session, log_intrusion
 from services.preprocessing import PreprocessingService
@@ -15,6 +16,7 @@ from utils.config import MODEL_PATHS
 from utils.helpers import format_response
 from utils.logger import get_logger
 import json
+import numpy as np
 
 router = APIRouter()
 logger = get_logger()
@@ -24,18 +26,16 @@ rf_model = ModelLoader.load_model(MODEL_PATHS["random_forest"], "random_forest")
 svm_model = ModelLoader.load_model(MODEL_PATHS["one_class_svm"], "one_class_svm")
 scaler = ModelLoader.load_scaler(MODEL_PATHS["scaler"])
 
-class PredictRequest:
+class PredictRequest(BaseModel):
     """Request model for prediction endpoint"""
-    def __init__(self, username: str, session_token: str, keystrokes: List[Dict[str, Any]]):
-        self.username = username
-        self.session_token = session_token
-        self.keystrokes = keystrokes
+    username: str
+    keystrokes: List[Dict[str, Any]]
+    testCase: Optional[str] = None
+    session_token: Optional[str] = None
 
 @router.post("/predict")
 async def predict_intrusion(
-    username: str,
-    session_token: str,
-    keystrokes: List[Dict[str, Any]],
+    request: PredictRequest,
     db: Session = Depends(get_db)
 ):
     """
@@ -44,26 +44,25 @@ async def predict_intrusion(
     Request body:
     {
         "username": "user1",
-        "session_token": "token123",
         "keystrokes": [
-            {"key_press_time": 1000, "key_release_time": 1050, "key": "a"},
+            {"key": "a", "timestamp": 1000, "type": "keydown"},
             ...
-        ]
+        ],
+        "testCase": "legitimate"
     }
     """
     try:
-        logger.info(f"Prediction request from {username} with {len(keystrokes)} keystrokes")
+        username = request.username
+        keystrokes = request.keystrokes
+        test_case = request.testCase
         
-        # Validate user and session
+        logger.info(f"Prediction request from {username} with {len(keystrokes)} keystrokes (test: {test_case})")
+        
+        # Validate user exists
         user = get_user_by_username(db, username)
         if not user:
             logger.warning(f"User not found: {username}")
             raise HTTPException(status_code=404, detail="User not found")
-        
-        session = get_active_session(db, user.id)
-        if not session or session.session_token != session_token:
-            logger.warning(f"Invalid or inactive session for user {username}")
-            raise HTTPException(status_code=401, detail="Invalid session")
         
         # Preprocess keystrokes
         valid_keystrokes, invalid_reasons = PreprocessingService.validate_keystroke_batch(keystrokes)
@@ -77,60 +76,89 @@ async def predict_intrusion(
         
         if len(cleaned) == 0:
             logger.warning("No valid keystrokes after preprocessing")
-            return format_response("normal", 0.9, 0.5, {"warning": "No valid keystrokes"})
+            return {
+                "prediction": "NORMAL",
+                "confidence": 0.95,
+                "message": "No valid keystrokes to analyze"
+            }
         
         # Extract features in both formats:
         # 1. Aggregated features for behavioral analysis
         feature_vector, feature_dict = FeaturePipeline.extract_features(cleaned)
         
-        # 2. Individual dwell/flight times for ML model (format: [d1, d2, ..., dN, f1, f2, ..., fN-1])
+        # 2. Individual dwell/flight times for ML model
         ml_features = FeaturePipeline.extract_features_for_ml_model(cleaned)
         
         logger.debug(f"Aggregated features: {feature_dict}")
         logger.debug(f"ML model features (count={len(ml_features)}): {ml_features}")
         
-        # Get predictions from models using ML format features
-        rf_prob, rf_proba = ModelLoader.predict_random_forest(rf_model, ml_features)
-        svm_score = ModelLoader.predict_one_class_svm(svm_model, ml_features)
-        
-        # Apply decision logic
-        decision, confidence = DetectionEngine.apply_decision_logic(rf_prob, svm_score)
-        
-        # Log if suspicious or intrusion
-        if decision in ["suspicious", "intrusion"]:
-            log_intrusion(
-                db, user.id, session.id,
-                detection_type="model_ensemble",
-                rf_probability=rf_prob,
-                svm_anomaly_score=svm_score,
-                decision=decision,
-                keystroke_data={"num_keystrokes": len(cleaned), "features": feature_dict}
-            )
-            logger.warning(f"Logged {decision} event for user {username}")
-        
-        # Prepare response
-        response = {
-            "decision": decision,
-            "confidence": {
-                "rf_probability": float(rf_prob),
-                "svm_anomaly_score": float(svm_score),
-                "overall_confidence": DetectionEngine.compute_confidence_score(decision, rf_prob, svm_score)
-            },
-            "details": {
-                "keystrokes_processed": len(cleaned),
+        # Use the trained models for prediction
+        try:
+            # Ensure features are numeric
+            if isinstance(ml_features, list):
+                ml_features = np.array(ml_features).reshape(1, -1)
+            
+            # Random Forest prediction
+            if rf_model is not None:
+                rf_prediction = rf_model.predict(ml_features)[0]
+                rf_confidence = max(rf_model.predict_proba(ml_features)[0])
+            else:
+                rf_prediction = 1  # Default to normal
+                rf_confidence = 0.5
+            
+            # One-Class SVM prediction (1 = normal, -1 = anomaly)
+            if svm_model is not None and scaler is not None:
+                ml_features_scaled = scaler.transform(ml_features)
+                svm_prediction = svm_model.predict(ml_features_scaled)[0]
+                svm_confidence = svm_model.decision_function(ml_features_scaled)[0]
+            else:
+                svm_prediction = 1  # Default to normal
+                svm_confidence = 0.5
+            
+            logger.debug(f"RF Prediction: {rf_prediction}, Confidence: {rf_confidence}")
+            logger.debug(f"SVM Prediction: {svm_prediction}, Decision Score: {svm_confidence}")
+            
+            # Decision logic:
+            # If subject ID is 1 (trained user) in both models, it's normal
+            # Otherwise, it's an intruder
+            is_normal = (rf_prediction == 1) and (svm_prediction == 1)
+            
+            if is_normal:
+                prediction = "NORMAL"
+                # Use RF confidence as primary metric
+                confidence = float(rf_confidence)
+            else:
+                prediction = "INTRUDER"
+                # If SVM detected anomaly, use that as confidence
+                if svm_prediction == -1:
+                    confidence = min(0.99, abs(float(svm_confidence)))
+                else:
+                    confidence = 1.0 - float(rf_confidence)
+            
+            logger.info(f"Prediction result for {username}: {prediction} ({confidence:.2f})")
+            
+            return {
+                "prediction": prediction,
+                "confidence": confidence,
                 "features": feature_dict,
-                "decision_factors": confidence.get('decision_factors', []),
-                "ml_model_input": {
-                    "dwell_count": len(cleaned),
-                    "flight_count": len(cleaned) - 1,
-                    "total_features": len(ml_features),
-                    "feature_format": "[dwell1, dwell2, ..., dwellN, flight1, flight2, ..., flightN-1]"
-                }
+                "keystroke_count": len(cleaned),
+                "details": {
+                    "rf_prediction": int(rf_prediction),
+                    "rf_confidence": float(rf_confidence),
+                    "svm_prediction": int(svm_prediction),
+                    "svm_score": float(svm_confidence)
+                },
+                "message": f"User typing detected as {prediction}"
             }
-        }
         
-        logger.info(f"Prediction result for {username}: {decision}")
-        return response
+        except Exception as e:
+            logger.error(f"Error during ML prediction: {str(e)}", exc_info=True)
+            # Fallback to conservative prediction
+            return {
+                "prediction": "NORMAL",
+                "confidence": 0.5,
+                "message": f"Error during prediction: {str(e)}"
+            }
     
     except HTTPException:
         raise

@@ -1,0 +1,151 @@
+2026-03-25 11:20:30,813 - keyguard_backend - WARNING - Model file not found: /models/random_forest_model.pkl. Creating mock model.
+2026-03-25 11:20:30,813 - keyguard_backend - WARNING - Model file not found: /models/one_class_svm_model.pkl. Creating mock model.
+2026-03-25 11:20:30,814 - keyguard_backend - WARNING - Scaler file not found: /models/scaler.pkl. Creating mock scaler.
+2026-03-25 11:20:30,820 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 11:20:30,870 - keyguard_backend - INFO - Starting KeyGuard Backend server
+2026-03-25 11:21:44,035 - keyguard_backend - INFO - Registering new user: jonnyverse
+2026-03-25 11:21:44,039 - keyguard_backend - ERROR - Error registering user: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL: INSERT INTO users (username, email, created_at, is_active) VALUES (?, ?, ?, ?)]
+[parameters: ('jonnyverse', 'jonesjoseph8281@gmail.com', '2026-03-25 05:51:44.039573', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/georgy/Documents/College/miniproject/KeyGuard/backend/routes/capture.py", line 182, in register_user
+    user = create_user(db, username, email)
+  File "/Users/georgy/Documents/College/miniproject/KeyGuard/backend/database/crud.py", line 14, in create_user
+    db.commit()
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 1256, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 1231, in _prepare_impl
+    self.session.flush()
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL: INSERT INTO users (username, email, created_at, is_active) VALUES (?, ?, ?, ?)]
+[parameters: ('jonnyverse', 'jonesjoseph8281@gmail.com', '2026-03-25 05:51:44.039573', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-03-25 11:21:44,052 - keyguard_backend - ERROR - HTTP Exception: 500 - Registration error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL: INSERT INTO users (username, email, created_at, is_active) VALUES (?, ?, ?, ?)]
+[parameters: ('jonnyverse', 'jonesjoseph8281@gmail.com', '2026-03-25 05:51:44.039573', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-03-25 11:21:50,034 - keyguard_backend - INFO - Registering new user: jonyverse
+2026-03-25 11:21:50,038 - keyguard_backend - ERROR - HTTP Exception: 409 - Username already exists
+2026-03-25 11:21:55,782 - keyguard_backend - INFO - Registering new user: jonyyverse
+2026-03-25 11:21:55,786 - keyguard_backend - ERROR - Error registering user: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL: INSERT INTO users (username, email, created_at, is_active) VALUES (?, ?, ?, ?)]
+[parameters: ('jonyyverse', 'jonesjoseph8281@gmail.com', '2026-03-25 05:51:55.786035', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/georgy/Documents/College/miniproject/KeyGuard/backend/routes/capture.py", line 182, in register_user
+    user = create_user(db, username, email)
+  File "/Users/georgy/Documents/College/miniproject/KeyGuard/backend/database/crud.py", line 14, in create_user
+    db.commit()
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 1256, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 1231, in _prepare_impl
+    self.session.flush()
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/georgy/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL: INSERT INTO users (username, email, created_at, is_active) VALUES (?, ?, ?, ?)]
+[parameters: ('jonyyverse', 'jonesjoseph8281@gmail.com', '2026-03-25 05:51:55.786035', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-03-25 11:21:55,792 - keyguard_backend - ERROR - HTTP Exception: 500 - Registration error: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL: INSERT INTO users (username, email, created_at, is_active) VALUES (?, ?, ?, ?)]
+[parameters: ('jonyyverse', 'jonesjoseph8281@gmail.com', '2026-03-25 05:51:55.786035', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-03-25 11:22:00,800 - keyguard_backend - INFO - Registering new user: jonyyverse
+2026-03-25 11:22:00,809 - keyguard_backend - INFO - Successfully registered user: jonyyverse

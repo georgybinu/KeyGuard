@@ -1,0 +1,621 @@
+2026-03-25 11:31:42,702 - keyguard_backend - WARNING - Model file not found: /models/random_forest_model.pkl. Creating mock model.
+2026-03-25 11:31:42,702 - keyguard_backend - WARNING - Model file not found: /models/one_class_svm_model.pkl. Creating mock model.
+2026-03-25 11:31:42,702 - keyguard_backend - WARNING - Scaler file not found: /models/scaler.pkl. Creating mock scaler.
+2026-03-25 11:31:42,710 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 11:31:42,749 - keyguard_backend - INFO - Starting KeyGuard Backend server
+2026-03-25 11:32:55,196 - keyguard_backend - INFO - Training request for madabkadab with 58 keystrokes (round 1)
+2026-03-25 11:32:55,202 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 's', 'timestamp': 1774418568443, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 's', 'timestamp': 1774418568563, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'e', 'timestamp': 1774418568652, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'e', 'timestamp': 1774418568728, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'c', 'timestamp': 1774418568888, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'u', 'timestamp': 1774418568987, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'c', 'timestamp': 1774418569001, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'u', 'timestamp': 1774418569107, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 'r', 'timestamp': 1774418569166, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'e', 'timestamp': 1774418569282, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'r', 'timestamp': 1774418569374, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'e', 'timestamp': 1774418569430, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': ' ', 'timestamp': 1774418569510, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': ' ', 'timestamp': 1774418569603, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'a', 'timestamp': 1774418569731, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'a', 'timestamp': 1774418569855, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'u', 'timestamp': 1774418569866, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'u', 'timestamp': 1774418569966, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': 't', 'timestamp': 1774418570044, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': 'h', 'timestamp': 1774418570168, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 't', 'timestamp': 1774418570173, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'h', 'timestamp': 1774418570256, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'e', 'timestamp': 1774418570325, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'e', 'timestamp': 1774418570450, 'type': 'keyup'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 'n', 'timestamp': 1774418570632, 'type': 'keydown'}
+2026-03-25 11:32:55,203 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 'n', 'timestamp': 1774418570712, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 't', 'timestamp': 1774418570887, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 't', 'timestamp': 1774418571015, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'i', 'timestamp': 1774418571146, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 'i', 'timestamp': 1774418571262, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'c', 'timestamp': 1774418571278, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': 'c', 'timestamp': 1774418571427, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 'a', 'timestamp': 1774418571495, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 'a', 'timestamp': 1774418571607, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 't', 'timestamp': 1774418571743, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'i', 'timestamp': 1774418571819, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 't', 'timestamp': 1774418571910, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'o', 'timestamp': 1774418571918, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 'n', 'timestamp': 1774418572039, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 'i', 'timestamp': 1774418572064, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'o', 'timestamp': 1774418572134, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': ' ', 'timestamp': 1774418572191, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'n', 'timestamp': 1774418572203, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': ' ', 'timestamp': 1774418572283, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 's', 'timestamp': 1774418572316, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 's', 'timestamp': 1774418572425, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 'y', 'timestamp': 1774418572450, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 's', 'timestamp': 1774418572543, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'y', 'timestamp': 1774418572547, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 's', 'timestamp': 1774418572639, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 50: {'key': 't', 'timestamp': 1774418572743, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 51: {'key': 'e', 'timestamp': 1774418572867, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 52: {'key': 't', 'timestamp': 1774418572871, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 53: {'key': 'm', 'timestamp': 1774418572979, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 54: {'key': 'e', 'timestamp': 1774418572984, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 55: {'key': 'm', 'timestamp': 1774418573070, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 56: {'key': 'Enter', 'timestamp': 1774418573233, 'type': 'keydown'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystroke at index 57: {'key': 'Enter', 'timestamp': 1774418573288, 'type': 'keyup'}
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps', 'Keystroke 50: Invalid format or timestamps', 'Keystroke 51: Invalid format or timestamps', 'Keystroke 52: Invalid format or timestamps', 'Keystroke 53: Invalid format or timestamps', 'Keystroke 54: Invalid format or timestamps', 'Keystroke 55: Invalid format or timestamps', 'Keystroke 56: Invalid format or timestamps', 'Keystroke 57: Invalid format or timestamps']
+2026-03-25 11:32:55,204 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:32:55,205 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:32:55,205 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:32:55,205 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:32:55,205 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:32:55,205 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 1)
+2026-03-25 11:33:04,835 - keyguard_backend - INFO - Training request for madabkadab with 54 keystrokes (round 2)
+2026-03-25 11:33:04,837 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 'b', 'timestamp': 1774418578697, 'type': 'keydown'}
+2026-03-25 11:33:04,837 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'b', 'timestamp': 1774418578768, 'type': 'keyup'}
+2026-03-25 11:33:04,837 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'e', 'timestamp': 1774418578821, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'e', 'timestamp': 1774418578930, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'h', 'timestamp': 1774418578940, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'h', 'timestamp': 1774418579054, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'a', 'timestamp': 1774418579251, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'a', 'timestamp': 1774418579404, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 'b', 'timestamp': 1774418579543, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'b', 'timestamp': 1774418579618, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'Backspace', 'timestamp': 1774418580194, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'Backspace', 'timestamp': 1774418580334, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'v', 'timestamp': 1774418580402, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': 'v', 'timestamp': 1774418580509, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'i', 'timestamp': 1774418580542, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'i', 'timestamp': 1774418580639, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'o', 'timestamp': 1774418580776, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'o', 'timestamp': 1774418580923, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': 'r', 'timestamp': 1774418580940, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': 'r', 'timestamp': 1774418581088, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'a', 'timestamp': 1774418581258, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'l', 'timestamp': 1774418581346, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'a', 'timestamp': 1774418581407, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'l', 'timestamp': 1774418581474, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': ' ', 'timestamp': 1774418581518, 'type': 'keydown'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': ' ', 'timestamp': 1774418581622, 'type': 'keyup'}
+2026-03-25 11:33:04,838 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 'a', 'timestamp': 1774418581699, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 'a', 'timestamp': 1774418581814, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'u', 'timestamp': 1774418581857, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 't', 'timestamp': 1774418582002, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'u', 'timestamp': 1774418582006, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': 'h', 'timestamp': 1774418582098, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 't', 'timestamp': 1774418582113, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 'h', 'timestamp': 1774418582201, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 'e', 'timestamp': 1774418582217, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'e', 'timestamp': 1774418582345, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 'n', 'timestamp': 1774418582369, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'n', 'timestamp': 1774418582469, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 't', 'timestamp': 1774418582511, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 't', 'timestamp': 1774418582607, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'i', 'timestamp': 1774418582621, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'i', 'timestamp': 1774418582754, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'c', 'timestamp': 1774418582773, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 'a', 'timestamp': 1774418582882, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 'c', 'timestamp': 1774418582924, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 'a', 'timestamp': 1774418582996, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 't', 'timestamp': 1774418583128, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 'i', 'timestamp': 1774418583216, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'o', 'timestamp': 1774418583271, 'type': 'keydown'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 't', 'timestamp': 1774418583287, 'type': 'keyup'}
+2026-03-25 11:33:04,839 - keyguard_backend - WARNING - Invalid keystroke at index 50: {'key': 'n', 'timestamp': 1774418583371, 'type': 'keydown'}
+2026-03-25 11:33:04,840 - keyguard_backend - WARNING - Invalid keystroke at index 51: {'key': 'i', 'timestamp': 1774418583385, 'type': 'keyup'}
+2026-03-25 11:33:04,840 - keyguard_backend - WARNING - Invalid keystroke at index 52: {'key': 'o', 'timestamp': 1774418583476, 'type': 'keyup'}
+2026-03-25 11:33:04,840 - keyguard_backend - WARNING - Invalid keystroke at index 53: {'key': 'n', 'timestamp': 1774418583494, 'type': 'keyup'}
+2026-03-25 11:33:04,840 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps', 'Keystroke 50: Invalid format or timestamps', 'Keystroke 51: Invalid format or timestamps', 'Keystroke 52: Invalid format or timestamps', 'Keystroke 53: Invalid format or timestamps']
+2026-03-25 11:33:04,840 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:04,840 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:04,840 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:04,840 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:04,840 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:04,840 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 2)
+2026-03-25 11:33:10,552 - keyguard_backend - INFO - Training request for madabkadab with 50 keystrokes (round 3)
+2026-03-25 11:33:10,554 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 't', 'timestamp': 1774418585666, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'y', 'timestamp': 1774418585766, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 't', 'timestamp': 1774418585796, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'y', 'timestamp': 1774418585820, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'p', 'timestamp': 1774418585982, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'p', 'timestamp': 1774418586094, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'i', 'timestamp': 1774418586147, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'n', 'timestamp': 1774418586272, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 'i', 'timestamp': 1774418586284, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'g', 'timestamp': 1774418586403, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'n', 'timestamp': 1774418586430, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': ' ', 'timestamp': 1774418586495, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'g', 'timestamp': 1774418586527, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': ' ', 'timestamp': 1774418586615, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'd', 'timestamp': 1774418586666, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'y', 'timestamp': 1774418586790, 'type': 'keydown'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'd', 'timestamp': 1774418586804, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'y', 'timestamp': 1774418586854, 'type': 'keyup'}
+2026-03-25 11:33:10,555 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': 'n', 'timestamp': 1774418586980, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': 'a', 'timestamp': 1774418587084, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'n', 'timestamp': 1774418587089, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'a', 'timestamp': 1774418587220, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'm', 'timestamp': 1774418587232, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'm', 'timestamp': 1774418587352, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 'i', 'timestamp': 1774418587393, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 'i', 'timestamp': 1774418587533, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 'c', 'timestamp': 1774418587535, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 's', 'timestamp': 1774418587653, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'c', 'timestamp': 1774418587700, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 's', 'timestamp': 1774418587789, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': ' ', 'timestamp': 1774418587810, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': ' ', 'timestamp': 1774418587899, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 'a', 'timestamp': 1774418587929, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 'a', 'timestamp': 1774418587998, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 'n', 'timestamp': 1774418588026, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'n', 'timestamp': 1774418588102, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 'a', 'timestamp': 1774418588138, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'l', 'timestamp': 1774418588218, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 'a', 'timestamp': 1774418588245, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 'l', 'timestamp': 1774418588302, 'type': 'keyup'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'y', 'timestamp': 1774418588429, 'type': 'keydown'}
+2026-03-25 11:33:10,556 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'y', 'timestamp': 1774418588492, 'type': 'keyup'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 's', 'timestamp': 1774418588574, 'type': 'keydown'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 'i', 'timestamp': 1774418588667, 'type': 'keydown'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 's', 'timestamp': 1774418588680, 'type': 'keyup'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 'i', 'timestamp': 1774418588750, 'type': 'keyup'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 's', 'timestamp': 1774418588762, 'type': 'keydown'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 's', 'timestamp': 1774418588874, 'type': 'keyup'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'Enter', 'timestamp': 1774418588964, 'type': 'keydown'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 'Enter', 'timestamp': 1774418589067, 'type': 'keyup'}
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps']
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:10,557 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:10,557 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:10,557 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:10,557 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 3)
+2026-03-25 11:33:17,418 - keyguard_backend - INFO - Training request for madabkadab with 56 keystrokes (round 4)
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 'c', 'timestamp': 1774418591419, 'type': 'keydown'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'o', 'timestamp': 1774418591495, 'type': 'keydown'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'c', 'timestamp': 1774418591550, 'type': 'keyup'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'o', 'timestamp': 1774418591695, 'type': 'keyup'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'n', 'timestamp': 1774418592017, 'type': 'keydown'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'n', 'timestamp': 1774418592142, 'type': 'keyup'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 't', 'timestamp': 1774418592254, 'type': 'keydown'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'i', 'timestamp': 1774418592362, 'type': 'keydown'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 't', 'timestamp': 1774418592380, 'type': 'keyup'}
+2026-03-25 11:33:17,421 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'i', 'timestamp': 1774418592474, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'n', 'timestamp': 1774418592541, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'o', 'timestamp': 1774418592657, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'n', 'timestamp': 1774418592669, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': 'o', 'timestamp': 1774418592817, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'Backspace', 'timestamp': 1774418593042, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'Backspace', 'timestamp': 1774418593134, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'u', 'timestamp': 1774418593297, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'o', 'timestamp': 1774418593424, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': 'u', 'timestamp': 1774418593461, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': 'u', 'timestamp': 1774418593617, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'o', 'timestamp': 1774418593720, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 's', 'timestamp': 1774418593748, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'u', 'timestamp': 1774418593761, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 's', 'timestamp': 1774418593904, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': ' ', 'timestamp': 1774418593918, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': ' ', 'timestamp': 1774418593999, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 'u', 'timestamp': 1774418594138, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 's', 'timestamp': 1774418594219, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'u', 'timestamp': 1774418594249, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 's', 'timestamp': 1774418594321, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'e', 'timestamp': 1774418594367, 'type': 'keydown'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': 'e', 'timestamp': 1774418594500, 'type': 'keyup'}
+2026-03-25 11:33:17,422 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 'r', 'timestamp': 1774418594620, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 'r', 'timestamp': 1774418594740, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': ' ', 'timestamp': 1774418594747, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': ' ', 'timestamp': 1774418594880, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 'm', 'timestamp': 1774418594918, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'o', 'timestamp': 1774418594990, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 'm', 'timestamp': 1774418595033, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 'n', 'timestamp': 1774418595158, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'o', 'timestamp': 1774418595186, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'i', 'timestamp': 1774418595294, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'n', 'timestamp': 1774418595299, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 't', 'timestamp': 1774418595414, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 'i', 'timestamp': 1774418595457, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 'o', 'timestamp': 1774418595538, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 't', 'timestamp': 1774418595564, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 'r', 'timestamp': 1774418595682, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'o', 'timestamp': 1774418595758, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 'r', 'timestamp': 1774418595837, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 50: {'key': 'i', 'timestamp': 1774418595874, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 51: {'key': 'n', 'timestamp': 1774418595994, 'type': 'keydown'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 52: {'key': 'i', 'timestamp': 1774418596007, 'type': 'keyup'}
+2026-03-25 11:33:17,423 - keyguard_backend - WARNING - Invalid keystroke at index 53: {'key': 'g', 'timestamp': 1774418596110, 'type': 'keydown'}
+2026-03-25 11:33:17,424 - keyguard_backend - WARNING - Invalid keystroke at index 54: {'key': 'n', 'timestamp': 1774418596123, 'type': 'keyup'}
+2026-03-25 11:33:17,424 - keyguard_backend - WARNING - Invalid keystroke at index 55: {'key': 'g', 'timestamp': 1774418596198, 'type': 'keyup'}
+2026-03-25 11:33:17,424 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps', 'Keystroke 50: Invalid format or timestamps', 'Keystroke 51: Invalid format or timestamps', 'Keystroke 52: Invalid format or timestamps', 'Keystroke 53: Invalid format or timestamps', 'Keystroke 54: Invalid format or timestamps', 'Keystroke 55: Invalid format or timestamps']
+2026-03-25 11:33:17,424 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:17,424 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:17,424 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:17,424 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:17,424 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:17,424 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 4)
+2026-03-25 11:33:23,691 - keyguard_backend - INFO - Training request for madabkadab with 58 keystrokes (round 5)
+2026-03-25 11:33:23,693 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 'k', 'timestamp': 1774418598287, 'type': 'keydown'}
+2026-03-25 11:33:23,693 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'e', 'timestamp': 1774418598403, 'type': 'keydown'}
+2026-03-25 11:33:23,693 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'k', 'timestamp': 1774418598407, 'type': 'keyup'}
+2026-03-25 11:33:23,693 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'e', 'timestamp': 1774418598527, 'type': 'keyup'}
+2026-03-25 11:33:23,693 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'y', 'timestamp': 1774418598555, 'type': 'keydown'}
+2026-03-25 11:33:23,693 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'y', 'timestamp': 1774418598628, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 's', 'timestamp': 1774418598675, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 's', 'timestamp': 1774418598800, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 't', 'timestamp': 1774418598886, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 't', 'timestamp': 1774418598978, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'r', 'timestamp': 1774418599073, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'o', 'timestamp': 1774418599140, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'r', 'timestamp': 1774418599200, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': 'k', 'timestamp': 1774418599267, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'o', 'timestamp': 1774418599320, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'e', 'timestamp': 1774418599376, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'k', 'timestamp': 1774418599395, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'e', 'timestamp': 1774418599488, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': ' ', 'timestamp': 1774418599491, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': ' ', 'timestamp': 1774418599604, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'p', 'timestamp': 1774418599641, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'a', 'timestamp': 1774418599706, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'p', 'timestamp': 1774418599794, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'a', 'timestamp': 1774418599821, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 't', 'timestamp': 1774418599958, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 't', 'timestamp': 1774418600057, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 't', 'timestamp': 1774418600135, 'type': 'keydown'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 't', 'timestamp': 1774418600246, 'type': 'keyup'}
+2026-03-25 11:33:23,694 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'e', 'timestamp': 1774418600249, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 'r', 'timestamp': 1774418600359, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'e', 'timestamp': 1774418600431, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': 'r', 'timestamp': 1774418600510, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 'n', 'timestamp': 1774418600542, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 'n', 'timestamp': 1774418600675, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 's', 'timestamp': 1774418600678, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 's', 'timestamp': 1774418600776, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': ' ', 'timestamp': 1774418600799, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'a', 'timestamp': 1774418600888, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': ' ', 'timestamp': 1774418600891, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 'a', 'timestamp': 1774418600992, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'r', 'timestamp': 1774418601104, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'e', 'timestamp': 1774418601200, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'r', 'timestamp': 1774418601308, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': ' ', 'timestamp': 1774418601320, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 'e', 'timestamp': 1774418601368, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': ' ', 'timestamp': 1774418601427, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 'u', 'timestamp': 1774418601460, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 'u', 'timestamp': 1774418601537, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'n', 'timestamp': 1774418601606, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 'n', 'timestamp': 1774418601743, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 50: {'key': 'i', 'timestamp': 1774418601806, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 51: {'key': 'q', 'timestamp': 1774418601890, 'type': 'keydown'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 52: {'key': 'i', 'timestamp': 1774418601917, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 53: {'key': 'q', 'timestamp': 1774418601993, 'type': 'keyup'}
+2026-03-25 11:33:23,695 - keyguard_backend - WARNING - Invalid keystroke at index 54: {'key': 'u', 'timestamp': 1774418602018, 'type': 'keydown'}
+2026-03-25 11:33:23,696 - keyguard_backend - WARNING - Invalid keystroke at index 55: {'key': 'u', 'timestamp': 1774418602094, 'type': 'keyup'}
+2026-03-25 11:33:23,696 - keyguard_backend - WARNING - Invalid keystroke at index 56: {'key': 'e', 'timestamp': 1774418602119, 'type': 'keydown'}
+2026-03-25 11:33:23,696 - keyguard_backend - WARNING - Invalid keystroke at index 57: {'key': 'e', 'timestamp': 1774418602240, 'type': 'keyup'}
+2026-03-25 11:33:23,696 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps', 'Keystroke 50: Invalid format or timestamps', 'Keystroke 51: Invalid format or timestamps', 'Keystroke 52: Invalid format or timestamps', 'Keystroke 53: Invalid format or timestamps', 'Keystroke 54: Invalid format or timestamps', 'Keystroke 55: Invalid format or timestamps', 'Keystroke 56: Invalid format or timestamps', 'Keystroke 57: Invalid format or timestamps']
+2026-03-25 11:33:23,696 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:23,696 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:23,696 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:23,696 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:23,696 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:23,696 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 5)
+2026-03-25 11:33:29,882 - keyguard_backend - INFO - Training request for madabkadab with 58 keystrokes (round 6)
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 'd', 'timestamp': 1774418604783, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'i', 'timestamp': 1774418604843, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'd', 'timestamp': 1774418604878, 'type': 'keyup'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'i', 'timestamp': 1774418604946, 'type': 'keyup'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'g', 'timestamp': 1774418605013, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'i', 'timestamp': 1774418605054, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'g', 'timestamp': 1774418605126, 'type': 'keyup'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'i', 'timestamp': 1774418605181, 'type': 'keyup'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 't', 'timestamp': 1774418605204, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 't', 'timestamp': 1774418605288, 'type': 'keyup'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'a', 'timestamp': 1774418605465, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'l', 'timestamp': 1774418605524, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'a', 'timestamp': 1774418605568, 'type': 'keyup'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': ' ', 'timestamp': 1774418605596, 'type': 'keydown'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'l', 'timestamp': 1774418605648, 'type': 'keyup'}
+2026-03-25 11:33:29,884 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': ' ', 'timestamp': 1774418605712, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'i', 'timestamp': 1774418605748, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'i', 'timestamp': 1774418605853, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': 'd', 'timestamp': 1774418605872, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': 'e', 'timestamp': 1774418605976, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'd', 'timestamp': 1774418606023, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'n', 'timestamp': 1774418606083, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'e', 'timestamp': 1774418606132, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'n', 'timestamp': 1774418606203, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 't', 'timestamp': 1774418606292, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 'i', 'timestamp': 1774418606432, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 't', 'timestamp': 1774418606487, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 'i', 'timestamp': 1774418606539, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 't', 'timestamp': 1774418606567, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 't', 'timestamp': 1774418606692, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'y', 'timestamp': 1774418606729, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': 'y', 'timestamp': 1774418606806, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': ' ', 'timestamp': 1774418606917, 'type': 'keydown'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': ' ', 'timestamp': 1774418607005, 'type': 'keyup'}
+2026-03-25 11:33:29,885 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 'v', 'timestamp': 1774418607162, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'v', 'timestamp': 1774418607281, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 'e', 'timestamp': 1774418607298, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'r', 'timestamp': 1774418607361, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 'e', 'timestamp': 1774418607434, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 'r', 'timestamp': 1774418607493, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'i', 'timestamp': 1774418607510, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'i', 'timestamp': 1774418607622, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'f', 'timestamp': 1774418607625, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 'i', 'timestamp': 1774418607727, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 'f', 'timestamp': 1774418607745, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 'i', 'timestamp': 1774418607843, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 'c', 'timestamp': 1774418607892, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 'c', 'timestamp': 1774418608001, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'a', 'timestamp': 1774418608017, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 'a', 'timestamp': 1774418608093, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 50: {'key': 't', 'timestamp': 1774418608269, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 51: {'key': 'i', 'timestamp': 1774418608320, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 52: {'key': 't', 'timestamp': 1774418608384, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 53: {'key': 'o', 'timestamp': 1774418608428, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 54: {'key': 'i', 'timestamp': 1774418608492, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 55: {'key': 'n', 'timestamp': 1774418608564, 'type': 'keydown'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 56: {'key': 'o', 'timestamp': 1774418608631, 'type': 'keyup'}
+2026-03-25 11:33:29,886 - keyguard_backend - WARNING - Invalid keystroke at index 57: {'key': 'n', 'timestamp': 1774418608669, 'type': 'keyup'}
+2026-03-25 11:33:29,887 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps', 'Keystroke 50: Invalid format or timestamps', 'Keystroke 51: Invalid format or timestamps', 'Keystroke 52: Invalid format or timestamps', 'Keystroke 53: Invalid format or timestamps', 'Keystroke 54: Invalid format or timestamps', 'Keystroke 55: Invalid format or timestamps', 'Keystroke 56: Invalid format or timestamps', 'Keystroke 57: Invalid format or timestamps']
+2026-03-25 11:33:29,887 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:29,887 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:29,887 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:29,887 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:29,887 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:29,887 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 6)
+2026-03-25 11:33:37,335 - keyguard_backend - INFO - Training request for madabkadab with 54 keystrokes (round 7)
+2026-03-25 11:33:37,336 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 'b', 'timestamp': 1774418610744, 'type': 'keydown'}
+2026-03-25 11:33:37,336 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'b', 'timestamp': 1774418610811, 'type': 'keyup'}
+2026-03-25 11:33:37,336 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'i', 'timestamp': 1774418610948, 'type': 'keydown'}
+2026-03-25 11:33:37,336 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'o', 'timestamp': 1774418611093, 'type': 'keydown'}
+2026-03-25 11:33:37,336 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'i', 'timestamp': 1774418611148, 'type': 'keyup'}
+2026-03-25 11:33:37,336 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'o', 'timestamp': 1774418611277, 'type': 'keyup'}
+2026-03-25 11:33:37,336 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'm', 'timestamp': 1774418611341, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'e', 'timestamp': 1774418611482, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 'm', 'timestamp': 1774418611485, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'e', 'timestamp': 1774418611589, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 't', 'timestamp': 1774418611832, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 't', 'timestamp': 1774418611919, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'r', 'timestamp': 1774418612267, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': 'r', 'timestamp': 1774418612314, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'i', 'timestamp': 1774418612510, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'i', 'timestamp': 1774418612630, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'c', 'timestamp': 1774418612648, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'c', 'timestamp': 1774418612769, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': ' ', 'timestamp': 1774418612781, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': ' ', 'timestamp': 1774418612889, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 's', 'timestamp': 1774418612926, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 's', 'timestamp': 1774418613046, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'e', 'timestamp': 1774418613118, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'e', 'timestamp': 1774418613221, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 'c', 'timestamp': 1774418613340, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 'c', 'timestamp': 1774418613499, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 'u', 'timestamp': 1774418613676, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 'u', 'timestamp': 1774418613816, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'r', 'timestamp': 1774418613881, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 'i', 'timestamp': 1774418613970, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'r', 'timestamp': 1774418614009, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': 'i', 'timestamp': 1774418614081, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 't', 'timestamp': 1774418614121, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 't', 'timestamp': 1774418614216, 'type': 'keyup'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 'y', 'timestamp': 1774418614233, 'type': 'keydown'}
+2026-03-25 11:33:37,337 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'y', 'timestamp': 1774418614274, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': ' ', 'timestamp': 1774418614911, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': ' ', 'timestamp': 1774418615002, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 'm', 'timestamp': 1774418615125, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 'e', 'timestamp': 1774418615189, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'm', 'timestamp': 1774418615223, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'e', 'timestamp': 1774418615300, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'a', 'timestamp': 1774418615386, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 's', 'timestamp': 1774418615510, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 'u', 'timestamp': 1774418615565, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 'a', 'timestamp': 1774418615609, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 's', 'timestamp': 1774418615620, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 'u', 'timestamp': 1774418615664, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'r', 'timestamp': 1774418615776, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 'e', 'timestamp': 1774418615869, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 50: {'key': 'r', 'timestamp': 1774418615936, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 51: {'key': 'e', 'timestamp': 1774418615976, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 52: {'key': 's', 'timestamp': 1774418616082, 'type': 'keydown'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystroke at index 53: {'key': 's', 'timestamp': 1774418616178, 'type': 'keyup'}
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps', 'Keystroke 50: Invalid format or timestamps', 'Keystroke 51: Invalid format or timestamps', 'Keystroke 52: Invalid format or timestamps', 'Keystroke 53: Invalid format or timestamps']
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:37,338 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:37,338 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:37,338 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:37,338 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 7)
+2026-03-25 11:33:42,956 - keyguard_backend - INFO - Training request for madabkadab with 52 keystrokes (round 8)
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 'i', 'timestamp': 1774418618250, 'type': 'keydown'}
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'n', 'timestamp': 1774418618377, 'type': 'keydown'}
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'i', 'timestamp': 1774418618391, 'type': 'keyup'}
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'n', 'timestamp': 1774418618501, 'type': 'keyup'}
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 't', 'timestamp': 1774418618534, 'type': 'keydown'}
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 't', 'timestamp': 1774418618634, 'type': 'keyup'}
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'r', 'timestamp': 1774418618725, 'type': 'keydown'}
+2026-03-25 11:33:42,959 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'u', 'timestamp': 1774418618788, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 'r', 'timestamp': 1774418618843, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'u', 'timestamp': 1774418618855, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 's', 'timestamp': 1774418618946, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'i', 'timestamp': 1774418619038, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 's', 'timestamp': 1774418619092, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': 'o', 'timestamp': 1774418619153, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'i', 'timestamp': 1774418619238, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'n', 'timestamp': 1774418619256, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'o', 'timestamp': 1774418619353, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': ' ', 'timestamp': 1774418619413, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': 'n', 'timestamp': 1774418619434, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': ' ', 'timestamp': 1774418619533, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'd', 'timestamp': 1774418619569, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'e', 'timestamp': 1774418619646, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'd', 'timestamp': 1774418619709, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'e', 'timestamp': 1774418619757, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 't', 'timestamp': 1774418619871, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 'e', 'timestamp': 1774418619979, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 't', 'timestamp': 1774418620042, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 'e', 'timestamp': 1774418620114, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'c', 'timestamp': 1774418620204, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 'c', 'timestamp': 1774418620304, 'type': 'keyup'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 't', 'timestamp': 1774418620442, 'type': 'keydown'}
+2026-03-25 11:33:42,960 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': 'i', 'timestamp': 1774418620547, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 't', 'timestamp': 1774418620579, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 'o', 'timestamp': 1774418620626, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 'i', 'timestamp': 1774418620710, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'n', 'timestamp': 1774418620721, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 'o', 'timestamp': 1774418620826, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': ' ', 'timestamp': 1774418620865, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 'n', 'timestamp': 1774418620877, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 's', 'timestamp': 1774418620970, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': ' ', 'timestamp': 1774418620974, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 's', 'timestamp': 1774418621102, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'y', 'timestamp': 1774418621135, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 's', 'timestamp': 1774418621243, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 'y', 'timestamp': 1774418621255, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 's', 'timestamp': 1774418621335, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 't', 'timestamp': 1774418621457, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 't', 'timestamp': 1774418621573, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'e', 'timestamp': 1774418621577, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 'e', 'timestamp': 1774418621705, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 50: {'key': 'm', 'timestamp': 1774418621707, 'type': 'keydown'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystroke at index 51: {'key': 'm', 'timestamp': 1774418621785, 'type': 'keyup'}
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps', 'Keystroke 50: Invalid format or timestamps', 'Keystroke 51: Invalid format or timestamps']
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:42,961 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:42,962 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:42,962 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:42,962 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 8)
+2026-03-25 11:33:47,890 - keyguard_backend - INFO - Training request for madabkadab with 46 keystrokes (round 9)
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 'm', 'timestamp': 1774418623913, 'type': 'keydown'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'a', 'timestamp': 1774418624032, 'type': 'keydown'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'm', 'timestamp': 1774418624044, 'type': 'keyup'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'c', 'timestamp': 1774418624200, 'type': 'keydown'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 'h', 'timestamp': 1774418624252, 'type': 'keydown'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': 'a', 'timestamp': 1774418624262, 'type': 'keyup'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'h', 'timestamp': 1774418624328, 'type': 'keyup'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': 'c', 'timestamp': 1774418624347, 'type': 'keyup'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 'i', 'timestamp': 1774418624426, 'type': 'keydown'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'n', 'timestamp': 1774418624530, 'type': 'keydown'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'i', 'timestamp': 1774418624580, 'type': 'keyup'}
+2026-03-25 11:33:47,892 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'e', 'timestamp': 1774418624629, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'n', 'timestamp': 1774418624685, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': ' ', 'timestamp': 1774418624753, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'e', 'timestamp': 1774418624788, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'l', 'timestamp': 1774418624821, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': ' ', 'timestamp': 1774418624856, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'e', 'timestamp': 1774418624941, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': 'e', 'timestamp': 1774418624985, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': 'l', 'timestamp': 1774418624986, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'a', 'timestamp': 1774418625009, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'a', 'timestamp': 1774418625158, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'r', 'timestamp': 1774418625294, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'n', 'timestamp': 1774418625394, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 'r', 'timestamp': 1774418625417, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 'i', 'timestamp': 1774418625509, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 'n', 'timestamp': 1774418625524, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 'n', 'timestamp': 1774418625642, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'i', 'timestamp': 1774418625680, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': 'g', 'timestamp': 1774418625722, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'n', 'timestamp': 1774418625756, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': ' ', 'timestamp': 1774418625845, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 'g', 'timestamp': 1774418625857, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': ' ', 'timestamp': 1774418625946, 'type': 'keyup'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 'm', 'timestamp': 1774418625986, 'type': 'keydown'}
+2026-03-25 11:33:47,893 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'o', 'timestamp': 1774418626095, 'type': 'keydown'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 'm', 'timestamp': 1774418626195, 'type': 'keyup'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'd', 'timestamp': 1774418626234, 'type': 'keydown'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': 'o', 'timestamp': 1774418626238, 'type': 'keyup'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': 'e', 'timestamp': 1774418626315, 'type': 'keydown'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'd', 'timestamp': 1774418626395, 'type': 'keyup'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'l', 'timestamp': 1774418626435, 'type': 'keydown'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'e', 'timestamp': 1774418626474, 'type': 'keyup'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 'l', 'timestamp': 1774418626538, 'type': 'keyup'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 's', 'timestamp': 1774418626542, 'type': 'keydown'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 's', 'timestamp': 1774418626642, 'type': 'keyup'}
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps']
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:47,894 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:47,894 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:47,894 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:47,894 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 9)
+2026-03-25 11:33:53,624 - keyguard_backend - INFO - Training request for madabkadab with 50 keystrokes (round 10)
+2026-03-25 11:33:53,626 - keyguard_backend - WARNING - Invalid keystroke at index 0: {'key': 't', 'timestamp': 1774418628784, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'h', 'timestamp': 1774418628864, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 2: {'key': 'e', 'timestamp': 1774418628948, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 3: {'key': 'h', 'timestamp': 1774418628959, 'type': 'keyup'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 4: {'key': 't', 'timestamp': 1774418628967, 'type': 'keyup'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 5: {'key': ' ', 'timestamp': 1774418629088, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 6: {'key': 'e', 'timestamp': 1774418629092, 'type': 'keyup'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 7: {'key': ' ', 'timestamp': 1774418629178, 'type': 'keyup'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 8: {'key': 'q', 'timestamp': 1774418629242, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 9: {'key': 'u', 'timestamp': 1774418629323, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 10: {'key': 'q', 'timestamp': 1774418629382, 'type': 'keyup'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 11: {'key': 'u', 'timestamp': 1774418629393, 'type': 'keyup'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 12: {'key': 'i', 'timestamp': 1774418629557, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 13: {'key': 'i', 'timestamp': 1774418629640, 'type': 'keyup'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 14: {'key': 'c', 'timestamp': 1774418629786, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 15: {'key': 'k', 'timestamp': 1774418629867, 'type': 'keydown'}
+2026-03-25 11:33:53,627 - keyguard_backend - WARNING - Invalid keystroke at index 16: {'key': 'c', 'timestamp': 1774418629902, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 17: {'key': 'k', 'timestamp': 1774418629942, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 18: {'key': ' ', 'timestamp': 1774418630019, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 19: {'key': ' ', 'timestamp': 1774418630108, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 20: {'key': 'b', 'timestamp': 1774418630191, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 21: {'key': 'b', 'timestamp': 1774418630259, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 22: {'key': 'r', 'timestamp': 1774418630271, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 23: {'key': 'o', 'timestamp': 1774418630358, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 24: {'key': 'r', 'timestamp': 1774418630386, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 25: {'key': 'w', 'timestamp': 1774418630434, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 26: {'key': 'o', 'timestamp': 1774418630514, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 27: {'key': 'n', 'timestamp': 1774418630566, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 28: {'key': 'w', 'timestamp': 1774418630570, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 29: {'key': ' ', 'timestamp': 1774418630676, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 30: {'key': 'n', 'timestamp': 1774418630707, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 31: {'key': ' ', 'timestamp': 1774418630800, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 32: {'key': 'f', 'timestamp': 1774418630870, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 33: {'key': 'f', 'timestamp': 1774418631026, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 34: {'key': 'o', 'timestamp': 1774418631104, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 35: {'key': 'o', 'timestamp': 1774418631224, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 36: {'key': 'x', 'timestamp': 1774418631267, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 37: {'key': 'x', 'timestamp': 1774418631395, 'type': 'keyup'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 38: {'key': ' ', 'timestamp': 1774418631423, 'type': 'keydown'}
+2026-03-25 11:33:53,628 - keyguard_backend - WARNING - Invalid keystroke at index 39: {'key': ' ', 'timestamp': 1774418631483, 'type': 'keyup'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 40: {'key': 'j', 'timestamp': 1774418631532, 'type': 'keydown'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 41: {'key': 'j', 'timestamp': 1774418631649, 'type': 'keyup'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 42: {'key': 'u', 'timestamp': 1774418631700, 'type': 'keydown'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 43: {'key': 'u', 'timestamp': 1774418631771, 'type': 'keyup'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 44: {'key': 'm', 'timestamp': 1774418631905, 'type': 'keydown'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 45: {'key': 'm', 'timestamp': 1774418631992, 'type': 'keyup'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 46: {'key': 'p', 'timestamp': 1774418632000, 'type': 'keydown'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 47: {'key': 's', 'timestamp': 1774418632088, 'type': 'keydown'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 48: {'key': 'p', 'timestamp': 1774418632152, 'type': 'keyup'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystroke at index 49: {'key': 's', 'timestamp': 1774418632196, 'type': 'keyup'}
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Invalid keystrokes during training: ['Keystroke 0: Invalid format or timestamps', 'Keystroke 1: Invalid format or timestamps', 'Keystroke 2: Invalid format or timestamps', 'Keystroke 3: Invalid format or timestamps', 'Keystroke 4: Invalid format or timestamps', 'Keystroke 5: Invalid format or timestamps', 'Keystroke 6: Invalid format or timestamps', 'Keystroke 7: Invalid format or timestamps', 'Keystroke 8: Invalid format or timestamps', 'Keystroke 9: Invalid format or timestamps', 'Keystroke 10: Invalid format or timestamps', 'Keystroke 11: Invalid format or timestamps', 'Keystroke 12: Invalid format or timestamps', 'Keystroke 13: Invalid format or timestamps', 'Keystroke 14: Invalid format or timestamps', 'Keystroke 15: Invalid format or timestamps', 'Keystroke 16: Invalid format or timestamps', 'Keystroke 17: Invalid format or timestamps', 'Keystroke 18: Invalid format or timestamps', 'Keystroke 19: Invalid format or timestamps', 'Keystroke 20: Invalid format or timestamps', 'Keystroke 21: Invalid format or timestamps', 'Keystroke 22: Invalid format or timestamps', 'Keystroke 23: Invalid format or timestamps', 'Keystroke 24: Invalid format or timestamps', 'Keystroke 25: Invalid format or timestamps', 'Keystroke 26: Invalid format or timestamps', 'Keystroke 27: Invalid format or timestamps', 'Keystroke 28: Invalid format or timestamps', 'Keystroke 29: Invalid format or timestamps', 'Keystroke 30: Invalid format or timestamps', 'Keystroke 31: Invalid format or timestamps', 'Keystroke 32: Invalid format or timestamps', 'Keystroke 33: Invalid format or timestamps', 'Keystroke 34: Invalid format or timestamps', 'Keystroke 35: Invalid format or timestamps', 'Keystroke 36: Invalid format or timestamps', 'Keystroke 37: Invalid format or timestamps', 'Keystroke 38: Invalid format or timestamps', 'Keystroke 39: Invalid format or timestamps', 'Keystroke 40: Invalid format or timestamps', 'Keystroke 41: Invalid format or timestamps', 'Keystroke 42: Invalid format or timestamps', 'Keystroke 43: Invalid format or timestamps', 'Keystroke 44: Invalid format or timestamps', 'Keystroke 45: Invalid format or timestamps', 'Keystroke 46: Invalid format or timestamps', 'Keystroke 47: Invalid format or timestamps', 'Keystroke 48: Invalid format or timestamps', 'Keystroke 49: Invalid format or timestamps']
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Insufficient keystrokes for training (need 3+, got 0)
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Empty keystroke batch
+2026-03-25 11:33:53,629 - keyguard_backend - WARNING - Empty keystroke batch for ML model
+2026-03-25 11:33:53,629 - keyguard_backend - INFO - Training with aggregated features: {}
+2026-03-25 11:33:53,629 - keyguard_backend - INFO - Training with ML model features (count=0): []
+2026-03-25 11:33:53,629 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 10)

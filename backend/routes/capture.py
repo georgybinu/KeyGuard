@@ -149,6 +149,56 @@ async def capture_status(
         logger.error(f"Error getting capture status: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Status check error: {str(e)}")
 
+@router.post("/register")
+async def register_user(
+    username: str = None,
+    email: str = None,
+    phone: str = None,
+    password: str = None,
+    db: Session = Depends(get_db)
+):
+    """
+    Register a new user
+    
+    Query parameters:
+    - username: Username for the account
+    - email: Email address
+    - phone: Phone number
+    - password: Password (optional, for demo)
+    """
+    try:
+        if not username or not email:
+            raise HTTPException(status_code=400, detail="Username and email are required")
+        
+        logger.info(f"Registering new user: {username}")
+        
+        # Check if user already exists
+        existing_user = get_user_by_username(db, username)
+        if existing_user:
+            raise HTTPException(status_code=409, detail="Username already exists")
+        
+        # Create new user
+        from database.crud import create_user
+        user = create_user(db, username, email)
+        
+        logger.info(f"Successfully registered user: {username}")
+        
+        return {
+            "status": "success",
+            "message": f"User {username} registered successfully",
+            "username": username,
+            "email": email,
+            "phone": phone or "",
+            "user_id": user.id,
+            "token": str(uuid.uuid4())
+        }
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error registering user: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Registration error: {str(e)}")
+
 @router.get("/capture/health")
 async def capture_health_check():
     """Health check for capture endpoint"""
@@ -156,3 +206,4 @@ async def capture_health_check():
         "status": "healthy",
         "service": "capture"
     }
+

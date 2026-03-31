@@ -16,10 +16,12 @@ try:
         end_active_sessions,
         get_active_session,
         get_training_sample_count,
+        get_user_by_email,
         get_user_by_session_token,
         get_user_by_username,
         update_user_credentials,
     )
+    from ..utils.config import TOTAL_TRAINING_ROUNDS
     from ..utils.helpers import hash_password, verify_password
     from ..utils.logger import get_logger
 except ImportError:
@@ -30,10 +32,12 @@ except ImportError:
         end_active_sessions,
         get_active_session,
         get_training_sample_count,
+        get_user_by_email,
         get_user_by_session_token,
         get_user_by_username,
         update_user_credentials,
     )
+    from utils.config import TOTAL_TRAINING_ROUNDS
     from utils.helpers import hash_password, verify_password
     from utils.logger import get_logger
 
@@ -77,26 +81,38 @@ def _build_auth_payload(user, session_token: str) -> dict:
 
 @router.post("/register", response_model=SessionResponse)
 async def register(request: RegisterRequest, db: Session = Depends(get_db)):
-    existing_user = get_user_by_username(db, request.username)
+    username = request.username.strip()
+    email = request.email.strip().lower()
+    phone = request.phone.strip() if request.phone else None
+
+    if len(username) < 3:
+        raise HTTPException(status_code=400, detail="Username must be at least 3 characters")
+    if len(request.password) < 8:
+        raise HTTPException(status_code=400, detail="Password must be at least 8 characters")
+
+    existing_user = get_user_by_username(db, username)
     if existing_user:
         raise HTTPException(status_code=409, detail="Username already exists")
+    if get_user_by_email(db, email):
+        raise HTTPException(status_code=409, detail="Email already exists")
 
     user = create_user(
         db,
-        username=request.username,
-        email=request.email,
-        phone=request.phone,
+        username=username,
+        email=email,
+        phone=phone,
         password_hash=hash_password(request.password),
     )
     session_token = str(uuid.uuid4())
     create_session(db, user.id, session_token)
-    logger.info("Registered new user %s", request.username)
+    logger.info("Registered new user %s", username)
     return _build_auth_payload(user, session_token)
 
 
 @router.post("/login", response_model=SessionResponse)
 async def login(request: LoginRequest, db: Session = Depends(get_db)):
-    user = get_user_by_username(db, request.username)
+    username = request.username.strip()
+    user = get_user_by_username(db, username)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
@@ -106,7 +122,7 @@ async def login(request: LoginRequest, db: Session = Depends(get_db)):
     else:
         # Repair legacy accounts created before password support existed.
         update_user_credentials(db, user.id, phone=user.phone, password_hash=hash_password(request.password))
-        user = get_user_by_username(db, request.username)
+        user = get_user_by_username(db, username)
 
     end_active_sessions(db, user.id)
     session_token = str(uuid.uuid4())
@@ -115,11 +131,11 @@ async def login(request: LoginRequest, db: Session = Depends(get_db)):
     training_count = get_training_sample_count(db, user.id)
     if training_count != (user.training_rounds or 0):
         user.training_rounds = training_count
-        user.training_completed = training_count >= 10
+        user.training_completed = training_count >= TOTAL_TRAINING_ROUNDS
         db.commit()
         db.refresh(user)
 
-    logger.info("User %s logged in", request.username)
+    logger.info("User %s logged in", username)
     return _build_auth_payload(user, session_token)
 
 

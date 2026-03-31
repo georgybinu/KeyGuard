@@ -6,6 +6,7 @@ import Notepad from './pages/Notepad'
 import { API_BASE_URL, logoutUser, restoreSession } from './lib/api'
 
 const SESSION_STORAGE_KEY = 'keyguard-session'
+const TOTAL_TRAINING_ROUNDS = 13
 
 function App() {
   const [appState, setAppState] = useState('loading')
@@ -81,7 +82,7 @@ function App() {
               <div className="header-user">
                 <span className="user-name">{session.username}</span>
                 <span className={`training-pill ${session.training_completed ? 'ready' : 'pending'}`}>
-                  {session.training_completed ? 'Profile ready' : `Training ${session.training_rounds || 0}/10`}
+                  {session.training_completed ? 'Profile ready' : `Training ${session.training_rounds || 0}/${TOTAL_TRAINING_ROUNDS}`}
                 </span>
                 <button className="logout-btn" onClick={handleLogout}>
                   Logout
@@ -111,7 +112,7 @@ function App() {
 
       <footer className="app-footer">
         <p>Frontend talks to {API_BASE_URL}</p>
-        <p>Sign up, complete 10 training phrases, then type in the monitored notepad.</p>
+        <p>Sign up, complete phrase and paragraph training, then type in the monitored notepad.</p>
       </footer>
     </div>
   )

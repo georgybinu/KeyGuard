@@ -86,6 +86,7 @@ async def predict_intrusion(
         # Clean keystrokes
         cleaned = [PreprocessingService.sanitize_keystroke_data(k) for k in valid_keystrokes]
         cleaned = PreprocessingService.handle_missing_values(cleaned)
+        cleaned = PreprocessingService.filter_noise_keys(cleaned, keep_space=False)
         cleaned = PreprocessingService.remove_outliers(cleaned)
         
         if len(cleaned) == 0:

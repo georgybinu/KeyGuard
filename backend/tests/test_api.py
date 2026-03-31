@@ -139,6 +139,39 @@ class TestAuthEndpoints:
         )
         assert response.status_code == 401
 
+    def test_register_rejects_duplicate_email(self, client):
+        client.post(
+            "/auth/register",
+            json={
+                "username": "firstuser",
+                "email": "shared@example.com",
+                "phone": "1111111111",
+                "password": "secret123",
+            }
+        )
+        response = client.post(
+            "/auth/register",
+            json={
+                "username": "seconduser",
+                "email": "shared@example.com",
+                "phone": "2222222222",
+                "password": "secret123",
+            }
+        )
+        assert response.status_code == 409
+
+    def test_register_rejects_short_password(self, client):
+        response = client.post(
+            "/auth/register",
+            json={
+                "username": "tiny",
+                "email": "tiny@example.com",
+                "phone": "1234567890",
+                "password": "short",
+            }
+        )
+        assert response.status_code == 400
+
 class TestCaptureEndpoints:
     """Test capture session endpoints"""
     
@@ -295,6 +328,30 @@ class TestTrainEndpoint:
         assert response.status_code == 200
         data = response.json()
         assert data["status"] == "success"
+        assert data["sample_type"] == "phrase"
+        assert data["profile_summary"]["required_rounds"] == 13
+
+    def test_train_paragraph_sample(self, client, test_user):
+        """Paragraph samples should be accepted and counted."""
+        keystrokes = [
+            {"key": f"k{i}", "key_press_time": i * 110, "key_release_time": i * 110 + 48}
+            for i in range(22)
+        ]
+
+        response = client.post(
+            "/train",
+            json={
+                "username": "testuser",
+                "keystrokes": keystrokes,
+                "round": 11,
+                "sample_type": "paragraph",
+                "prompt_text": "sample paragraph",
+                "typed_text": "sample paragraph",
+            }
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert data["sample_type"] == "paragraph"
     
     def test_train_invalid_user(self, client):
         """Test training with invalid user"""

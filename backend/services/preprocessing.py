@@ -5,15 +5,28 @@ from typing import Dict, List, Any, Tuple
 
 try:
     from ..utils.helpers import validate_keystroke_data
+    from ..utils.config import NOISY_KEYS
     from ..utils.logger import get_logger
 except ImportError:
     from utils.helpers import validate_keystroke_data
+    from utils.config import NOISY_KEYS
     from utils.logger import get_logger
 
 logger = get_logger()
 
 class PreprocessingService:
     """Handles data validation and cleaning"""
+
+    @staticmethod
+    def filter_noise_keys(keystroke_batch: List[Dict[str, Any]], keep_space: bool = False) -> List[Dict[str, Any]]:
+        """Remove keys that add more noise than identity signal."""
+        filtered = []
+        for keystroke in keystroke_batch:
+            key = str(keystroke.get("key", ""))
+            if key in NOISY_KEYS and not (keep_space and key == " "):
+                continue
+            filtered.append(keystroke)
+        return filtered
     
     @staticmethod
     def validate_keystroke_batch(keystroke_batch: List[Dict[str, Any]]) -> Tuple[List[Dict], List[str]]:

@@ -6,14 +6,18 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
 
 try:
-    from ..utils.config import DATABASE_URL
+    from ..utils.config import DATABASE_URL, IS_SQLITE
 except ImportError:
-    from utils.config import DATABASE_URL
+    from utils.config import DATABASE_URL, IS_SQLITE
 
 Base = declarative_base()
 
-# SQLite database setup
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+# Database setup
+engine_kwargs = {"pool_pre_ping": True}
+if IS_SQLITE:
+    engine_kwargs["connect_args"] = {"check_same_thread": False}
+
+engine = create_engine(DATABASE_URL, **engine_kwargs)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 class User(Base):
@@ -73,12 +77,18 @@ class TrainingSample(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, index=True)
     round_number = Column(Integer, nullable=False)
+    sample_type = Column(String, nullable=False, default="phrase")
     phrase = Column(String, nullable=True)
+    prompt_text = Column(String, nullable=True)
+    typed_text = Column(String, nullable=True)
+    keystroke_count = Column(Integer, nullable=False, default=0)
     feature_vector = Column(String, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
 def _ensure_sqlite_columns():
     """Backfill columns on existing SQLite databases without a full migration tool."""
+    if not IS_SQLITE:
+        return
     inspector = inspect(engine)
     if "users" in inspector.get_table_names():
         columns = {column["name"] for column in inspector.get_columns("users")}
@@ -91,6 +101,23 @@ def _ensure_sqlite_columns():
             statements.append("ALTER TABLE users ADD COLUMN training_completed BOOLEAN DEFAULT 0")
         if "training_rounds" not in columns:
             statements.append("ALTER TABLE users ADD COLUMN training_rounds INTEGER DEFAULT 0")
+
+        if statements:
+            with engine.begin() as connection:
+                for statement in statements:
+                    connection.execute(text(statement))
+
+    if "training_samples" in inspector.get_table_names():
+        columns = {column["name"] for column in inspector.get_columns("training_samples")}
+        statements = []
+        if "sample_type" not in columns:
+            statements.append("ALTER TABLE training_samples ADD COLUMN sample_type VARCHAR DEFAULT 'phrase'")
+        if "prompt_text" not in columns:
+            statements.append("ALTER TABLE training_samples ADD COLUMN prompt_text VARCHAR")
+        if "typed_text" not in columns:
+            statements.append("ALTER TABLE training_samples ADD COLUMN typed_text VARCHAR")
+        if "keystroke_count" not in columns:
+            statements.append("ALTER TABLE training_samples ADD COLUMN keystroke_count INTEGER DEFAULT 0")
 
         if statements:
             with engine.begin() as connection:

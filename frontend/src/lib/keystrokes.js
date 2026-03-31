@@ -2,6 +2,10 @@ export function isTrackableKey(key) {
   return typeof key === 'string' && (key === ' ' || key.length === 1);
 }
 
+export function isIdentitySignalKey(key) {
+  return typeof key === 'string' && key.length === 1 && key !== ' ';
+}
+
 export function registerKeyDown(pendingKeydowns, key, timestamp) {
   const updated = { ...pendingKeydowns };
   const queue = updated[key] ? [...updated[key]] : [];

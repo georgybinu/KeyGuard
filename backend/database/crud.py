@@ -8,8 +8,10 @@ import math
 
 try:
     from .db import User, Session as DBSession, IntrusionLog, BehaviorProfile, TrainingSample
+    from ..utils.config import TOTAL_TRAINING_ROUNDS
 except ImportError:
     from database.db import User, Session as DBSession, IntrusionLog, BehaviorProfile, TrainingSample
+    from utils.config import TOTAL_TRAINING_ROUNDS
 
 # User CRUD
 def create_user(db: Session, username: str, email: str, phone: str = None, password_hash: str = None) -> User:
@@ -27,6 +29,10 @@ def get_user(db: Session, user_id: int) -> User:
 def get_user_by_username(db: Session, username: str) -> User:
     """Get user by username"""
     return db.query(User).filter(User.username == username).first()
+
+def get_user_by_email(db: Session, email: str) -> User:
+    """Get user by email."""
+    return db.query(User).filter(User.email == email).first()
 
 def get_user_by_session_token(db: Session, session_token: str) -> User:
     """Get user by active session token."""
@@ -57,7 +63,7 @@ def update_user_training_status(db: Session, user_id: int, training_rounds: int)
     if not user:
         return None
     user.training_rounds = training_rounds
-    user.training_completed = training_rounds >= 10
+    user.training_completed = training_rounds >= TOTAL_TRAINING_ROUNDS
     db.commit()
     db.refresh(user)
     return user
@@ -208,12 +214,26 @@ def clear_training_data(db: Session, user_id: int) -> None:
     db.query(TrainingSample).filter(TrainingSample.user_id == user_id).delete()
     db.commit()
 
-def save_training_sample(db: Session, user_id: int, round_number: int, feature_vector: list, phrase: str = None) -> TrainingSample:
+def save_training_sample(
+    db: Session,
+    user_id: int,
+    round_number: int,
+    feature_vector: list,
+    phrase: str = None,
+    sample_type: str = "phrase",
+    prompt_text: str = None,
+    typed_text: str = None,
+    keystroke_count: int = 0,
+) -> TrainingSample:
     """Persist a fixed-length training vector for per-user anomaly detection."""
     sample = TrainingSample(
         user_id=user_id,
         round_number=round_number,
+        sample_type=sample_type,
         phrase=phrase,
+        prompt_text=prompt_text or phrase,
+        typed_text=typed_text,
+        keystroke_count=int(keystroke_count or 0),
         feature_vector=json.dumps([float(value) for value in feature_vector]),
     )
     db.add(sample)
@@ -227,6 +247,15 @@ def get_training_samples(db: Session, user_id: int) -> list:
         TrainingSample.user_id == user_id
     ).order_by(TrainingSample.round_number.asc(), TrainingSample.id.asc()).all()
     return [json.loads(sample.feature_vector) for sample in samples]
+
+def get_training_sample_breakdown(db: Session, user_id: int) -> dict:
+    """Return counts per sample type for a user's training corpus."""
+    samples = db.query(TrainingSample).filter(TrainingSample.user_id == user_id).all()
+    breakdown = {"phrase": 0, "paragraph": 0}
+    for sample in samples:
+        sample_type = (sample.sample_type or "phrase").lower()
+        breakdown[sample_type] = breakdown.get(sample_type, 0) + 1
+    return breakdown
 
 def get_training_sample_count(db: Session, user_id: int) -> int:
     """Count saved training samples for a user."""

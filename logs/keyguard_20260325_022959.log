@@ -1,4 +1,0 @@
-2026-03-25 02:29:59,219 - keyguard_backend - DEBUG - ML Model Features - Dwells: 5, Flights: 4, Total: 9
-2026-03-25 02:29:59,220 - keyguard_backend - DEBUG - Feature vector: [50, 50, 50, 50, 50, 30, 20, 20, 20]
-2026-03-25 02:29:59,227 - keyguard_backend - DEBUG - ML Model Features - Dwells: 16, Flights: 15, Total: 31
-2026-03-25 02:29:59,228 - keyguard_backend - DEBUG - Feature vector: [50, 55, 60, 50, 55, 60, 50, 55, 60, 50, 55, 60, 50, 55, 60, 50, 50, 45, 40, 50, 45, 40, 50, 45, 40, 50, 45, 40, 50, 45, 40]

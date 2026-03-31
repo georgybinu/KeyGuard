@@ -12,8 +12,8 @@ function Auth({ onSuccess }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setError('');
     setLoading(true);
 
@@ -24,6 +24,7 @@ function Auth({ onSuccess }) {
           setLoading(false);
           return;
         }
+
         if (password !== confirmPassword) {
           setError('Passwords do not match');
           setLoading(false);
@@ -58,17 +59,12 @@ function Auth({ onSuccess }) {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <div className="auth-header">
-          <p className="eyebrow">Continuous Keystroke Authentication</p>
-          <h1>KeyGuard</h1>
-          <p>Train your typing rhythm once, then let the app silently watch for intruders.</p>
-        </div>
-
+    <div className="auth-stage">
+      <div className="auth-panel">
         <div className="auth-tabs">
           <button
-            className={`tab ${mode === 'login' ? 'active' : ''}`}
+            type="button"
+            className={`auth-tab ${mode === 'login' ? 'active' : ''}`}
             onClick={() => {
               setMode('login');
               setError('');
@@ -77,7 +73,8 @@ function Auth({ onSuccess }) {
             Sign In
           </button>
           <button
-            className={`tab ${mode === 'register' ? 'active' : ''}`}
+            type="button"
+            className={`auth-tab ${mode === 'register' ? 'active' : ''}`}
             onClick={() => {
               setMode('register');
               setError('');
@@ -87,94 +84,123 @@ function Auth({ onSuccess }) {
           </button>
         </div>
 
+        <div className="auth-copy-block">
+          <h2>{mode === 'login' ? 'Welcome Back' : 'Create Your KeyGuard Profile'}</h2>
+          <p>
+            {mode === 'login'
+              ? 'Authenticate with your digital signature.'
+              : 'Register, complete training, and enter the monitored workspace.'}
+          </p>
+        </div>
+
         <form onSubmit={handleSubmit} className="auth-form">
-          <div className="form-group">
-            <label>Username</label>
-            <input
-              type="text"
-              placeholder="Enter username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              disabled={loading}
-            />
-          </div>
-
-          {mode === 'register' && (
-            <>
-              <div className="form-group">
-                <label>Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={loading}
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Phone</label>
-                <input
-                  type="tel"
-                  placeholder="Enter phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  disabled={loading}
-                />
-              </div>
-            </>
-          )}
-
-          <div className="form-group">
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              disabled={loading}
-            />
-          </div>
-
-          {mode === 'register' && (
-            <div className="form-group">
-              <label>Confirm Password</label>
+          <div className="auth-form-stack">
+            <div className="auth-field">
+              <label>Username</label>
               <input
-                type="password"
-                placeholder="Confirm password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                type="text"
+                placeholder="curator_01"
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
                 disabled={loading}
               />
             </div>
-          )}
 
-          {error && <div className="error-message">{error}</div>}
+            {mode === 'register' && (
+              <>
+                <div className="auth-field">
+                  <label>Email</label>
+                  <input
+                    type="email"
+                    placeholder="name@example.com"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    disabled={loading}
+                  />
+                </div>
 
-          <button type="submit" className="submit-btn" disabled={loading}>
+                <div className="auth-field">
+                  <label>Phone</label>
+                  <input
+                    type="tel"
+                    placeholder="+91 98765 43210"
+                    value={phone}
+                    onChange={(event) => setPhone(event.target.value)}
+                    disabled={loading}
+                  />
+                </div>
+              </>
+            )}
+
+            <div className="auth-field">
+              <label>Secure Password</label>
+              <input
+                type="password"
+                placeholder="••••••••••••"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                disabled={loading}
+              />
+              {mode === 'login' && (
+                <div className="auth-pulse">
+                  <div className="auth-pulse-track">
+                    <div className="auth-pulse-fill" />
+                  </div>
+                  <p>Keystroke dynamics sensor active...</p>
+                </div>
+              )}
+            </div>
+
+            {mode === 'register' && (
+              <div className="auth-field">
+                <label>Confirm Password</label>
+                <input
+                  type="password"
+                  placeholder="••••••••••••"
+                  value={confirmPassword}
+                  onChange={(event) => setConfirmPassword(event.target.value)}
+                  disabled={loading}
+                />
+              </div>
+            )}
+          </div>
+
+          <div className="auth-actions-row">
+            <label className="remember-row">
+              <input type="checkbox" disabled={loading} />
+              <span>Remember identity</span>
+            </label>
+            <button type="button" className="text-link" disabled>
+              Forgot rhythm?
+            </button>
+          </div>
+
+          {error && <div className="auth-error">{error}</div>}
+
+          <button type="submit" className="auth-submit" disabled={loading}>
             {loading
               ? mode === 'login'
                 ? 'Signing in...'
                 : 'Creating account...'
               : mode === 'login'
-              ? 'Sign In'
-              : 'Create Account'}
+                ? 'Sign In'
+                : 'Create Account'}
           </button>
         </form>
 
-        <div className="auth-info">
-          <div className="info-item">
-            <span className="icon">Timing profile</span>
-            <span>Each account stores a unique keystroke signature.</span>
-          </div>
-          <div className="info-item">
-            <span className="icon">10 phrases</span>
-            <span>New users complete a short biometric training session.</span>
-          </div>
-          <div className="info-item">
-            <span className="icon">Live defense</span>
-            <span>Typing in the notepad is monitored continuously for anomalies.</span>
-          </div>
+        <div className="auth-divider">
+          <span>Or continue with</span>
+        </div>
+
+        <div className="auth-provider-grid">
+          <button type="button" className="provider-btn">
+            <span className="provider-badge">G</span>
+            <span>Google</span>
+          </button>
+          <button type="button" className="provider-btn">
+            <span className="provider-badge">P</span>
+            <span>Passkey</span>
+          </button>
         </div>
       </div>
     </div>

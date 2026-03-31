@@ -10,12 +10,12 @@ try:
     from .routes import auth, predict, train, capture
     from .database.db import Base, engine
     from .utils.logger import get_logger
-    from .utils.config import NORMAL_THRESHOLD, SUSPICIOUS_THRESHOLD
+    from .utils.config import CORS_ORIGINS, DATABASE_URL, NORMAL_THRESHOLD, SUSPICIOUS_THRESHOLD
 except ImportError:
     from routes import auth, predict, train, capture
     from database.db import Base, engine
     from utils.logger import get_logger
-    from utils.config import NORMAL_THRESHOLD, SUSPICIOUS_THRESHOLD
+    from utils.config import CORS_ORIGINS, DATABASE_URL, NORMAL_THRESHOLD, SUSPICIOUS_THRESHOLD
 
 # Setup logging
 logger = get_logger()
@@ -32,7 +32,7 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=CORS_ORIGINS or ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -89,7 +89,8 @@ async def health_check():
         "status": "healthy",
         "service": "KeyGuard Backend",
         "version": "1.0.0",
-        "database": "connected"
+        "database": "connected",
+        "database_url": DATABASE_URL.split("@")[-1] if "@" in DATABASE_URL else DATABASE_URL,
     }
 
 @app.get("/config")
@@ -129,7 +130,11 @@ async def get_status():
             "train_service": "operational",
             "capture_service": "operational",
             "ml_models": "loaded"
-        }
+        },
+        "deployment": {
+            "shared_profile_storage": True,
+            "cors_origins": CORS_ORIGINS,
+        },
     }
 
 @app.exception_handler(HTTPException)

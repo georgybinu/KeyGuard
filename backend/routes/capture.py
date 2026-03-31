@@ -4,11 +4,16 @@ Capture endpoint for handling keystroke data ingestion
 from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
-from typing import List, Dict, Any
-from database.db import get_db
-from database.crud import get_user_by_username, create_session, get_active_session
-from utils.logger import get_logger
 import uuid
+
+try:
+    from ..database.db import get_db
+    from ..database.crud import get_user_by_username, create_session, get_active_session
+    from ..utils.logger import get_logger
+except ImportError:
+    from database.db import get_db
+    from database.crud import get_user_by_username, create_session, get_active_session
+    from utils.logger import get_logger
 
 router = APIRouter()
 logger = get_logger()
@@ -33,7 +38,10 @@ async def start_capture_session(
         user = get_user_by_username(db, username)
         if not user:
             # Create new user if doesn't exist
-            from database.crud import create_user
+            try:
+                from ..database.crud import create_user
+            except ImportError:
+                from database.crud import create_user
             user = create_user(db, username, f"{username}@keyguard.local")
             logger.info(f"Created new user: {username}")
         
@@ -96,7 +104,10 @@ async def end_capture_session(
             raise HTTPException(status_code=401, detail="Invalid session")
         
         # End session
-        from database.crud import end_session
+        try:
+            from ..database.crud import end_session
+        except ImportError:
+            from database.crud import end_session
         end_session(db, session.id)
         
         logger.info(f"Ended capture session {session.id} for {username}")
@@ -178,7 +189,10 @@ async def register_user(
             raise HTTPException(status_code=409, detail="Username already exists")
         
         # Create new user
-        from database.crud import create_user
+        try:
+            from ..database.crud import create_user
+        except ImportError:
+            from database.crud import create_user
         user = create_user(db, username, email)
         
         logger.info(f"Successfully registered user: {username}")
@@ -206,4 +220,3 @@ async def capture_health_check():
         "status": "healthy",
         "service": "capture"
     }
-

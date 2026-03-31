@@ -1,0 +1,5 @@
+2026-03-25 13:35:27,225 - keyguard_backend - INFO - Loaded model from /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/random_forest_model.pkl
+2026-03-25 13:35:27,227 - keyguard_backend - INFO - Loaded model from /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/one_class_svm_model.pkl
+2026-03-25 13:35:27,227 - keyguard_backend - INFO - Loaded scaler from /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/scaler.pkl
+2026-03-25 13:35:27,237 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 13:35:27,289 - keyguard_backend - INFO - Starting KeyGuard Backend server

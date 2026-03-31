@@ -5,12 +5,17 @@ Real-time keystroke-based intrusion detection system
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from routes import predict, train, capture
-from database.db import Base, engine
-from utils.logger import get_logger
-from utils.config import NORMAL_THRESHOLD, SUSPICIOUS_THRESHOLD
-import sys
-import os
+
+try:
+    from .routes import auth, predict, train, capture
+    from .database.db import Base, engine
+    from .utils.logger import get_logger
+    from .utils.config import NORMAL_THRESHOLD, SUSPICIOUS_THRESHOLD
+except ImportError:
+    from routes import auth, predict, train, capture
+    from database.db import Base, engine
+    from utils.logger import get_logger
+    from utils.config import NORMAL_THRESHOLD, SUSPICIOUS_THRESHOLD
 
 # Setup logging
 logger = get_logger()
@@ -38,6 +43,7 @@ Base.metadata.create_all(bind=engine)
 logger.info("Database tables created/verified")
 
 # Include routers
+app.include_router(auth.router, prefix="", tags=["auth"])
 app.include_router(predict.router, prefix="", tags=["prediction"])
 app.include_router(train.router, prefix="", tags=["training"])
 app.include_router(capture.router, prefix="", tags=["capture"])
@@ -54,6 +60,12 @@ async def read_root():
                 "POST /capture/start": "Start keystroke capture session",
                 "POST /capture/end": "End keystroke capture session",
                 "GET /capture/status": "Check session status"
+            },
+            "auth": {
+                "POST /auth/register": "Create a new account",
+                "POST /auth/login": "Login and create a session",
+                "POST /auth/logout": "Logout and end the active session",
+                "GET /auth/session/{token}": "Restore a logged-in session"
             },
             "prediction": {
                 "POST /predict": "Predict intrusion from keystroke data",

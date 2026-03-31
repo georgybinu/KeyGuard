@@ -6,25 +6,30 @@ from fastapi.params import Depends
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
-from database.db import get_db
-from database.crud import get_user_by_username, get_active_session, log_intrusion
-from services.preprocessing import PreprocessingService
-from services.feature_pipeline import FeaturePipeline
-from services.detection import DetectionEngine
-from models.model_loader import ModelLoader
-from utils.config import MODEL_PATHS
-from utils.helpers import format_response
-from utils.logger import get_logger
-import json
-import numpy as np
+
+try:
+    from ..database.db import get_db
+    from ..database.crud import get_active_session, get_behavior_profile, get_training_samples, get_user_by_username, log_intrusion
+    from ..services.preprocessing import PreprocessingService
+    from ..services.feature_pipeline import FeaturePipeline
+    from ..services.detection import DetectionEngine
+    from ..utils.logger import get_logger
+except ImportError:
+    from database.db import get_db
+    from database.crud import get_user_by_username, get_active_session, log_intrusion, get_behavior_profile, get_training_samples
+    from services.preprocessing import PreprocessingService
+    from services.feature_pipeline import FeaturePipeline
+    from services.detection import DetectionEngine
+    from utils.logger import get_logger
 
 router = APIRouter()
 logger = get_logger()
 
-# Load models at startup
-rf_model = ModelLoader.load_model(MODEL_PATHS["random_forest"], "random_forest")
-svm_model = ModelLoader.load_model(MODEL_PATHS["one_class_svm"], "one_class_svm")
-scaler = ModelLoader.load_scaler(MODEL_PATHS["scaler"])
+PREDICTION_LABELS = {
+    "normal": "NORMAL",
+    "suspicious": "SUSPICIOUS",
+    "intrusion": "INTRUDER",
+}
 
 class PredictRequest(BaseModel):
     """Request model for prediction endpoint"""
@@ -32,6 +37,10 @@ class PredictRequest(BaseModel):
     keystrokes: List[Dict[str, Any]]
     testCase: Optional[str] = None
     session_token: Optional[str] = None
+
+def format_prediction_label(decision: str) -> str:
+    """Convert internal decision labels to UI-facing API labels."""
+    return PREDICTION_LABELS.get(decision.lower(), decision.upper())
 
 @router.post("/predict")
 async def predict_intrusion(
@@ -63,6 +72,11 @@ async def predict_intrusion(
         if not user:
             logger.warning(f"User not found: {username}")
             raise HTTPException(status_code=404, detail="User not found")
+
+        if request.session_token:
+            active_session = get_active_session(db, user.id)
+            if not active_session or active_session.session_token != request.session_token:
+                raise HTTPException(status_code=401, detail="Invalid or expired session")
         
         # Preprocess keystrokes
         valid_keystrokes, invalid_reasons = PreprocessingService.validate_keystroke_batch(keystrokes)
@@ -84,81 +98,75 @@ async def predict_intrusion(
         
         # Extract features in both formats:
         # 1. Aggregated features for behavioral analysis
-        feature_vector, feature_dict = FeaturePipeline.extract_features(cleaned)
+        _, feature_dict = FeaturePipeline.extract_features(cleaned)
         
         # 2. Individual dwell/flight times for ML model
         ml_features = FeaturePipeline.extract_features_for_ml_model(cleaned)
         
         logger.debug(f"Aggregated features: {feature_dict}")
         logger.debug(f"ML model features (count={len(ml_features)}): {ml_features}")
+
+        user_profile = get_behavior_profile(db, user.id)
+        profile_decision_internal, profile_details = DetectionEngine.evaluate_user_profile(
+            feature_dict,
+            user_profile,
+        )
+        profile_available = profile_details.get("available", False)
+        profile_decision = format_prediction_label(profile_decision_internal)
+        profile_confidence = float(profile_details.get("confidence", 0.0))
         
-        # Use the trained models for prediction
-        try:
-            # Ensure features are numeric
-            if isinstance(ml_features, list):
-                ml_features = np.array(ml_features).reshape(1, -1)
-            
-            # Random Forest prediction
-            if rf_model is not None:
-                rf_prediction = rf_model.predict(ml_features)[0]
-                rf_confidence = max(rf_model.predict_proba(ml_features)[0])
-            else:
-                rf_prediction = 1  # Default to normal
-                rf_confidence = 0.5
-            
-            # One-Class SVM prediction (1 = normal, -1 = anomaly)
-            if svm_model is not None and scaler is not None:
-                ml_features_scaled = scaler.transform(ml_features)
-                svm_prediction = svm_model.predict(ml_features_scaled)[0]
-                svm_confidence = svm_model.decision_function(ml_features_scaled)[0]
-            else:
-                svm_prediction = 1  # Default to normal
-                svm_confidence = 0.5
-            
-            logger.debug(f"RF Prediction: {rf_prediction}, Confidence: {rf_confidence}")
-            logger.debug(f"SVM Prediction: {svm_prediction}, Decision Score: {svm_confidence}")
-            
-            # Decision logic:
-            # If subject ID is 1 (trained user) in both models, it's normal
-            # Otherwise, it's an intruder
-            is_normal = (rf_prediction == 1) and (svm_prediction == 1)
-            
-            if is_normal:
-                prediction = "NORMAL"
-                # Use RF confidence as primary metric
-                confidence = float(rf_confidence)
-            else:
-                prediction = "INTRUDER"
-                # If SVM detected anomaly, use that as confidence
-                if svm_prediction == -1:
-                    confidence = min(0.99, abs(float(svm_confidence)))
-                else:
-                    confidence = 1.0 - float(rf_confidence)
-            
-            logger.info(f"Prediction result for {username}: {prediction} ({confidence:.2f})")
-            
-            return {
-                "prediction": prediction,
-                "confidence": confidence,
-                "features": feature_dict,
-                "keystroke_count": len(cleaned),
-                "details": {
-                    "rf_prediction": int(rf_prediction),
-                    "rf_confidence": float(rf_confidence),
-                    "svm_prediction": int(svm_prediction),
-                    "svm_score": float(svm_confidence)
-                },
-                "message": f"User typing detected as {prediction}"
-            }
-        
-        except Exception as e:
-            logger.error(f"Error during ML prediction: {str(e)}", exc_info=True)
-            # Fallback to conservative prediction
-            return {
-                "prediction": "NORMAL",
-                "confidence": 0.5,
-                "message": f"Error during prediction: {str(e)}"
-            }
+        training_vectors = get_training_samples(db, user.id)
+        user_model_decision, user_model_details = DetectionEngine.evaluate_user_model(training_vectors, ml_features)
+
+        model_decision = user_model_decision if user_model_details.get("available") else profile_decision_internal
+        model_confidence = float(user_model_details.get("confidence", profile_confidence))
+
+        prediction, confidence = DetectionEngine.combine_profile_and_model_decisions(
+            profile_decision=profile_decision_internal,
+            profile_confidence=profile_confidence,
+            model_decision=model_decision.lower(),
+            model_confidence=model_confidence,
+            profile_available=profile_available,
+        )
+        prediction = format_prediction_label(prediction)
+
+        if prediction == "INTRUDER" and request.session_token:
+            active_session = get_active_session(db, user.id)
+            if active_session:
+                log_intrusion(
+                    db=db,
+                    user_id=user.id,
+                    session_id=active_session.id,
+                    detection_type="keystroke_anomaly",
+                    rf_probability=0.0,
+                    svm_anomaly_score=float(user_model_details.get("score", 0.0)),
+                    decision=prediction.lower(),
+                    keystroke_data={
+                        "feature_dict": feature_dict,
+                        "profile_details": profile_details,
+                        "user_model_details": user_model_details,
+                    },
+                )
+
+        logger.info(f"Prediction result for {username}: {prediction} ({confidence:.2f})")
+
+        return {
+            "prediction": prediction,
+            "confidence": confidence,
+            "features": feature_dict,
+            "keystroke_count": len(cleaned),
+            "details": {
+                "model_decision": format_prediction_label(model_decision),
+                "model_confidence": float(model_confidence),
+                "profile_decision": profile_decision,
+                "profile_confidence": profile_confidence,
+                "profile_details": profile_details,
+                "user_model_decision": format_prediction_label(user_model_decision),
+                "user_model_details": user_model_details,
+                "ml_feature_summary": FeaturePipeline.summarize_timing_vector(ml_features),
+            },
+            "message": f"User typing detected as {prediction}"
+        }
     
     except HTTPException:
         raise
@@ -173,8 +181,7 @@ async def predict_health_check():
         "status": "healthy",
         "service": "predict",
         "models_loaded": {
-            "random_forest": rf_model is not None,
-            "one_class_svm": svm_model is not None,
-            "scaler": scaler is not None
-        }
+            "user_specific_one_class_svm": True
+        },
+        "preferred_detector": "user-specific one-class svm"
     }

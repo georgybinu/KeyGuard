@@ -10,7 +10,7 @@ from utils.helpers import validate_keystroke_data, normalize_features, format_re
 from services.feature_pipeline import FeaturePipeline
 from services.preprocessing import PreprocessingService
 from services.detection import DetectionEngine
-from models.model_loader import ModelLoader
+from models.model_loader import ModelLoader, ModelLoadError
 
 class TestValidation:
     """Tests for data validation"""
@@ -180,31 +180,48 @@ class TestDetection:
         score = DetectionEngine.compute_confidence_score("normal", 0.9, 0.7)
         assert 0 <= score <= 1
 
+    def test_user_profile_normal_behavior(self):
+        """Trained-user profile should accept close behavior."""
+        decision, details = DetectionEngine.evaluate_user_profile(
+            {
+                "dwell_time": 52.0,
+                "flight_time": 102.0,
+            },
+            {
+                "dwell_time": {"mean": 50.0, "std_dev": 5.0, "sample_count": 5},
+                "flight_time": {"mean": 100.0, "std_dev": 8.0, "sample_count": 5},
+            }
+        )
+        assert decision == "normal"
+        assert details["available"] is True
+
+    def test_user_profile_intrusion_behavior(self):
+        """Trained-user profile should flag large deviations."""
+        decision, details = DetectionEngine.evaluate_user_profile(
+            {
+                "dwell_time": 180.0,
+                "flight_time": 420.0,
+            },
+            {
+                "dwell_time": {"mean": 50.0, "std_dev": 5.0, "sample_count": 5},
+                "flight_time": {"mean": 100.0, "std_dev": 8.0, "sample_count": 5},
+            }
+        )
+        assert decision == "intrusion"
+        assert details["available"] is True
+
 class TestModelLoader:
     """Tests for model loading"""
     
-    def test_mock_rf_model_predict(self):
-        """Test mock random forest model"""
-        model = ModelLoader._create_mock_model("random_forest")
-        prob, proba = ModelLoader.predict_random_forest(model, [1, 2, 3, 4, 5])
-        
-        assert 0 <= prob <= 1
-        assert proba is not None
+    def test_missing_model_raises(self):
+        """Missing model files should fail loudly."""
+        with pytest.raises(ModelLoadError):
+            ModelLoader.load_model("/tmp/does-not-exist.pkl", "missing")
     
-    def test_mock_svm_model_predict(self):
-        """Test mock SVM model"""
-        model = ModelLoader._create_mock_model("one_class_svm")
-        score = ModelLoader.predict_one_class_svm(model, [1, 2, 3, 4, 5])
-        
-        assert isinstance(score, float)
-    
-    def test_scaler_creation(self):
-        """Test mock scaler creation"""
-        scaler = ModelLoader._create_mock_scaler()
-        import numpy as np
-        X = np.array([[1, 2, 3], [4, 5, 6]])
-        transformed = scaler.transform(X)
-        assert transformed.shape == X.shape
+    def test_missing_scaler_raises(self):
+        """Missing scaler files should fail loudly."""
+        with pytest.raises(ModelLoadError):
+            ModelLoader.load_scaler("/tmp/does-not-exist.pkl")
 
 class TestFormatResponse:
     """Tests for response formatting"""
@@ -243,16 +260,8 @@ class TestIntegration:
         features, feature_dict = FeaturePipeline.extract_features(cleaned)
         assert len(features) == 5
         
-        # Predict with mock models
-        rf_model = ModelLoader._create_mock_model("random_forest")
-        svm_model = ModelLoader._create_mock_model("one_class_svm")
-        
-        rf_prob, _ = ModelLoader.predict_random_forest(rf_model, features)
-        svm_score = ModelLoader.predict_one_class_svm(svm_model, features)
-        
-        # Detect
-        decision, confidence = DetectionEngine.apply_decision_logic(rf_prob, svm_score)
-        assert decision in ["normal", "suspicious", "intrusion"]
+        summary = FeaturePipeline.summarize_timing_vector(features)
+        assert len(summary) == 10
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v", "--tb=short"])

@@ -5,19 +5,23 @@ Tests the FastAPI application with realistic scenarios
 import pytest
 import sys
 import os
+import tempfile
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+TEST_DB_FILE = os.path.join(tempfile.gettempdir(), "keyguard_test_api.db")
+os.environ["DATABASE_URL"] = f"sqlite:///{TEST_DB_FILE}"
 
 from fastapi.testclient import TestClient
 from app import app
 from database.db import Base, engine, SessionLocal
 from database.crud import create_user, create_session
 import uuid
-import json
 
 # Setup test database
 @pytest.fixture(autouse=True)
 def setup_database():
     """Setup and teardown test database"""
+    Base.metadata.drop_all(bind=engine)
     Base.metadata.create_all(bind=engine)
     yield
     Base.metadata.drop_all(bind=engine)
@@ -82,6 +86,59 @@ class TestHealthEndpoints:
         assert data["status"] == "running"
         assert "components" in data
 
+class TestAuthEndpoints:
+    """Test registration, login, and session restoration."""
+
+    def test_register_login_and_restore_session(self, client):
+        response = client.post(
+            "/auth/register",
+            json={
+                "username": "alice",
+                "email": "alice@example.com",
+                "phone": "1234567890",
+                "password": "secret123",
+            }
+        )
+        assert response.status_code == 200
+        register_data = response.json()
+        assert register_data["training_completed"] is False
+        assert register_data["training_rounds"] == 0
+
+        login_response = client.post(
+            "/auth/login",
+            json={
+                "username": "alice",
+                "password": "secret123",
+            }
+        )
+        assert login_response.status_code == 200
+        login_data = login_response.json()
+        assert login_data["session_token"]
+
+        restore_response = client.get(f"/auth/session/{login_data['session_token']}")
+        assert restore_response.status_code == 200
+        restore_data = restore_response.json()
+        assert restore_data["username"] == "alice"
+
+    def test_login_rejects_bad_password(self, client):
+        client.post(
+            "/auth/register",
+            json={
+                "username": "bob",
+                "email": "bob@example.com",
+                "phone": "1234567890",
+                "password": "right-password",
+            }
+        )
+        response = client.post(
+            "/auth/login",
+            json={
+                "username": "bob",
+                "password": "wrong-password",
+            }
+        )
+        assert response.status_code == 401
+
 class TestCaptureEndpoints:
     """Test capture session endpoints"""
     
@@ -137,6 +194,40 @@ class TestCaptureEndpoints:
 
 class TestPredictEndpoint:
     """Test prediction endpoint"""
+
+    def test_predict_user_specific_intrusion_after_training(self, client, test_user, test_session):
+        """Prediction should use the user's own training profile."""
+        training_keystrokes = [
+            {"key": f"k{i}", "key_press_time": i * 120, "key_release_time": i * 120 + 50}
+            for i in range(15)
+        ]
+        for round_num in range(3):
+            response = client.post(
+                "/train",
+                json={
+                    "username": "testuser",
+                    "keystrokes": training_keystrokes,
+                    "round": round_num + 1,
+                }
+            )
+            assert response.status_code == 200
+
+        suspicious_keystrokes = [
+            {"key": f"k{i}", "key_press_time": i * 400, "key_release_time": i * 400 + 200}
+            for i in range(15)
+        ]
+        response = client.post(
+            "/predict",
+            json={
+                "username": "testuser",
+                "session_token": test_session.session_token,
+                "keystrokes": suspicious_keystrokes
+            }
+        )
+        assert response.status_code == 200
+        data = response.json()
+        assert data["prediction"] in ["SUSPICIOUS", "INTRUDER"]
+        assert data["details"]["profile_details"]["available"] is True
     
     def test_predict_normal_behavior(self, client, test_user, test_session):
         """Test prediction on normal keystroke data"""
@@ -150,17 +241,16 @@ class TestPredictEndpoint:
         
         response = client.post(
             "/predict",
-            params={
+            json={
                 "username": "testuser",
                 "session_token": test_session.session_token,
                 "keystrokes": keystrokes
-            },
-            json=keystrokes
+            }
         )
-        
-        # Note: FastAPI requires proper request handling
-        # This is a simplified test
-        assert response.status_code in [200, 422]  # 422 if param format issue
+        assert response.status_code == 200
+        data = response.json()
+        assert "prediction" in data
+        assert "confidence" in data
     
     def test_predict_invalid_user(self, client, test_session):
         """Test prediction with invalid user"""
@@ -170,16 +260,13 @@ class TestPredictEndpoint:
         
         response = client.post(
             "/predict",
-            params={
+            json={
                 "username": "nonexistent",
                 "session_token": "invalid",
                 "keystrokes": keystrokes
-            },
-            json=keystrokes
+            }
         )
-        
-        # Should fail due to user not found
-        assert response.status_code in [404, 422]
+        assert response.status_code == 404
     
     def test_predict_health(self, client):
         """Test predict health endpoint"""
@@ -200,14 +287,14 @@ class TestTrainEndpoint:
         
         response = client.post(
             "/train",
-            params={
+            json={
                 "username": "testuser",
                 "keystrokes": keystrokes
-            },
-            json=keystrokes
+            }
         )
-        
-        assert response.status_code in [200, 422]
+        assert response.status_code == 200
+        data = response.json()
+        assert data["status"] == "success"
     
     def test_train_invalid_user(self, client):
         """Test training with invalid user"""
@@ -217,14 +304,12 @@ class TestTrainEndpoint:
         
         response = client.post(
             "/train",
-            params={
+            json={
                 "username": "nonexistent",
                 "keystrokes": keystrokes
-            },
-            json=keystrokes
+            }
         )
-        
-        assert response.status_code in [404, 422]
+        assert response.status_code == 404
     
     def test_train_health(self, client):
         """Test train health endpoint"""

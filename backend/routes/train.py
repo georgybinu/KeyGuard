@@ -1,16 +1,40 @@
 """
 Training endpoint for KeyGuard
 """
-from fastapi import APIRouter, HTTPException, Body
+from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
-from database.db import get_db
-from database.crud import get_user_by_username, update_behavior_profile
-from services.preprocessing import PreprocessingService
-from services.feature_pipeline import FeaturePipeline
-from utils.logger import get_logger
+
+try:
+    from ..database.db import get_db
+    from ..database.crud import (
+        clear_training_data,
+        get_behavior_profile,
+        get_training_sample_count,
+        get_user_by_username,
+        save_behavior_snapshot,
+        save_training_sample,
+        update_user_training_status,
+    )
+    from ..services.preprocessing import PreprocessingService
+    from ..services.feature_pipeline import FeaturePipeline
+    from ..utils.logger import get_logger
+except ImportError:
+    from database.db import get_db
+    from database.crud import (
+        clear_training_data,
+        get_behavior_profile,
+        get_training_sample_count,
+        get_user_by_username,
+        save_behavior_snapshot,
+        save_training_sample,
+        update_user_training_status,
+    )
+    from services.preprocessing import PreprocessingService
+    from services.feature_pipeline import FeaturePipeline
+    from utils.logger import get_logger
 
 router = APIRouter()
 logger = get_logger()
@@ -19,6 +43,7 @@ class TrainingRequest(BaseModel):
     username: str
     keystrokes: List[Dict[str, Any]]
     round: Optional[int] = None
+    phrase: Optional[str] = None
 
 @router.post("/train")
 async def train_user_profile(
@@ -51,6 +76,9 @@ async def train_user_profile(
             logger.warning(f"User not found: {username}")
             raise HTTPException(status_code=404, detail="User not found")
         
+        if round_num == 1:
+            clear_training_data(db, user.id)
+
         # Preprocess keystrokes
         valid_keystrokes, invalid_reasons = PreprocessingService.validate_keystroke_batch(keystrokes)
         if invalid_reasons:
@@ -75,19 +103,14 @@ async def train_user_profile(
         logger.info(f"Training with aggregated features: {feature_dict}")
         logger.info(f"Training with ML model features (count={len(ml_features)}): {ml_features}")
         
-        # Update behavior profile with aggregated features
-        import numpy as np
-        for feature_name, feature_value in feature_dict.items():
-            # In real scenario, would compute mean/std from multiple sessions
-            std_dev = feature_value * 0.1  # 10% standard deviation
-            
-            update_behavior_profile(
-                db, user.id, feature_name,
-                mean_value=feature_value,
-                std_dev=std_dev
-            )
+        # Persist each training round so prediction can build a real per-user baseline.
+        save_behavior_snapshot(db, user.id, feature_dict)
+        save_training_sample(db, user.id, round_num or 1, ml_features, request.phrase)
+        behavior_profile = get_behavior_profile(db, user.id)
+        trained_rounds = get_training_sample_count(db, user.id)
+        update_user_training_status(db, user.id, trained_rounds)
         
-        logger.info(f"Updated behavior profile for user {username} (round {round_num})")
+        logger.info(f"Updated behavior profile for user {username} (round {round_num}, trained_rounds={trained_rounds})")
         
         return {
             "status": "success",
@@ -98,6 +121,11 @@ async def train_user_profile(
             "keystrokes_processed": len(cleaned),
             "features_trained": list(feature_dict.keys()),
             "feature_values": feature_dict,
+            "profile_summary": {
+                "trained_rounds": trained_rounds,
+                "training_completed": trained_rounds >= 10,
+                "features_available": list(behavior_profile.keys()),
+            },
             "ml_model_features": {
                 "dwell_count": len(cleaned),
                 "flight_count": max(0, len(cleaned) - 1),

@@ -1,0 +1,52 @@
+2026-03-25 13:12:41,952 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/random_forest_model.pkl: STACK_GLOBAL requires str
+2026-03-25 13:12:41,953 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/one_class_svm_model.pkl: invalid load key, '\x05'.
+2026-03-25 13:12:41,953 - keyguard_backend - ERROR - Error loading scaler /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/scaler.pkl: STACK_GLOBAL requires str
+2026-03-25 13:12:41,960 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 13:12:42,112 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/random_forest_model.pkl: STACK_GLOBAL requires str
+2026-03-25 13:12:42,113 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/one_class_svm_model.pkl: invalid load key, '\x05'.
+2026-03-25 13:12:42,113 - keyguard_backend - ERROR - Error loading scaler /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/scaler.pkl: STACK_GLOBAL requires str
+2026-03-25 13:12:42,119 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 13:12:42,229 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/random_forest_model.pkl: STACK_GLOBAL requires str
+2026-03-25 13:12:42,229 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/one_class_svm_model.pkl: invalid load key, '\x05'.
+2026-03-25 13:12:42,229 - keyguard_backend - ERROR - Error loading scaler /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/scaler.pkl: STACK_GLOBAL requires str
+2026-03-25 13:12:42,235 - keyguard_backend - INFO - Database tables created/verified
+2026-03-25 13:12:42,316 - keyguard_backend - INFO - Starting capture session for newuser
+2026-03-25 13:12:42,320 - keyguard_backend - INFO - Created new user: newuser
+2026-03-25 13:12:42,321 - keyguard_backend - INFO - Created new capture session 1 for newuser
+2026-03-25 13:12:42,330 - keyguard_backend - INFO - Starting capture session for testuser
+2026-03-25 13:12:42,331 - keyguard_backend - INFO - Returning existing active session for testuser
+2026-03-25 13:12:42,339 - keyguard_backend - DEBUG - Session active for testuser
+2026-03-25 13:12:42,362 - keyguard_backend - INFO - Prediction request from testuser with 5 keystrokes (test: None)
+2026-03-25 13:12:42,362 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 80.0, 'key_press_rate': 6.153846153846153, 'key_release_interval': 100.0, 'typing_speed': 50.0}
+2026-03-25 13:12:42,362 - keyguard_backend - DEBUG - ML Model Features - Dwells: 5, Flights: 4, Total: 9
+2026-03-25 13:12:42,362 - keyguard_backend - DEBUG - Feature vector: [50.0, 50.0, 50.0, 50.0, 50.0, 100.0, 100.0, 100.0, 100.0]
+2026-03-25 13:12:42,362 - keyguard_backend - DEBUG - Aggregated features: {'dwell_time': 50.0, 'flight_time': 80.0, 'key_press_rate': 6.153846153846153, 'key_release_interval': 100.0, 'typing_speed': 50.0}
+2026-03-25 13:12:42,363 - keyguard_backend - DEBUG - ML model features (count=9): [50.0, 50.0, 50.0, 50.0, 50.0, 100.0, 100.0, 100.0, 100.0]
+2026-03-25 13:12:42,363 - keyguard_backend - DEBUG - RF Prediction: 1, Confidence: 0.6222222222222222
+2026-03-25 13:12:42,363 - keyguard_backend - DEBUG - SVM Prediction: 1, Decision Score: 1.0
+2026-03-25 13:12:42,363 - keyguard_backend - INFO - Prediction result for testuser: NORMAL (0.62)
+2026-03-25 13:12:42,371 - keyguard_backend - INFO - Prediction request from nonexistent with 1 keystrokes (test: None)
+2026-03-25 13:12:42,371 - keyguard_backend - WARNING - User not found: nonexistent
+2026-03-25 13:12:42,372 - keyguard_backend - ERROR - HTTP Exception: 404 - User not found
+2026-03-25 13:12:42,387 - keyguard_backend - INFO - Training request for testuser with 15 keystrokes (round None)
+2026-03-25 13:12:42,388 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 46.666666666666664, 'key_press_rate': 9.655172413793103, 'key_release_interval': 50.0, 'typing_speed': 50.0}
+2026-03-25 13:12:42,388 - keyguard_backend - DEBUG - ML Model Features - Dwells: 15, Flights: 14, Total: 29
+2026-03-25 13:12:42,388 - keyguard_backend - DEBUG - Feature vector: [50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0]
+2026-03-25 13:12:42,388 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 50.0, 'flight_time': 46.666666666666664, 'key_press_rate': 9.655172413793103, 'key_release_interval': 50.0, 'typing_speed': 50.0}
+2026-03-25 13:12:42,388 - keyguard_backend - INFO - Training with ML model features (count=29): [50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0, 50.0]
+2026-03-25 13:12:42,393 - keyguard_backend - INFO - Updated behavior profile for user testuser (round None)
+2026-03-25 13:12:42,401 - keyguard_backend - INFO - Training request for nonexistent with 1 keystrokes (round None)
+2026-03-25 13:12:42,401 - keyguard_backend - WARNING - User not found: nonexistent
+2026-03-25 13:12:42,401 - keyguard_backend - ERROR - HTTP Exception: 404 - User not found
+2026-03-25 13:12:42,419 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 66.66666666666667, 'key_press_rate': 5.714285714285714, 'key_release_interval': 100.0, 'typing_speed': 50.0}
+2026-03-25 13:12:42,420 - keyguard_backend - WARNING - Invalid keystroke at index 1: {'key': 'b', 'key_press_time': 1150, 'key_release_time': 1000}
+2026-03-25 13:12:42,421 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 1500ms
+2026-03-25 13:12:42,421 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.95, SVM score: 0.8
+2026-03-25 13:12:42,421 - keyguard_backend - INFO - Detection decision: normal - ['RF: High confidence in normal (prob=0.95)', 'SVM: Normal behavior detected']
+2026-03-25 13:12:42,422 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.45, SVM score: 0.5
+2026-03-25 13:12:42,422 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.45)', 'SVM: Normal behavior detected']
+2026-03-25 13:12:42,422 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.2, SVM score: -0.8
+2026-03-25 13:12:42,423 - keyguard_backend - INFO - Detection decision: intrusion - ['RF: Low confidence in normal (prob=0.20)', 'SVM: Anomaly detected (score=-0.80)']
+2026-03-25 13:12:42,425 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 50.0, 'flight_time': 80.0, 'key_press_rate': 6.153846153846153, 'key_release_interval': 100.0, 'typing_speed': 50.0}
+2026-03-25 13:12:42,426 - keyguard_backend - DEBUG - Decision logic - RF prob: 0.6072307692307692, SVM score: 0.8855384615384615
+2026-03-25 13:12:42,426 - keyguard_backend - INFO - Detection decision: suspicious - ['RF: Suspicious behavior (prob=0.61)', 'SVM: Normal behavior detected']

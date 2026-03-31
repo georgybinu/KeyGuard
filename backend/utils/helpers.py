@@ -2,6 +2,9 @@
 Helper functions for KeyGuard backend
 """
 from typing import Dict, List, Any
+import hashlib
+import hmac
+import os
 import numpy as np
 
 def validate_keystroke_data(data: Dict[str, Any]) -> bool:
@@ -80,3 +83,20 @@ def format_response(decision: str, probability: float, anomaly_score: float,
         "details": details or {},
         "timestamp": None,
     }
+
+def hash_password(password: str) -> str:
+    """Create a salted password hash."""
+    salt = os.urandom(16)
+    password_hash = hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, 120000)
+    return f"{salt.hex()}${password_hash.hex()}"
+
+def verify_password(password: str, stored_hash: str) -> bool:
+    """Verify a password against a stored salted hash."""
+    try:
+        salt_hex, hash_hex = stored_hash.split("$", 1)
+        salt = bytes.fromhex(salt_hex)
+        expected = bytes.fromhex(hash_hex)
+    except ValueError:
+        return False
+    candidate = hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, 120000)
+    return hmac.compare_digest(candidate, expected)

@@ -2,9 +2,13 @@
 Data preprocessing service for KeyGuard
 """
 from typing import Dict, List, Any, Tuple
-from utils.helpers import validate_keystroke_data
-from utils.logger import get_logger
-import numpy as np
+
+try:
+    from ..utils.helpers import validate_keystroke_data
+    from ..utils.logger import get_logger
+except ImportError:
+    from utils.helpers import validate_keystroke_data
+    from utils.logger import get_logger
 
 logger = get_logger()
 
@@ -106,6 +110,13 @@ class PreprocessingService:
                 logger.debug(f"Removing keystroke with anomalous dwell time: {dwell_time}ms")
                 continue
             
+            if filtered:
+                previous = filtered[-1]
+                flight_time = keystroke.get('key_press_time', 0) - previous.get('key_release_time', 0)
+                if flight_time < thresholds['flight_time'][0] or flight_time > thresholds['flight_time'][1]:
+                    logger.debug(f"Removing keystroke with anomalous flight time: {flight_time}ms")
+                    continue
+
             filtered.append(keystroke)
         
         return filtered

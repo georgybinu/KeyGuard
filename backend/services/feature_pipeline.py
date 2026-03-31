@@ -3,8 +3,13 @@ Feature extraction and pipeline for KeyGuard
 """
 from typing import Dict, List, Any, Tuple
 import numpy as np
-from utils.config import FEATURE_NAMES
-from utils.logger import get_logger
+
+try:
+    from ..utils.config import FEATURE_NAMES
+    from ..utils.logger import get_logger
+except ImportError:
+    from utils.config import FEATURE_NAMES
+    from utils.logger import get_logger
 
 logger = get_logger()
 
@@ -81,7 +86,7 @@ class FeaturePipeline:
         intervals = []
         for i in range(1, len(keystroke_batch)):
             interval = keystroke_batch[i].get('key_press_time', 0) - keystroke_batch[i-1].get('key_release_time', 0)
-            intervals.append(interval)
+            intervals.append(max(0, interval))
         
         return np.mean(intervals) if intervals else 0
     
@@ -99,12 +104,13 @@ class FeaturePipeline:
         if len(keystroke_batch) == 0:
             return 0
         
-        intervals = []
-        for keystroke in keystroke_batch:
-            dwell = FeaturePipeline.compute_dwell_time(keystroke)
-            intervals.append(dwell)
-        
-        return np.mean(intervals) if intervals else 0
+        duration_ms = keystroke_batch[-1].get('key_release_time', 0) - keystroke_batch[0].get('key_press_time', 0)
+        if duration_ms <= 0:
+            return 0
+
+        words_typed = max(len(keystroke_batch) / 5.0, 0.2)
+        minutes = duration_ms / 60000.0
+        return words_typed / minutes if minutes > 0 else 0
     
     @classmethod
     def extract_features(cls, keystroke_batch: List[Dict[str, Any]]) -> Tuple[List[float], Dict[str, float]]:
@@ -170,10 +176,45 @@ class FeaturePipeline:
         # Remove the first flight time (before first keystroke) to get N-1 values
         flight_times = flight_times[1:]
         
-        # Concatenate: [dwell1, dwell2, ..., dwellN, flight1, flight2, ..., flightN-1]
-        feature_vector = dwell_times + flight_times
+        feature_vector = cls.to_fixed_length_vector(dwell_times + flight_times)
         
         logger.debug(f"ML Model Features - Dwells: {len(dwell_times)}, Flights: {len(flight_times)}, Total: {len(feature_vector)}")
         logger.debug(f"Feature vector: {feature_vector}")
         
         return feature_vector
+
+    @staticmethod
+    def to_fixed_length_vector(feature_vector: List[float], target_length: int = 31) -> List[float]:
+        """Trim or pad a variable-length vector to the model's expected size."""
+        if len(feature_vector) >= target_length:
+            return [float(value) for value in feature_vector[:target_length]]
+
+        if not feature_vector:
+            return [0.0] * target_length
+
+        padding_value = float(np.mean(feature_vector))
+        padded = [float(value) for value in feature_vector]
+        while len(padded) < target_length:
+            padded.append(padding_value)
+        return padded
+
+    @staticmethod
+    def summarize_timing_vector(feature_vector: List[float]) -> List[float]:
+        """Convert a position-dependent sequence into text-independent summary features."""
+        values = np.asarray(feature_vector, dtype=float)
+        if values.size == 0:
+            return [0.0] * 10
+
+        percentiles = np.percentile(values, [10, 25, 50, 75, 90])
+        return [
+            float(np.mean(values)),
+            float(np.std(values)),
+            float(np.min(values)),
+            float(np.max(values)),
+            float(percentiles[0]),
+            float(percentiles[1]),
+            float(percentiles[2]),
+            float(percentiles[3]),
+            float(percentiles[4]),
+            float(np.mean(np.abs(np.diff(values)))) if values.size > 1 else 0.0,
+        ]

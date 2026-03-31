@@ -1,13 +1,21 @@
 """
 Model loading and management for KeyGuard
 """
-from typing import Dict, Any, Tuple
+from typing import Any, Tuple
 import pickle
 import os
 import numpy as np
-from utils.logger import get_logger
+import joblib
+
+try:
+    from ..utils.logger import get_logger
+except ImportError:
+    from utils.logger import get_logger
 
 logger = get_logger()
+
+class ModelLoadError(RuntimeError):
+    """Raised when a required model or scaler cannot be loaded."""
 
 class ModelLoader:
     """Handles loading and caching of ML models"""
@@ -34,19 +42,24 @@ class ModelLoader:
         
         # Check if file exists
         if not os.path.exists(model_path):
-            logger.warning(f"Model file not found: {model_path}. Creating mock model.")
-            # Return mock model for demo
-            return ModelLoader._create_mock_model(model_name)
+            raise ModelLoadError(f"Model file not found: {model_path}")
         
         try:
-            with open(model_path, 'rb') as f:
-                model = pickle.load(f)
+            model = joblib.load(model_path)
             logger.info(f"Loaded model from {model_path}")
             ModelLoader._models_cache[model_name] = model
             return model
         except Exception as e:
-            logger.error(f"Error loading model {model_path}: {str(e)}")
-            return ModelLoader._create_mock_model(model_name)
+            logger.warning(f"Joblib load failed for {model_path}: {str(e)}. Falling back to pickle.")
+            try:
+                with open(model_path, 'rb') as f:
+                    model = pickle.load(f)
+                logger.info(f"Loaded model from {model_path} using pickle fallback")
+                ModelLoader._models_cache[model_name] = model
+                return model
+            except Exception as pickle_error:
+                logger.error(f"Error loading model {model_path}: {str(pickle_error)}")
+                raise ModelLoadError(f"Unable to load model from {model_path}") from pickle_error
     
     @staticmethod
     def load_scaler(scaler_path: str) -> Any:
@@ -65,57 +78,24 @@ class ModelLoader:
             return ModelLoader._scaler_cache
         
         if not os.path.exists(scaler_path):
-            logger.warning(f"Scaler file not found: {scaler_path}. Creating mock scaler.")
-            return ModelLoader._create_mock_scaler()
+            raise ModelLoadError(f"Scaler file not found: {scaler_path}")
         
         try:
-            with open(scaler_path, 'rb') as f:
-                scaler = pickle.load(f)
+            scaler = joblib.load(scaler_path)
             logger.info(f"Loaded scaler from {scaler_path}")
             ModelLoader._scaler_cache = scaler
             return scaler
         except Exception as e:
-            logger.error(f"Error loading scaler {scaler_path}: {str(e)}")
-            return ModelLoader._create_mock_scaler()
-    
-    @staticmethod
-    def _create_mock_model(model_type: str) -> Any:
-        """Create mock model for demo/testing"""
-        class MockModel:
-            def __init__(self, model_type):
-                self.model_type = model_type
-            
-            def predict(self, X):
-                """Mock predict returning dummy predictions"""
-                if self.model_type == "random_forest":
-                    # Return probabilities in [0, 1]
-                    return np.random.uniform(0.4, 0.9, size=len(X) if isinstance(X, list) else 1)
-                elif self.model_type == "one_class_svm":
-                    # Return anomaly scores
-                    return np.random.uniform(-1, 1, size=len(X) if isinstance(X, list) else 1)
-                return np.array([0.5])
-            
-            def predict_proba(self, X):
-                """Mock predict_proba for RF"""
-                if self.model_type == "random_forest":
-                    n_samples = len(X) if isinstance(X, list) else 1
-                    probs = np.random.uniform(0.3, 0.95, size=(n_samples, 2))
-                    # Normalize to sum to 1
-                    return probs / probs.sum(axis=1, keepdims=True)
-                return None
-        
-        return MockModel(model_type)
-    
-    @staticmethod
-    def _create_mock_scaler() -> Any:
-        """Create mock scaler for demo/testing"""
-        class MockScaler:
-            def transform(self, X):
-                """Mock transform - simple normalization"""
-                X = np.array(X)
-                return (X - np.mean(X, axis=0)) / (np.std(X, axis=0) + 1e-8)
-        
-        return MockScaler()
+            logger.warning(f"Joblib load failed for {scaler_path}: {str(e)}. Falling back to pickle.")
+            try:
+                with open(scaler_path, 'rb') as f:
+                    scaler = pickle.load(f)
+                logger.info(f"Loaded scaler from {scaler_path} using pickle fallback")
+                ModelLoader._scaler_cache = scaler
+                return scaler
+            except Exception as pickle_error:
+                logger.error(f"Error loading scaler {scaler_path}: {str(pickle_error)}")
+                raise ModelLoadError(f"Unable to load scaler from {scaler_path}") from pickle_error
     
     @staticmethod
     def predict_random_forest(rf_model: Any, features: list) -> Tuple[float, np.ndarray]:

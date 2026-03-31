@@ -1,0 +1,308 @@
+2026-03-31 21:30:40,920 - keyguard_backend - INFO - Database tables created/verified
+2026-03-31 21:31:00,790 - keyguard_backend - ERROR - HTTP Exception: 404 - Session not found
+2026-03-31 21:31:00,790 - keyguard_backend - ERROR - HTTP Exception: 404 - Session not found
+2026-03-31 21:31:09,248 - keyguard_backend - ERROR - HTTP Exception: 404 - User not found
+2026-03-31 21:31:26,523 - keyguard_backend - INFO - Registered new user madabkadab
+2026-03-31 21:31:38,503 - keyguard_backend - INFO - Training request for madabkadab with 42 keystrokes (round 1)
+2026-03-31 21:31:38,510 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -52.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -72.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -371.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -10.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -72.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -22.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -3.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -68.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -26.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -64.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -16.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -11.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -39.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -60.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 8.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 3.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -81.0ms
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 138.8, 'flight_time': 119.12, 'key_press_rate': 3.722084367245657, 'key_release_interval': 124.08333333333333, 'typing_speed': 46.526054590570716}
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - ML Model Features - Dwells: 25, Flights: 24, Total: 31
+2026-03-31 21:31:38,511 - keyguard_backend - DEBUG - Feature vector: [181.0, 196.0, 116.0, 112.0, 463.0, 127.0, 76.0, 94.0, 136.0, 134.0, 167.0, 84.0, 119.0, 103.0, 163.0, 146.0, 128.0, 162.0, 162.0, 95.0, 111.0, 130.0, 83.0, 71.0, 111.0, 56.0, 24.0, 26.0, 128.0, 81.0, 35.0]
+2026-03-31 21:31:38,511 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 138.8, 'flight_time': 119.12, 'key_press_rate': 3.722084367245657, 'key_release_interval': 124.08333333333333, 'typing_speed': 46.526054590570716}
+2026-03-31 21:31:38,512 - keyguard_backend - INFO - Training with ML model features (count=31): [181.0, 196.0, 116.0, 112.0, 463.0, 127.0, 76.0, 94.0, 136.0, 134.0, 167.0, 84.0, 119.0, 103.0, 163.0, 146.0, 128.0, 162.0, 162.0, 95.0, 111.0, 130.0, 83.0, 71.0, 111.0, 56.0, 24.0, 26.0, 128.0, 81.0, 35.0]
+2026-03-31 21:31:38,538 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 1, trained_rounds=1)
+2026-03-31 21:31:57,731 - keyguard_backend - INFO - Training request for madabkadab with 39 keystrokes (round 2)
+2026-03-31 21:31:57,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 7.0ms
+2026-03-31 21:31:57,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -114.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -49.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 3.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -21.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -60.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -18.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -74.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -14.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -5.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -22.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -14.0ms
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 151.2962962962963, 'flight_time': 244.85185185185185, 'key_press_rate': 2.430815258040389, 'key_release_interval': 254.26923076923077, 'typing_speed': 30.29169783096485}
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - ML Model Features - Dwells: 27, Flights: 26, Total: 31
+2026-03-31 21:31:57,734 - keyguard_backend - DEBUG - Feature vector: [132.0, 104.0, 60.0, 84.0, 483.0, 78.0, 136.0, 112.0, 127.0, 83.0, 129.0, 147.0, 104.0, 184.0, 58.0, 106.0, 178.0, 145.0, 117.0, 122.0, 325.0, 119.0, 143.0, 91.0, 140.0, 456.0, 122.0, 197.0, 240.0, 138.0, 81.0]
+2026-03-31 21:31:57,734 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 151.2962962962963, 'flight_time': 244.85185185185185, 'key_press_rate': 2.430815258040389, 'key_release_interval': 254.26923076923077, 'typing_speed': 30.29169783096485}
+2026-03-31 21:31:57,734 - keyguard_backend - INFO - Training with ML model features (count=31): [132.0, 104.0, 60.0, 84.0, 483.0, 78.0, 136.0, 112.0, 127.0, 83.0, 129.0, 147.0, 104.0, 184.0, 58.0, 106.0, 178.0, 145.0, 117.0, 122.0, 325.0, 119.0, 143.0, 91.0, 140.0, 456.0, 122.0, 197.0, 240.0, 138.0, 81.0]
+2026-03-31 21:31:57,755 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 2, trained_rounds=2)
+2026-03-31 21:32:10,530 - keyguard_backend - INFO - Training request for madabkadab with 43 keystrokes (round 3)
+2026-03-31 21:32:10,532 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -19.0ms
+2026-03-31 21:32:10,532 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -15.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -80.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -59.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 2.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -54.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -20.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -22.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -84.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -46.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 3.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 8.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 3.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -19.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -5.0ms
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 146.39285714285714, 'flight_time': 179.75, 'key_press_rate': 2.9566360052562417, 'key_release_interval': 186.40740740740742, 'typing_speed': 36.793692509855454}
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - ML Model Features - Dwells: 28, Flights: 27, Total: 31
+2026-03-31 21:32:10,533 - keyguard_backend - DEBUG - Feature vector: [148.0, 111.0, 131.0, 134.0, 95.0, 175.0, 83.0, 122.0, 99.0, 188.0, 196.0, 170.0, 130.0, 126.0, 171.0, 171.0, 140.0, 107.0, 136.0, 115.0, 136.0, 136.0, 112.0, 85.0, 38.0, 96.0, 55.0, 693.0, 231.0, 56.0, 11.0]
+2026-03-31 21:32:10,533 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 146.39285714285714, 'flight_time': 179.75, 'key_press_rate': 2.9566360052562417, 'key_release_interval': 186.40740740740742, 'typing_speed': 36.793692509855454}
+2026-03-31 21:32:10,533 - keyguard_backend - INFO - Training with ML model features (count=31): [148.0, 111.0, 131.0, 134.0, 95.0, 175.0, 83.0, 122.0, 99.0, 188.0, 196.0, 170.0, 130.0, 126.0, 171.0, 171.0, 140.0, 107.0, 136.0, 115.0, 136.0, 136.0, 112.0, 85.0, 38.0, 96.0, 55.0, 693.0, 231.0, 56.0, 11.0]
+2026-03-31 21:32:10,552 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 3, trained_rounds=3)
+2026-03-31 21:32:22,416 - keyguard_backend - INFO - Training request for madabkadab with 36 keystrokes (round 4)
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -4.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -22.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -50.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -75.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -31.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -15.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -15.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -218.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 3.0ms
+2026-03-31 21:32:22,419 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -103.0ms
+2026-03-31 21:32:22,420 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 178.34615384615384, 'flight_time': 159.1153846153846, 'key_press_rate': 2.849327558696148, 'key_release_interval': 165.48, 'typing_speed': 35.559607932527925}
+2026-03-31 21:32:22,420 - keyguard_backend - DEBUG - ML Model Features - Dwells: 26, Flights: 25, Total: 31
+2026-03-31 21:32:22,420 - keyguard_backend - DEBUG - Feature vector: [161.0, 119.0, 130.0, 128.0, 126.0, 218.0, 148.0, 107.0, 95.0, 209.0, 325.0, 237.0, 761.0, 124.0, 114.0, 102.0, 147.0, 107.0, 123.0, 90.0, 318.0, 141.0, 100.0, 139.0, 156.0, 212.0, 152.0, 84.0, 380.0, 394.0, 116.0]
+2026-03-31 21:32:22,420 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 178.34615384615384, 'flight_time': 159.1153846153846, 'key_press_rate': 2.849327558696148, 'key_release_interval': 165.48, 'typing_speed': 35.559607932527925}
+2026-03-31 21:32:22,420 - keyguard_backend - INFO - Training with ML model features (count=31): [161.0, 119.0, 130.0, 128.0, 126.0, 218.0, 148.0, 107.0, 95.0, 209.0, 325.0, 237.0, 761.0, 124.0, 114.0, 102.0, 147.0, 107.0, 123.0, 90.0, 318.0, 141.0, 100.0, 139.0, 156.0, 212.0, 152.0, 84.0, 380.0, 394.0, 116.0]
+2026-03-31 21:32:22,440 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 4, trained_rounds=4)
+2026-03-31 21:32:31,496 - keyguard_backend - INFO - Training request for madabkadab with 35 keystrokes (round 5)
+2026-03-31 21:32:31,498 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -33.0ms
+2026-03-31 21:32:31,498 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -101.0ms
+2026-03-31 21:32:31,498 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -11.0ms
+2026-03-31 21:32:31,498 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -3.0ms
+2026-03-31 21:32:31,498 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -32.0ms
+2026-03-31 21:32:31,498 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -4.0ms
+2026-03-31 21:32:31,498 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -67.0ms
+2026-03-31 21:32:31,499 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -15.0ms
+2026-03-31 21:32:31,499 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -13.0ms
+2026-03-31 21:32:31,499 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -48.0ms
+2026-03-31 21:32:31,499 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 148.24, 'flight_time': 108.8, 'key_press_rate': 3.734827264239029, 'key_release_interval': 113.33333333333333, 'typing_speed': 46.68534080298786}
+2026-03-31 21:32:31,499 - keyguard_backend - DEBUG - ML Model Features - Dwells: 25, Flights: 24, Total: 31
+2026-03-31 21:32:31,499 - keyguard_backend - DEBUG - Feature vector: [123.0, 54.0, 141.0, 220.0, 125.0, 123.0, 341.0, 123.0, 131.0, 129.0, 155.0, 91.0, 147.0, 164.0, 250.0, 121.0, 127.0, 83.0, 115.0, 163.0, 119.0, 104.0, 104.0, 28.0, 425.0, 156.0, 150.0, 147.0, 24.0, 59.0, 73.0]
+2026-03-31 21:32:31,499 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 148.24, 'flight_time': 108.8, 'key_press_rate': 3.734827264239029, 'key_release_interval': 113.33333333333333, 'typing_speed': 46.68534080298786}
+2026-03-31 21:32:31,499 - keyguard_backend - INFO - Training with ML model features (count=31): [123.0, 54.0, 141.0, 220.0, 125.0, 123.0, 341.0, 123.0, 131.0, 129.0, 155.0, 91.0, 147.0, 164.0, 250.0, 121.0, 127.0, 83.0, 115.0, 163.0, 119.0, 104.0, 104.0, 28.0, 425.0, 156.0, 150.0, 147.0, 24.0, 59.0, 73.0]
+2026-03-31 21:32:31,520 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 5, trained_rounds=5)
+2026-03-31 21:32:42,815 - keyguard_backend - INFO - Training request for madabkadab with 43 keystrokes (round 6)
+2026-03-31 21:32:42,817 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -47.0ms
+2026-03-31 21:32:42,817 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -140.0ms
+2026-03-31 21:32:42,817 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -76.0ms
+2026-03-31 21:32:42,817 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -35.0ms
+2026-03-31 21:32:42,817 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 4.0ms
+2026-03-31 21:32:42,817 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -30.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -130.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -5.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -24.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -119.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -20.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -6.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 1.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -64.0ms
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 139.89655172413794, 'flight_time': 135.51724137931035, 'key_press_rate': 3.5056967572304996, 'key_release_interval': 140.35714285714286, 'typing_speed': 43.5708025541505}
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - ML Model Features - Dwells: 29, Flights: 28, Total: 31
+2026-03-31 21:32:42,818 - keyguard_backend - DEBUG - Feature vector: [163.0, 143.0, 240.0, 179.0, 123.0, 83.0, 156.0, 122.0, 179.0, 182.0, 147.0, 132.0, 157.0, 267.0, 110.0, 88.0, 124.0, 140.0, 80.0, 151.0, 59.0, 132.0, 110.0, 79.0, 142.0, 148.0, 87.0, 250.0, 84.0, 57.0, 104.0]
+2026-03-31 21:32:42,818 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 139.89655172413794, 'flight_time': 135.51724137931035, 'key_press_rate': 3.5056967572304996, 'key_release_interval': 140.35714285714286, 'typing_speed': 43.5708025541505}
+2026-03-31 21:32:42,818 - keyguard_backend - INFO - Training with ML model features (count=31): [163.0, 143.0, 240.0, 179.0, 123.0, 83.0, 156.0, 122.0, 179.0, 182.0, 147.0, 132.0, 157.0, 267.0, 110.0, 88.0, 124.0, 140.0, 80.0, 151.0, 59.0, 132.0, 110.0, 79.0, 142.0, 148.0, 87.0, 250.0, 84.0, 57.0, 104.0]
+2026-03-31 21:32:42,837 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 6, trained_rounds=6)
+2026-03-31 21:32:55,931 - keyguard_backend - INFO - Training request for madabkadab with 48 keystrokes (round 7)
+2026-03-31 21:32:55,933 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -35.0ms
+2026-03-31 21:32:55,933 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -15.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -18.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 1.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -10.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -3.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -9.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -100.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -52.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -5.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -18.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -39.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -396.0ms
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 145.37142857142857, 'flight_time': 156.54285714285714, 'key_press_rate': 3.2175641146966973, 'key_release_interval': 161.14705882352942, 'typing_speed': 39.74638024037097}
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - ML Model Features - Dwells: 35, Flights: 34, Total: 31
+2026-03-31 21:32:55,934 - keyguard_backend - DEBUG - Feature vector: [129.0, 92.0, 191.0, 124.0, 99.0, 160.0, 123.0, 128.0, 124.0, 135.0, 616.0, 87.0, 63.0, 111.0, 122.0, 98.0, 154.0, 115.0, 141.0, 145.0, 109.0, 100.0, 122.0, 116.0, 104.0, 163.0, 169.0, 51.0, 28.0, 122.0, 151.0]
+2026-03-31 21:32:55,934 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 145.37142857142857, 'flight_time': 156.54285714285714, 'key_press_rate': 3.2175641146966973, 'key_release_interval': 161.14705882352942, 'typing_speed': 39.74638024037097}
+2026-03-31 21:32:55,934 - keyguard_backend - INFO - Training with ML model features (count=31): [129.0, 92.0, 191.0, 124.0, 99.0, 160.0, 123.0, 128.0, 124.0, 135.0, 616.0, 87.0, 63.0, 111.0, 122.0, 98.0, 154.0, 115.0, 141.0, 145.0, 109.0, 100.0, 122.0, 116.0, 104.0, 163.0, 169.0, 51.0, 28.0, 122.0, 151.0]
+2026-03-31 21:32:55,954 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 7, trained_rounds=7)
+2026-03-31 21:33:06,479 - keyguard_backend - INFO - Training request for madabkadab with 46 keystrokes (round 8)
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -9.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 2.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -40.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -28.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -15.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -68.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -59.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -46.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -48.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -30.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -111.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -117.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -6.0ms
+2026-03-31 21:33:06,482 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -20.0ms
+2026-03-31 21:33:06,483 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -51.0ms
+2026-03-31 21:33:06,483 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -20.0ms
+2026-03-31 21:33:06,483 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -55.0ms
+2026-03-31 21:33:06,483 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 130.20689655172413, 'flight_time': 156.89655172413794, 'key_press_rate': 3.3629594042757627, 'key_release_interval': 162.5, 'typing_speed': 41.79678116742733}
+2026-03-31 21:33:06,483 - keyguard_backend - DEBUG - ML Model Features - Dwells: 29, Flights: 28, Total: 31
+2026-03-31 21:33:06,483 - keyguard_backend - DEBUG - Feature vector: [204.0, 140.0, 166.0, 91.0, 103.0, 112.0, 104.0, 148.0, 148.0, 115.0, 155.0, 154.0, 132.0, 174.0, 147.0, 123.0, 92.0, 136.0, 88.0, 40.0, 179.0, 134.0, 135.0, 180.0, 118.0, 85.0, 134.0, 135.0, 104.0, 64.0, 65.0]
+2026-03-31 21:33:06,483 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 130.20689655172413, 'flight_time': 156.89655172413794, 'key_press_rate': 3.3629594042757627, 'key_release_interval': 162.5, 'typing_speed': 41.79678116742733}
+2026-03-31 21:33:06,483 - keyguard_backend - INFO - Training with ML model features (count=31): [204.0, 140.0, 166.0, 91.0, 103.0, 112.0, 104.0, 148.0, 148.0, 115.0, 155.0, 154.0, 132.0, 174.0, 147.0, 123.0, 92.0, 136.0, 88.0, 40.0, 179.0, 134.0, 135.0, 180.0, 118.0, 85.0, 134.0, 135.0, 104.0, 64.0, 65.0]
+2026-03-31 21:33:06,502 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 8, trained_rounds=8)
+2026-03-31 21:33:20,730 - keyguard_backend - INFO - Training request for madabkadab with 36 keystrokes (round 9)
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -23.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -15.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -114.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -9.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -23.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -27.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -5.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -7.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -26.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 3.0ms
+2026-03-31 21:33:20,733 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -25.0ms
+2026-03-31 21:33:20,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -39.0ms
+2026-03-31 21:33:20,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 4793.0ms
+2026-03-31 21:33:20,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 4885.0ms
+2026-03-31 21:33:20,734 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 5027.0ms
+2026-03-31 21:33:20,734 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 170.42857142857142, 'flight_time': 97.42857142857143, 'key_press_rate': 3.5555555555555554, 'key_release_interval': 102.3, 'typing_speed': 44.800000000000004}
+2026-03-31 21:33:20,734 - keyguard_backend - DEBUG - ML Model Features - Dwells: 21, Flights: 20, Total: 31
+2026-03-31 21:33:20,734 - keyguard_backend - DEBUG - Feature vector: [78.0, 128.0, 107.0, 131.0, 214.0, 363.0, 149.0, 136.0, 117.0, 103.0, 136.0, 142.0, 139.0, 688.0, 244.0, 149.0, 149.0, 108.0, 128.0, 131.0, 39.0, 173.0, 88.0, 81.0, 88.0, 127.0, 125.0, 141.0, 43.0, 84.0, 209.0]
+2026-03-31 21:33:20,734 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 170.42857142857142, 'flight_time': 97.42857142857143, 'key_press_rate': 3.5555555555555554, 'key_release_interval': 102.3, 'typing_speed': 44.800000000000004}
+2026-03-31 21:33:20,734 - keyguard_backend - INFO - Training with ML model features (count=31): [78.0, 128.0, 107.0, 131.0, 214.0, 363.0, 149.0, 136.0, 117.0, 103.0, 136.0, 142.0, 139.0, 688.0, 244.0, 149.0, 149.0, 108.0, 128.0, 131.0, 39.0, 173.0, 88.0, 81.0, 88.0, 127.0, 125.0, 141.0, 43.0, 84.0, 209.0]
+2026-03-31 21:33:20,756 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 9, trained_rounds=9)
+2026-03-31 21:33:31,130 - keyguard_backend - INFO - Training request for madabkadab with 49 keystrokes (round 10)
+2026-03-31 21:33:31,132 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -38.0ms
+2026-03-31 21:33:31,132 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -115.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -17.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -80.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -96.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -24.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -22.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -21.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -59.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -67.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -20.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -34.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -22.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -35.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -42.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 7.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -63.0ms
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 145.59375, 'flight_time': 102.03125, 'key_press_rate': 3.912165572942958, 'key_release_interval': 105.3225806451613, 'typing_speed': 48.460373548712774}
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - ML Model Features - Dwells: 32, Flights: 31, Total: 31
+2026-03-31 21:33:31,133 - keyguard_backend - DEBUG - Feature vector: [159.0, 259.0, 148.0, 136.0, 158.0, 164.0, 169.0, 181.0, 142.0, 141.0, 111.0, 39.0, 157.0, 108.0, 151.0, 128.0, 128.0, 132.0, 163.0, 133.0, 124.0, 154.0, 149.0, 150.0, 302.0, 171.0, 138.0, 125.0, 139.0, 132.0, 76.0]
+2026-03-31 21:33:31,133 - keyguard_backend - INFO - Training with aggregated features: {'dwell_time': 145.59375, 'flight_time': 102.03125, 'key_press_rate': 3.912165572942958, 'key_release_interval': 105.3225806451613, 'typing_speed': 48.460373548712774}
+2026-03-31 21:33:31,133 - keyguard_backend - INFO - Training with ML model features (count=31): [159.0, 259.0, 148.0, 136.0, 158.0, 164.0, 169.0, 181.0, 142.0, 141.0, 111.0, 39.0, 157.0, 108.0, 151.0, 128.0, 128.0, 132.0, 163.0, 133.0, 124.0, 154.0, 149.0, 150.0, 302.0, 171.0, 138.0, 125.0, 139.0, 132.0, 76.0]
+2026-03-31 21:33:31,155 - keyguard_backend - INFO - Updated behavior profile for user madabkadab (round 10, trained_rounds=10)
+2026-03-31 21:33:42,160 - keyguard_backend - INFO - Prediction request from madabkadab with 24 keystrokes (test: None)
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -80.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -28.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -14.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -27.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -76.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -22.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -18.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -60.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -31.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -38.0ms
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 142.42857142857142, 'flight_time': 145.35714285714286, 'key_press_rate': 3.226607098535617, 'key_release_interval': 156.53846153846155, 'typing_speed': 41.69769173492181}
+2026-03-31 21:33:42,165 - keyguard_backend - DEBUG - ML Model Features - Dwells: 14, Flights: 13, Total: 31
+2026-03-31 21:33:42,166 - keyguard_backend - DEBUG - Feature vector: [164.0, 163.0, 133.0, 127.0, 167.0, 80.0, 131.0, 148.0, 95.0, 154.0, 159.0, 151.0, 235.0, 87.0, 48.0, 12.0, 158.0, 102.0, 136.0, 153.0, 75.0, 406.0, 24.0, 413.0, 164.0, 25.0, 319.0, 149.22222222222223, 149.22222222222223, 149.22222222222223, 149.22222222222223]
+2026-03-31 21:33:42,166 - keyguard_backend - DEBUG - Aggregated features: {'dwell_time': 142.42857142857142, 'flight_time': 145.35714285714286, 'key_press_rate': 3.226607098535617, 'key_release_interval': 156.53846153846155, 'typing_speed': 41.69769173492181}
+2026-03-31 21:33:42,166 - keyguard_backend - DEBUG - ML model features (count=31): [164.0, 163.0, 133.0, 127.0, 167.0, 80.0, 131.0, 148.0, 95.0, 154.0, 159.0, 151.0, 235.0, 87.0, 48.0, 12.0, 158.0, 102.0, 136.0, 153.0, 75.0, 406.0, 24.0, 413.0, 164.0, 25.0, 319.0, 149.22222222222223, 149.22222222222223, 149.22222222222223, 149.22222222222223]
+2026-03-31 21:33:42,177 - keyguard_backend - INFO - Prediction result for madabkadab: SUSPICIOUS (0.98)
+2026-03-31 21:33:49,475 - keyguard_backend - INFO - Prediction request from madabkadab with 24 keystrokes (test: None)
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -35.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -39.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -19.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -75.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -31.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -60.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -28.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -17.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -27.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -44.0ms
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 133.5, 'flight_time': 123.92857142857143, 'key_press_rate': 3.607103218645949, 'key_release_interval': 133.46153846153845, 'typing_speed': 46.614872364039954}
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - ML Model Features - Dwells: 14, Flights: 13, Total: 31
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Feature vector: [129.0, 150.0, 148.0, 95.0, 111.0, 181.0, 167.0, 163.0, 96.0, 135.0, 137.0, 110.0, 92.0, 155.0, 40.0, 145.0, 159.0, 29.0, 292.0, 38.0, 186.0, 107.0, 128.0, 172.0, 222.0, 105.0, 112.0, 133.4814814814815, 133.4814814814815, 133.4814814814815, 133.4814814814815]
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - Aggregated features: {'dwell_time': 133.5, 'flight_time': 123.92857142857143, 'key_press_rate': 3.607103218645949, 'key_release_interval': 133.46153846153845, 'typing_speed': 46.614872364039954}
+2026-03-31 21:33:49,478 - keyguard_backend - DEBUG - ML model features (count=31): [129.0, 150.0, 148.0, 95.0, 111.0, 181.0, 167.0, 163.0, 96.0, 135.0, 137.0, 110.0, 92.0, 155.0, 40.0, 145.0, 159.0, 29.0, 292.0, 38.0, 186.0, 107.0, 128.0, 172.0, 222.0, 105.0, 112.0, 133.4814814814815, 133.4814814814815, 133.4814814814815, 133.4814814814815]
+2026-03-31 21:33:49,484 - keyguard_backend - INFO - Prediction result for madabkadab: NORMAL (0.98)
+2026-03-31 21:33:55,557 - keyguard_backend - INFO - Prediction request from madabkadab with 24 keystrokes (test: None)
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -43.0ms
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -55.0ms
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -27.0ms
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -70.0ms
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -40.0ms
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -69.0ms
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -104.0ms
+2026-03-31 21:33:55,560 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -48.0ms
+2026-03-31 21:33:55,561 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -31.0ms
+2026-03-31 21:33:55,561 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 148.6, 'flight_time': 91.53333333333333, 'key_press_rate': 3.886729594669628, 'key_release_interval': 98.07142857142857, 'typing_speed': 49.97223764575236}
+2026-03-31 21:33:55,561 - keyguard_backend - DEBUG - ML Model Features - Dwells: 15, Flights: 14, Total: 31
+2026-03-31 21:33:55,561 - keyguard_backend - DEBUG - Feature vector: [111.0, 146.0, 172.0, 126.0, 214.0, 164.0, 144.0, 167.0, 95.0, 162.0, 189.0, 136.0, 123.0, 130.0, 150.0, 43.0, 69.0, 306.0, 225.0, 58.0, 55.0, 76.0, 132.0, 147.0, 56.0, 77.0, 60.0, 25.0, 44.0, 124.20689655172414, 124.20689655172414]
+2026-03-31 21:33:55,561 - keyguard_backend - DEBUG - Aggregated features: {'dwell_time': 148.6, 'flight_time': 91.53333333333333, 'key_press_rate': 3.886729594669628, 'key_release_interval': 98.07142857142857, 'typing_speed': 49.97223764575236}
+2026-03-31 21:33:55,561 - keyguard_backend - DEBUG - ML model features (count=31): [111.0, 146.0, 172.0, 126.0, 214.0, 164.0, 144.0, 167.0, 95.0, 162.0, 189.0, 136.0, 123.0, 130.0, 150.0, 43.0, 69.0, 306.0, 225.0, 58.0, 55.0, 76.0, 132.0, 147.0, 56.0, 77.0, 60.0, 25.0, 44.0, 124.20689655172414, 124.20689655172414]
+2026-03-31 21:33:55,567 - keyguard_backend - INFO - Prediction result for madabkadab: NORMAL (0.83)
+2026-03-31 21:34:03,774 - keyguard_backend - INFO - Prediction request from madabkadab with 24 keystrokes (test: None)
+2026-03-31 21:34:03,777 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -44.0ms
+2026-03-31 21:34:03,777 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -52.0ms
+2026-03-31 21:34:03,777 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -39.0ms
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -42.0ms
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -18.0ms
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 2.0ms
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -51.0ms
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -6.0ms
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -23.0ms
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 136.26666666666668, 'flight_time': 172.66666666666666, 'key_press_rate': 3.021148036253776, 'key_release_interval': 185.0, 'typing_speed': 38.84333189469141}
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - ML Model Features - Dwells: 15, Flights: 14, Total: 31
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Feature vector: [136.0, 163.0, 147.0, 147.0, 160.0, 120.0, 127.0, 84.0, 126.0, 143.0, 129.0, 124.0, 131.0, 135.0, 172.0, 65.0, 145.0, 68.0, 94.0, 15.0, 507.0, 107.0, 100.0, 153.0, 70.0, 126.0, 331.0, 411.0, 398.0, 159.79310344827587, 159.79310344827587]
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - Aggregated features: {'dwell_time': 136.26666666666668, 'flight_time': 172.66666666666666, 'key_press_rate': 3.021148036253776, 'key_release_interval': 185.0, 'typing_speed': 38.84333189469141}
+2026-03-31 21:34:03,778 - keyguard_backend - DEBUG - ML model features (count=31): [136.0, 163.0, 147.0, 147.0, 160.0, 120.0, 127.0, 84.0, 126.0, 143.0, 129.0, 124.0, 131.0, 135.0, 172.0, 65.0, 145.0, 68.0, 94.0, 15.0, 507.0, 107.0, 100.0, 153.0, 70.0, 126.0, 331.0, 411.0, 398.0, 159.79310344827587, 159.79310344827587]
+2026-03-31 21:34:03,785 - keyguard_backend - INFO - Prediction result for madabkadab: SUSPICIOUS (0.89)
+2026-03-31 21:34:12,362 - keyguard_backend - INFO - Prediction request from madabkadab with 24 keystrokes (test: None)
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -51.0ms
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -6.0ms
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: -23.0ms
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 135.04761904761904, 'flight_time': 377.0952380952381, 'key_press_rate': 1.8596001859600184, 'key_release_interval': 395.95, 'typing_speed': 23.430962343096237}
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - ML Model Features - Dwells: 21, Flights: 20, Total: 31
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - Feature vector: [143.0, 129.0, 124.0, 131.0, 135.0, 172.0, 126.0, 140.0, 147.0, 107.0, 139.0, 132.0, 132.0, 180.0, 143.0, 121.0, 140.0, 105.0, 144.0, 123.0, 123.0, 70.0, 126.0, 331.0, 411.0, 398.0, 898.0, 374.0, 366.0, 383.0, 449.0]
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - Aggregated features: {'dwell_time': 135.04761904761904, 'flight_time': 377.0952380952381, 'key_press_rate': 1.8596001859600184, 'key_release_interval': 395.95, 'typing_speed': 23.430962343096237}
+2026-03-31 21:34:12,365 - keyguard_backend - DEBUG - ML model features (count=31): [143.0, 129.0, 124.0, 131.0, 135.0, 172.0, 126.0, 140.0, 147.0, 107.0, 139.0, 132.0, 132.0, 180.0, 143.0, 121.0, 140.0, 105.0, 144.0, 123.0, 123.0, 70.0, 126.0, 331.0, 411.0, 398.0, 898.0, 374.0, 366.0, 383.0, 449.0]
+2026-03-31 21:34:12,380 - keyguard_backend - INFO - Prediction result for madabkadab: INTRUDER (0.99)
+2026-03-31 21:34:18,891 - keyguard_backend - INFO - Prediction request from madabkadab with 24 keystrokes (test: None)
+2026-03-31 21:34:18,894 - keyguard_backend - DEBUG - Removing keystroke with anomalous dwell time: 1621.0ms
+2026-03-31 21:34:18,894 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 2485.0ms
+2026-03-31 21:34:18,894 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 3305.0ms
+2026-03-31 21:34:18,894 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 4148.0ms
+2026-03-31 21:34:18,894 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 4370.0ms
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 5902.0ms
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 6016.0ms
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 6136.0ms
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 6283.0ms
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Removing keystroke with anomalous flight time: 6399.0ms
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Extracted features: {'dwell_time': 134.0, 'flight_time': 379.35714285714283, 'key_press_rate': 1.8088214832336162, 'key_release_interval': 408.53846153846155, 'typing_speed': 23.375539167942115}
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - ML Model Features - Dwells: 14, Flights: 13, Total: 31
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Feature vector: [140.0, 147.0, 107.0, 139.0, 132.0, 132.0, 180.0, 143.0, 121.0, 140.0, 105.0, 144.0, 123.0, 123.0, 366.0, 383.0, 449.0, 405.0, 395.0, 388.0, 362.0, 479.0, 459.0, 429.0, 424.0, 360.0, 412.0, 266.18518518518516, 266.18518518518516, 266.18518518518516, 266.18518518518516]
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - Aggregated features: {'dwell_time': 134.0, 'flight_time': 379.35714285714283, 'key_press_rate': 1.8088214832336162, 'key_release_interval': 408.53846153846155, 'typing_speed': 23.375539167942115}
+2026-03-31 21:34:18,895 - keyguard_backend - DEBUG - ML model features (count=31): [140.0, 147.0, 107.0, 139.0, 132.0, 132.0, 180.0, 143.0, 121.0, 140.0, 105.0, 144.0, 123.0, 123.0, 366.0, 383.0, 449.0, 405.0, 395.0, 388.0, 362.0, 479.0, 459.0, 429.0, 424.0, 360.0, 412.0, 266.18518518518516, 266.18518518518516, 266.18518518518516, 266.18518518518516]
+2026-03-31 21:34:18,907 - keyguard_backend - INFO - Prediction result for madabkadab: INTRUDER (0.99)

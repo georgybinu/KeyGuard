@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../styles/Auth.css';
+import { loginUser, registerUser } from '../lib/api';
 
 function Auth({ onSuccess }) {
-  const [mode, setMode] = useState('login'); // login or register
+  const [mode, setMode] = useState('login');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -18,7 +19,6 @@ function Auth({ onSuccess }) {
 
     try {
       if (mode === 'register') {
-        // Register validation
         if (!username || !email || !phone || !password) {
           setError('All fields are required');
           setLoading(false);
@@ -30,52 +30,28 @@ function Auth({ onSuccess }) {
           return;
         }
 
-        // Register user
-        const params = new URLSearchParams({
+        const data = await registerUser({
           username,
           email,
           phone,
-          password
+          password,
         });
-        const response = await fetch(`http://localhost:8000/register?${params}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' }
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          onSuccess({
-            username,
-            email,
-            phone,
-            registeredAt: new Date().toISOString(),
-            token: data.token || 'demo-token',
-            isNewUser: true
-          });
-        } else {
-          setError('Registration failed. Username might already exist.');
-        }
+        onSuccess(data);
       } else {
-        // Login validation
         if (!username || !password) {
           setError('Username and password are required');
           setLoading(false);
           return;
         }
 
-        // For demo: accept any username/password combination
-        // In production, would verify against backend
-        onSuccess({
+        const data = await loginUser({
           username,
-          email: `${username}@keyguard.local`,
-          phone: 'Not provided',
-          registeredAt: new Date().toISOString(),
-          token: 'login-token-' + Date.now(),
-          isNewUser: false
+          password,
         });
+        onSuccess(data);
       }
     } catch (err) {
-      setError('Connection error. Make sure backend is running.');
+      setError(err.message || 'Connection error. Make sure backend is running.');
     }
 
     setLoading(false);
@@ -85,8 +61,9 @@ function Auth({ onSuccess }) {
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-header">
-          <h1>🔐 KeyGuard</h1>
-          <p>Keystroke Authentication</p>
+          <p className="eyebrow">Continuous Keystroke Authentication</p>
+          <h1>KeyGuard</h1>
+          <p>Train your typing rhythm once, then let the app silently watch for intruders.</p>
         </div>
 
         <div className="auth-tabs">
@@ -187,16 +164,16 @@ function Auth({ onSuccess }) {
 
         <div className="auth-info">
           <div className="info-item">
-            <span className="icon">⌨️</span>
-            <span>Keystroke biometric authentication</span>
+            <span className="icon">Timing profile</span>
+            <span>Each account stores a unique keystroke signature.</span>
           </div>
           <div className="info-item">
-            <span className="icon">🎯</span>
-            <span>Train your unique typing pattern</span>
+            <span className="icon">10 phrases</span>
+            <span>New users complete a short biometric training session.</span>
           </div>
           <div className="info-item">
-            <span className="icon">🛡️</span>
-            <span>Real-time intrusion detection</span>
+            <span className="icon">Live defense</span>
+            <span>Typing in the notepad is monitored continuously for anomalies.</span>
           </div>
         </div>
       </div>

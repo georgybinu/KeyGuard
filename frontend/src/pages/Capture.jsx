@@ -1,67 +1,72 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import '../styles/Capture.css';
+import { submitTrainingRound } from '../lib/api';
+import { consumeKeyUp, isTrackableKey, registerKeyDown } from '../lib/keystrokes';
 
 function Capture({ user, onComplete }) {
-  // Training phrases - we'll randomize and show one per round
-  const TRAINING_PHRASES = [
-    'the quick brown fox jumps',
-    'keystroke patterns are unique',
-    'secure authentication system',
-    'typing dynamics analysis',
-    'biometric security measures',
-    'machine learning models',
-    'intrusion detection system',
-    'behavioral authentication',
-    'digital identity verification',
-    'continuous user monitoring'
-  ];
+  const phraseBank = useMemo(
+    () => [
+      'secure identities begin with steady typing',
+      'behavioral biometrics protect sensitive notes',
+      'typing rhythm reveals who is at the keyboard',
+      'an attentive system can spot unusual behavior',
+      'fastapi services power this authentication demo',
+      'continuous verification keeps sessions safer',
+      'well trained profiles improve anomaly detection',
+      'every phrase helps shape a stronger baseline',
+      'users should feel protected without friction',
+      'keystroke timing becomes a digital signature',
+      'careful models can separate owners from intruders',
+      'trusted sessions deserve silent background checks',
+      'security works best when it respects the user',
+      'precision in timing creates a unique pattern',
+      'note taking stays open while identity is checked',
+    ],
+    [],
+  );
 
   const [phase, setPhase] = useState('ready');
   const [currentRound, setCurrentRound] = useState(0);
-  const [currentPhrase, setCurrentPhrase] = useState('');
   const [typedText, setTypedText] = useState('');
   const [keystrokes, setKeystrokes] = useState([]);
-  const [allKeystrokes, setAllKeystrokes] = useState([]);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  const [phrasesList, setPhrasesList] = useState([]);
+  const [trainingPhrases, setTrainingPhrases] = useState([]);
+  const [lastSummary, setLastSummary] = useState(null);
   const inputRef = useRef(null);
+  const pendingKeyDownsRef = useRef({});
 
   const REQUIRED_ROUNDS = 10;
 
-  // Initialize phrases list on mount
   useEffect(() => {
-    const shuffled = [...TRAINING_PHRASES].sort(() => Math.random() - 0.5);
-    setPhrasesList(shuffled);
+    const shuffled = [...phraseBank].sort(() => Math.random() - 0.5);
+    setTrainingPhrases(shuffled.slice(0, REQUIRED_ROUNDS));
+  }, [phraseBank]);
+
+  useEffect(() => {
+    if (phase === 'training') {
+      inputRef.current?.focus();
+    }
   }, []);
 
-  // Set current phrase when round changes
-  useEffect(() => {
-    if (phrasesList.length > 0 && phase === 'training') {
-      setCurrentPhrase(phrasesList[currentRound]);
-    }
-  }, [currentRound, phase, phrasesList]);
+  const currentPhrase = trainingPhrases[currentRound] || '';
 
   const handleKeyDown = (e) => {
-    if (phase !== 'training') return;
-    
-    const keystroke = {
-      key: e.key,
-      timestamp: Date.now(),
-      type: 'keydown'
-    };
-    setKeystrokes(prev => [...prev, keystroke]);
+    if (phase !== 'training' || !isTrackableKey(e.key)) {
+      return;
+    }
+    pendingKeyDownsRef.current = registerKeyDown(pendingKeyDownsRef.current, e.key, Date.now());
   };
 
   const handleKeyUp = (e) => {
-    if (phase !== 'training') return;
-    
-    const keystroke = {
-      key: e.key,
-      timestamp: Date.now(),
-      type: 'keyup'
-    };
-    setKeystrokes(prev => [...prev, keystroke]);
+    if (phase !== 'training' || !isTrackableKey(e.key)) {
+      return;
+    }
+    const result = consumeKeyUp(pendingKeyDownsRef.current, e.key, Date.now());
+    pendingKeyDownsRef.current = result.pendingKeydowns;
+    if (result.keystroke) {
+      setKeystrokes((prev) => [...prev, result.keystroke]);
+    }
   };
 
   const handleInput = (e) => {
@@ -73,8 +78,9 @@ function Capture({ user, onComplete }) {
     setCurrentRound(0);
     setTypedText('');
     setKeystrokes([]);
+    pendingKeyDownsRef.current = {};
+    setLastSummary(null);
     setMessage('');
-    inputRef.current?.focus();
   };
 
   const submitRound = async () => {
@@ -85,53 +91,38 @@ function Capture({ user, onComplete }) {
 
     setLoading(true);
     try {
-      // Submit to backend
-      const response = await fetch('http://localhost:8000/train', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: user.username,
-          keystrokes: keystrokes,
-          round: currentRound + 1
-        })
+      const response = await submitTrainingRound({
+        username: user.username,
+        keystrokes,
+        round: currentRound + 1,
+        phrase: currentPhrase,
       });
+      setLastSummary(response.profile_summary);
+      const nextRound = currentRound + 1;
 
-      if (response.ok) {
-        setAllKeystrokes(prev => [...prev, ...keystrokes]);
-        const nextRound = currentRound + 1;
-
-        if (nextRound === REQUIRED_ROUNDS) {
-          // Training complete
-          setPhase('completed');
-          setMessage('✅ Training complete! Your profile is ready.');
-          
-          setTimeout(() => {
-            if (onComplete) {
-              onComplete({
-                rounds: REQUIRED_ROUNDS,
-                totalKeystrokes: allKeystrokes.length + keystrokes.length,
-                features: { trained: true }
-              });
-            }
-          }, 1500);
-        } else {
-          // Next round
-          setCurrentRound(nextRound);
-          setTypedText('');
-          setKeystrokes([]);
-          setMessage('');
-          inputRef.current?.focus();
-        }
+      if (nextRound === REQUIRED_ROUNDS) {
+        setPhase('completed');
+        setMessage('Training complete. Redirecting to your protected notepad.');
+        setTimeout(() => {
+          onComplete?.({
+            trainingRounds: response.profile_summary.trained_rounds,
+            trainingCompleted: response.profile_summary.training_completed,
+          });
+        }, 900);
       } else {
-        setMessage('❌ Error submitting training data.');
+        setCurrentRound(nextRound);
+        setTypedText('');
+        setKeystrokes([]);
+        pendingKeyDownsRef.current = {};
+        setMessage('');
       }
     } catch (err) {
-      setMessage('❌ Connection error. Make sure backend is running.');
+      setMessage(err.message || 'Unable to save the training round.');
     }
     setLoading(false);
   };
 
-  const progress = (currentRound / REQUIRED_ROUNDS) * 100;
+  const progress = ((phase === 'completed' ? REQUIRED_ROUNDS : currentRound) / REQUIRED_ROUNDS) * 100;
   const isTextMatched = typedText.trim() === currentPhrase.trim();
 
   return (
@@ -139,21 +130,25 @@ function Capture({ user, onComplete }) {
       <div className="capture-card">
         {phase === 'ready' && (
           <div className="phase-ready">
-            <h2>Train Your Profile</h2>
-            <p>Create your unique keystroke fingerprint</p>
+            <h2>Build Your Typing Profile</h2>
+            <p>Type 10 short phrases so KeyGuard can learn how you naturally use the keyboard.</p>
             
             <div className="training-info">
+              <div className="info-row">
+                <span className="label">User</span>
+                <span className="value">{user.username}</span>
+              </div>
               <div className="info-row">
                 <span className="label">Rounds</span>
                 <span className="value">{REQUIRED_ROUNDS}</span>
               </div>
               <div className="info-row">
-                <span className="label">Time</span>
-                <span className="value">~3 mins</span>
+                <span className="label">Signals</span>
+                <span className="value">Press, release, dwell, flight</span>
               </div>
               <div className="info-row">
-                <span className="label">Measures</span>
-                <span className="value">Dwell & Flight time</span>
+                <span className="label">Afterward</span>
+                <span className="value">Protected notepad access</span>
               </div>
             </div>
 
@@ -221,8 +216,8 @@ function Capture({ user, onComplete }) {
         {phase === 'completed' && (
           <div className="phase-completed">
             <div className="completion-icon">✓</div>
-            <h2>Training Complete</h2>
-            <p>Your keystroke profile is now ready for authentication</p>
+            <h2>Profile Ready</h2>
+            <p>Your typing baseline has been stored. Opening the monitored notepad now.</p>
 
             <div className="completion-stats">
               <div className="stat">
@@ -230,12 +225,12 @@ function Capture({ user, onComplete }) {
                 <span className="stat-value">{REQUIRED_ROUNDS}</span>
               </div>
               <div className="stat">
-                <span className="stat-label">Keystrokes Recorded</span>
-                <span className="stat-value">{allKeystrokes.length + keystrokes.length}</span>
+                <span className="stat-label">Profile Features</span>
+                <span className="stat-value">{lastSummary?.features_available?.length || 5}</span>
               </div>
             </div>
 
-            <p className="next-step">Ready to test your authentication</p>
+            <p className="next-step">{message}</p>
           </div>
         )}
       </div>

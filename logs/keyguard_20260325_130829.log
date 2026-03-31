@@ -1,0 +1,4 @@
+2026-03-25 13:08:49,613 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/random_forest_model.pkl: STACK_GLOBAL requires str
+2026-03-25 13:08:49,614 - keyguard_backend - ERROR - Error loading model /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/one_class_svm_model.pkl: invalid load key, '\x05'.
+2026-03-25 13:08:49,614 - keyguard_backend - ERROR - Error loading scaler /Users/georgy/Documents/College/miniproject/KeyGuard/backend/models/scaler.pkl: STACK_GLOBAL requires str
+2026-03-25 13:08:49,625 - keyguard_backend - INFO - Database tables created/verified

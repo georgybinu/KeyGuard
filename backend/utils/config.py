@@ -2,7 +2,6 @@
 Configuration settings for KeyGuard backend
 """
 import os
-from typing import Dict, Any
 
 # Model thresholds
 NORMAL_THRESHOLD = 0.7  # RF probability threshold for normal behavior
@@ -13,14 +12,19 @@ ANOMALY_SCORE_THRESHOLD = -0.5  # One-Class SVM anomaly threshold
 DWELL_TIME_THRESHOLD = 50  # ms - time key is held down
 FLIGHT_TIME_THRESHOLD = 100  # ms - time between key releases and next press
 
+# Base paths
+BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_MODELS_DIR = os.path.join(BACKEND_DIR, "models")
+
 # Database
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./keyguard.db")
+DEFAULT_DATABASE_PATH = os.path.join(BACKEND_DIR, "keyguard.db")
+DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{DEFAULT_DATABASE_PATH}")
 
 # Model paths
 MODEL_PATHS = {
-    "random_forest": os.getenv("RF_MODEL_PATH", "/models/random_forest_model.pkl"),
-    "one_class_svm": os.getenv("SVM_MODEL_PATH", "/models/one_class_svm_model.pkl"),
-    "scaler": os.getenv("SCALER_PATH", "/models/scaler.pkl"),
+    "random_forest": os.getenv("RF_MODEL_PATH", os.path.join(DEFAULT_MODELS_DIR, "random_forest_model.pkl")),
+    "one_class_svm": os.getenv("SVM_MODEL_PATH", os.path.join(DEFAULT_MODELS_DIR, "one_class_svm_model.pkl")),
+    "scaler": os.getenv("SCALER_PATH", os.path.join(DEFAULT_MODELS_DIR, "scaler.pkl")),
 }
 
 # Feature names expected by models

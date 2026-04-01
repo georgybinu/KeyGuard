@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: keyguard-backend
+    runtime: python
+    pythonVersion: 3.11
+    plan: free
+    
+    buildCommand: |
+      cd backend
+      pip install -r requirements.txt
+      python init_db.py
+    
+    startCommand: |
+      cd backend
+      uvicorn app:app --host 0.0.0.0 --port $PORT
+    
+    envVars:
+      - key: DATABASE_URL
+        synchronizedSecrets:
+          - DATABASE_URL
+    
+    routes:
+      - path: /
+        destination: /
+
+  - type: static
+    name: keyguard-frontend
+    buildCommand: |
+      cd frontend
+      npm install
+      npm run build
+    
+    staticPublishPath: frontend/dist
+    routes:
+      - path: /
+        destination: /

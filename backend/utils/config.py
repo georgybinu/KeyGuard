@@ -2,6 +2,15 @@
 Configuration settings for KeyGuard backend
 """
 import os
+from pathlib import Path
+
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    env_path = Path(__file__).parent.parent.parent / ".env"
+    load_dotenv(env_path)
+except ImportError:
+    pass  # dotenv not installed, use environment variables only
 
 def _normalize_database_url(url: str) -> str:
     """Normalize provider-specific database URLs for SQLAlchemy."""

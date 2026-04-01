@@ -196,164 +196,84 @@ function Capture({ user, onComplete }) {
   const currentStage = currentPrompt?.type === 'paragraph' ? 'Natural Paragraphs' : 'Fixed Phrases';
 
   return (
-    <div className="capture-container">
-      <div className="capture-card capture-card-wide">
-        {phase === 'ready' && (
-          <div className="phase-ready">
-            <h2>Build Your Typing Profile</h2>
-            <p>KeyGuard trains in two stages: short phrases for controlled timing and short paragraphs for more natural typing rhythm.</p>
-
-            <div className="training-info">
-              <div className="info-row">
-                <span className="label">User</span>
-                <span className="value">{user.username}</span>
-              </div>
-              <div className="info-row">
-                <span className="label">Phase 1</span>
-                <span className="value">{PHRASE_ROUNDS} fixed phrases</span>
-              </div>
-              <div className="info-row">
-                <span className="label">Phase 2</span>
-                <span className="value">{PARAGRAPH_ROUNDS} natural paragraphs</span>
-              </div>
-              <div className="info-row">
-                <span className="label">Signals</span>
-                <span className="value">Press, release, dwell, flight, pace</span>
-              </div>
-              <div className="info-row">
-                <span className="label">Afterward</span>
-                <span className="value">Protected notepad access</span>
-              </div>
-            </div>
-
-            <button className="btn btn-primary" onClick={startTraining}>
-              Start Training
+    <div className="capture-stage">
+      {phase === 'ready' && (
+        <div className="training-intro">
+          <div className="intro-container">
+            <h1 className="intro-title">Keystroke Training</h1>
+            <p className="intro-description">
+              Complete this training to establish your unique typing signature. This helps KeyGuard recognize your authentic keystrokes.
+            </p>
+            <button className="intro-btn" onClick={startTraining}>
+              Begin Training
             </button>
           </div>
-        )}
+        </div>
+      )}
 
-        {phase === 'training' && currentPrompt && (
-          <div className="phase-training">
-            <div className="training-topbar">
-              <div>
-                <span className={`phase-badge ${currentPrompt.type}`}>{currentStage}</span>
-                <h2 className="training-title">Biometric Enrollment</h2>
-              </div>
-              <div className="training-step-card">
-                <span className="training-step-label">Step Indicator</span>
-                <strong>Sample {currentIndex + 1} of {TOTAL_ROUNDS}</strong>
+      {phase === 'training' && currentPrompt && (
+        <div className="training-active">
+          <div className="training-header-bar">
+            <div className="progress-wrapper">
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: `${progress}%` }}></div>
               </div>
             </div>
+          </div>
 
-            <div className="training-header">
-              <div className="progress-wrapper">
-                <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-                </div>
-                <div className="progress-text">{Math.round(progress)}%</div>
-              </div>
-            </div>
-
-            <div className="phase-badge-row">
-              <span className="prompt-chip">{currentPrompt.label}</span>
-              <span className="phase-hint">
-                {currentPrompt.type === 'phrase'
-                  ? 'Type the phrase exactly as shown.'
-                  : 'Type the paragraph naturally at your normal pace.'}
-              </span>
-            </div>
-
-            <div className={`phrase-box ${currentPrompt.type === 'paragraph' ? 'paragraph-box' : ''}`}>
-              <p className="phrase-label">
-                {currentPrompt.type === 'phrase' ? 'Type this phrase:' : 'Now type the following paragraph naturally:'}
-              </p>
-              <p className={`phrase-text ${currentPrompt.type === 'paragraph' ? 'paragraph-text' : ''}`}>{promptText}</p>
+          <div className="training-content">
+            <div className="phrase-display">
+              <p className="phrase-text">{promptText}</p>
             </div>
 
             <textarea
               ref={inputRef}
-              className="input-field"
-              placeholder="Click here and start typing..."
+              className="training-input"
+              placeholder="Start typing the phrase above"
               value={typedText}
               onChange={(event) => setTypedText(event.target.value)}
               onKeyDown={handleKeyDown}
               onKeyUp={handleKeyUp}
+              disabled={loading}
             />
 
-            <div className="capture-metrics-grid">
-              <div className="capture-metric-card">
-                <span className="capture-metric-label">Key Press Span</span>
-                <strong>{promptMetrics.pressTime > 0 ? `${Math.round((promptMetrics.releaseTime - promptMetrics.pressTime) / 1000)}s` : '--'}</strong>
-              </div>
-              <div className="capture-metric-card">
-                <span className="capture-metric-label">Key Release Time</span>
-                <strong>{promptMetrics.releaseTime > 0 ? `${Math.round(promptMetrics.releaseTime % 1000)} ms` : '--'}</strong>
-              </div>
-              <div className="capture-metric-card">
-                <span className="capture-metric-label">Dwell Time</span>
-                <strong>{keystrokes.length > 0 ? `${Math.round(promptMetrics.dwellTime)} ms` : '--'}</strong>
-              </div>
-              <div className="capture-metric-card">
-                <span className="capture-metric-label">Flight Time</span>
-                <strong>{keystrokes.length > 1 ? `${Math.round(promptMetrics.flightTime)} ms` : '--'}</strong>
-              </div>
-            </div>
+            {message && <div className="training-message">{message}</div>}
 
-            <div className={`match-status ${isTextMatched ? 'matched' : ''}`}>
-              {isTextMatched ? (
-                <>
-                  <span className="icon">✓</span>
-                  <span>Prompt matched. This sample is ready to save.</span>
-                </>
-              ) : (
-                <>
-                  <span className="icon">○</span>
-                  <span>{typedText.length}/{promptText.length} characters typed</span>
-                </>
-              )}
+            <div className="training-stats">
+              <div className="stat-item">
+                <span className="stat-label">Keystrokes</span>
+                <span className="stat-value">{keystrokes.length}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Progress</span>
+                <span className="stat-value">{Math.round(progress)}%</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Round</span>
+                <span className="stat-value">{currentIndex + 1}/{TOTAL_ROUNDS}</span>
+              </div>
             </div>
 
             <button
-              className="btn btn-primary"
+              className="training-btn"
               onClick={submitRound}
               disabled={!isTextMatched || loading}
             >
               {loading ? 'Submitting...' : currentIndex + 1 === TOTAL_ROUNDS ? 'Finish Training' : 'Continue'}
             </button>
-
-            {message && <div className="message">{message}</div>}
           </div>
-        )}
+        </div>
+      )}
 
-        {phase === 'completed' && (
-          <div className="phase-completed">
+      {phase === 'completed' && (
+        <div className="training-completed">
+          <div className="completion-container">
             <div className="completion-icon">✓</div>
-            <h2>Profile Ready</h2>
-            <p>Your phrase and paragraph baseline has been stored. Opening the monitored notepad now.</p>
-
-            <div className="completion-stats">
-              <div className="stat">
-                <span className="stat-label">Samples Completed</span>
-                <span className="stat-value">{TOTAL_ROUNDS}</span>
-              </div>
-              <div className="stat">
-                <span className="stat-label">Phrase Samples</span>
-                <span className="stat-value">{lastSummary?.sample_breakdown?.phrase || PHRASE_ROUNDS}</span>
-              </div>
-              <div className="stat">
-                <span className="stat-label">Paragraph Samples</span>
-                <span className="stat-value">{lastSummary?.sample_breakdown?.paragraph || PARAGRAPH_ROUNDS}</span>
-              </div>
-              <div className="stat">
-                <span className="stat-label">Profile Features</span>
-                <span className="stat-value">{lastSummary?.features_available?.length || 5}</span>
-              </div>
-            </div>
-
-            <p className="next-step">{message}</p>
+            <h2>Training Complete</h2>
+            <p>Your keystroke signature has been established. Redirecting to your secure workspace...</p>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
